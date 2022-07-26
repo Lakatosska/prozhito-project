@@ -1,0 +1,21 @@
+.menu__dropdown {
+  position: absolute;
+  min-width: 705px;
+  top: 100%;
+  height: 38px;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.1s, opacity 0.1s linear;
+  align-items: flex-end;
+  padding: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu__dropdown {
+    min-width: 456px;
+    height: 25px;
+  }
+}

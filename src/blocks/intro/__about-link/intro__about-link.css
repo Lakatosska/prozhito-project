@@ -1,0 +1,21 @@
+.intro__about-link {
+  font: 1em/1.3em "PT Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgba(50, 50, 50, 0.5);
+  align-self: center;
+  max-width: 400px;
+  width: 70%;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro__about-link {
+    max-width: 250px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .intro__about-link {
+    font-size: 0.86em;
+    line-height: 1.3em;
+  }
+}

@@ -1,0 +1,12 @@
+.typical__subtitle {
+  font: 0.7em/1.29em "PT Sans", sans-serif;
+  margin: 0 auto 0;
+  text-align: center;
+  padding: 47px 0 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+}

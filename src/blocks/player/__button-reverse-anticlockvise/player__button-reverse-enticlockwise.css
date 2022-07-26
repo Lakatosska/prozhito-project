@@ -1,0 +1,23 @@
+.player__button-reverse-anticlockwise {
+  border: none;
+  background-color: transparent;
+  background-image: url(../../../images/player\(typical_page\)/Reverse_anticlockwise.svg);
+  background-repeat: no-repeat;
+  height: 28px;
+  width: 23px;
+  margin: 0 0 0 31px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .player__button-reverse-anticlockwise {
+    background-image: url(../../../images/player\(typical_page\)/Reverse_anticlockwise_320px.svg);
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 12px;
+  }
+}
+
+.player__button-reverse-anticlockwise:hover {
+  opacity: 50%;
+}

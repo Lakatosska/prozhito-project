@@ -1,0 +1,30 @@
+.popup__title {
+  font: 1.3em/1em "WF", sans-serif;
+  text-transform: uppercase;
+  padding: 16px 0 0;
+  margin: auto;
+  max-width: 189px;
+  width: 100%;
+  color: #323232;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1023px) {
+  .popup__title {
+    max-width: 150px;
+    width: 100%;
+    padding: 12px 0 0;
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .popup__title {
+    max-width: 130px;
+    width: 100%;
+    padding: 12px 0 0;
+    font-size: 1.3em;
+    line-height: 1.22em;
+    margin: auto;
+  }
+}

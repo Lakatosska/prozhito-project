@@ -1,0 +1,9 @@
+.menu__item_dropdown:not(:last-of-type) {
+  margin-right: 60px;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu__item_dropdown:not(:last-of-type) {
+    margin-right: 32px;
+  }
+}

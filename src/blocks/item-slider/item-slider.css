@@ -1,0 +1,33 @@
+.item-slider + .item-slider {
+  margin-left: 20px;
+}
+
+.journal-projito__materials .item-slider + .item-slider {
+  margin: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .item-slider + .item-slider {
+    margin-left: 12px;
+  }
+  .news-main .item-slider + .item-slider {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .item-slider + .item-slider {
+    margin: 16px 0 0;
+  }
+  .journal-projito .item-slider + .item-slider {
+    margin: 0;
+  }
+  .materials .item-slider + .item-slider {
+    margin: 0;
+    margin-right: 12px;
+  }
+  .news-main .item-slider + .item-slider {
+    margin-left: 0;
+  }
+
+}

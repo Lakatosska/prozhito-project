@@ -1,0 +1,17 @@
+.page-numbers__arrow-right {
+  border: 0;
+  background: none;
+  background-image: url(../../../images/Arrow_right.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  margin-left: 200px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 1023px) {
+  .page-numbers__arrow-right {
+    margin-left: 0;
+  }
+}

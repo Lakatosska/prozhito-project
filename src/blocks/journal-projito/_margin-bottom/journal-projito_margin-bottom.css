@@ -1,0 +1,16 @@
+.journal-projito_margin-bottom {
+  margin-bottom: 46px;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito_margin-bottom {
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .journal-projito_margin-bottom {
+    margin-bottom: 0;
+  }
+}
+

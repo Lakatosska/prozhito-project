@@ -1,0 +1,7 @@
+.item__date {
+  color: #323232;
+  grid-area: date;
+  font-size: 0.7em;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,17 @@
+.logo_place_footer {
+  min-width: 290px;
+  height: 30px;
+}
+@media screen and (max-width: 1023px) {
+  .logo_place_footer {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo_place_footer {
+    order: 2;
+    min-width: 256px;
+    height: 26px;
+  }
+}

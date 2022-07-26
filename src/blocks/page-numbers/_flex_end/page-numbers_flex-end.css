@@ -1,0 +1,6 @@
+.page-numbers_flex-end {
+  display: flex;
+  margin: 0 auto 0;
+  justify-content: center;
+  align-items: center;
+}

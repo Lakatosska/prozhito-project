@@ -1,0 +1,12 @@
+.journal-projito__text-title {
+  font: normal 1.3em/1 'WF', sans-serif;
+  margin: 0;
+  min-height: 35px;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__text-title {
+    line-height: 1.22;
+    min-height: 22px;
+  }
+}

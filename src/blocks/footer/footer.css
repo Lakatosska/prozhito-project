@@ -1,0 +1,24 @@
+.footer {
+  font: 20px/1.26 "PT sans", sans-serif;
+  max-width: 1375px;
+  width: calc(100vw * 1375 / 1440);
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+@media screen and (max-width: 1023px) {
+  .footer {
+    max-width: 735px;
+    width: calc(100% - 32px);
+    font: 14px/18.13px "PT sans", sans-serif;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    min-width: 296px;
+    width: calc(100% - 24px);
+    margin-bottom: 16px;
+  }
+}

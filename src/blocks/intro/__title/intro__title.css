@@ -1,0 +1,31 @@
+.intro__title {
+  font: 2.3em/1.2em "WF", sans-serif;
+  font-weight: 400;
+  max-width: 1163px;
+  width: 100%;
+  color: #323232;
+  padding: 70px 0 0 0;
+  word-wrap: normal;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro__title {
+    max-width: 676px;
+    width: 100%;
+    padding-top: 40px;
+    font-size: 2.14em;
+    line-height: 1.23em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro__title {
+    max-width: 336px;
+    width: 100%;
+    padding: 20px 0 0 0;
+    font-size: 1.86em;
+    line-height: 1em;
+  }
+}

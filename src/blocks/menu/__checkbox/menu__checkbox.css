@@ -1,0 +1,29 @@
+.menu__checkbox {
+  display: none;
+}
+
+#menu__checkbox:checked ~ .menu__mobile {
+  display: flex;
+}
+
+#menu__checkbox:checked ~ label .menu__open-button {
+  display: none;
+}
+
+#menu__checkbox:checked ~ label .menu__close-button {
+  display: block;
+}
+
+#menu__checkbox ~ label .menu__open-button {
+  display: block;
+}
+
+#menu__checkbox ~ label .menu__close-button {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #menu__checkbox:checked ~ .menu__mobile {
+    display: none;
+  }
+}

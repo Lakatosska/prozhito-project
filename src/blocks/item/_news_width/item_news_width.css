@@ -1,0 +1,15 @@
+.item_news-width {
+}
+
+@media screen and (max-width: 1023px) {
+  .item_news-width {
+    width: 300px;
+    grid-template-columns: 150px 150px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .item_news-width {
+    width: 300px;
+  }
+}

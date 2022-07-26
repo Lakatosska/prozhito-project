@@ -1,0 +1,24 @@
+.button_size-news {
+  width: 36px;
+  height: 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid #323232;
+}
+
+.button_size-news + .button_size-news {
+  margin-left: 8px;
+}
+
+.button_size-news:hover,
+.button_size-news:disabled {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1023px) {
+  .button_size-news {
+    width: 32px;
+    height: 32px;
+  }
+}

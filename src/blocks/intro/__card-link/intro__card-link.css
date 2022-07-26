@@ -1,0 +1,14 @@
+.intro__card-link {
+  border: 1px solid green;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro__card-link {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+  }
+}

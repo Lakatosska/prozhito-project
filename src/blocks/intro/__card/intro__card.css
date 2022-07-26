@@ -1,0 +1,21 @@
+.intro__card {
+  border: 1px solid;
+  border-color: rgba(50, 50, 50, 0.3);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 276px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro__card {
+    min-height: 212px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro__card {
+    min-height: 150px;
+  }
+}

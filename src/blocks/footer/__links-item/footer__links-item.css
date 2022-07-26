@@ -1,0 +1,15 @@
+.footer__links-item:not(:last-of-type) {
+  margin-right: 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__links-item:not(:last-of-type) {
+    margin-right: 0;
+  }
+  .footer__links-item {
+    height: 18px;
+  }
+  .footer__links-item:first-of-type {
+    margin-left: 13px;
+  }
+}

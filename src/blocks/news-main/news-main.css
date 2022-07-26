@@ -1,0 +1,14 @@
+.news-main {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .news-main {
+    background: #FFFFFF;
+    flex-direction: column;
+    max-width: calc(100% - 24px);
+  }
+}

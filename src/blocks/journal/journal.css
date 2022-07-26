@@ -1,0 +1,12 @@
+.journal {
+  margin: 0 auto;
+  max-width: 1440px;
+  font: normal 20px "WF", "PT Sans", sans-serif;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal {
+    font-size: 14px;
+  }
+}

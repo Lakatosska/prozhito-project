@@ -1,0 +1,37 @@
+.journal-projito__card {
+  width: 100%;
+  min-height: 526px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #F5F5F5;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.journal-projito__card:hover {
+    opacity: .8;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__card {
+    max-height: 280px;
+    min-height: unset;
+    height: 100%;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .journal-projito__card {
+    max-height: 352px;
+    min-height: unset;
+    position: absolute;
+    inset: 0;
+    width: 252px;
+    transition: transform 3s ease-out;
+  }
+  .journal-projito__card:hover {
+    opacity: 1;
+}
+}

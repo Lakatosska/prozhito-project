@@ -1,0 +1,18 @@
+.chapter__title {
+  font: 400 2.3em/1 'WF', sans-serif;
+  max-width: 410px;
+  margin: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .chapter__title {
+    line-height: 1.15;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .chapter__title {
+    min-width: 300px;
+    display: contents;
+  }
+}

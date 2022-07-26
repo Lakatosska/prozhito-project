@@ -1,0 +1,32 @@
+.card__tag {
+  position: absolute;
+  top: -16px;
+  max-width: calc(328px - 16px * 2);    /* где 16px горизонтальный padding*/
+  margin: 0;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  background: #A5CDAB;
+  border-radius: 8px;
+  font: normal 0.7em/1.28 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  color: #323232;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1023px) {
+  .card__tag {
+    top: -12px;
+    max-width: calc(250px - 16px * 2);
+    padding: 4px 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__tag {
+    padding: 4px 12px;
+    font-size: 0.85em;
+    line-height: 1.33;
+  }
+}

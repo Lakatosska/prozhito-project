@@ -1,0 +1,9 @@
+.card__title_top {
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .card__title_top {
+    margin-top: 8px;
+  }
+}

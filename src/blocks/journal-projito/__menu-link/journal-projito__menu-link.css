@@ -1,0 +1,19 @@
+.journal-projito__menu-link {
+  font: normal 14px/18px "PT Sans", sans-serif;
+  text-decoration: none;
+  color: #323232;
+  text-transform: uppercase;
+  margin: 16px 10px;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__menu-link {
+    font: normal 12px/16px "PT Sans", sans-serif;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .journal-projito__menu-link {
+    margin: 5px 0;
+  }
+}

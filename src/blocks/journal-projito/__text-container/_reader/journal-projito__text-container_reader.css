@@ -1,0 +1,5 @@
+.journal-projito__text-container_reader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

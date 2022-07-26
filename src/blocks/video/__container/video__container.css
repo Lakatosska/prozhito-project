@@ -1,0 +1,13 @@
+.video__container {
+  min-height: 379px;
+  margin: 32px auto 16px;
+  padding: 0;
+  background-color: #f7f4f0;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .video__container {
+    min-height: 200px;
+  }
+}

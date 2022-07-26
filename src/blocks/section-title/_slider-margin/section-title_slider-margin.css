@@ -1,0 +1,9 @@
+.section-title_slider-margin {
+  margin: 16px 0 24px;
+}
+
+@media screen and (max-width: 1023px) {
+  .section-title_slider-margin {
+    margin: 16px 0;
+  }
+}

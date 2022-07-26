@@ -1,0 +1,21 @@
+.journal-projito {
+  display: flex;
+  margin: 76px auto 0;
+  max-width: 1440px;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .journal-projito {
+    background: #FFFFFF;
+    flex-direction: column;
+    max-width: calc(100% - 12px);
+    margin-right: 0;
+    margin-top: 32px;
+  }
+}

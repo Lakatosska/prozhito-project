@@ -1,0 +1,23 @@
+.player__button-mute {
+  border: none;
+  background-color: transparent;
+  background-image: url(../../../images/player\(typical_page\)/Mute.svg);
+  background-repeat: no-repeat;
+  height: 27px;
+  width: 25px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .player__button-mute {
+    background-image: url(../../../images/player\(typical_page\)/Mute_320px.svg);
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 8px;
+  }
+}
+
+.player__button-mute:hover {
+  opacity: 50%;
+}

@@ -1,0 +1,15 @@
+.menu__mobile {
+  min-width: 360px;
+  background: #e7e4de;
+  height: 100vh;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}

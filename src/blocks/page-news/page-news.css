@@ -1,0 +1,11 @@
+.page-news {
+  font: 20px "WF", "PT Sans", sans-serif;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+@media screen and (max-width: 1023px) {
+  .page-news {
+    font-size: 14px;
+  }
+}

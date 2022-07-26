@@ -1,0 +1,18 @@
+.journal-projito__menu-title {
+  font: normal 1em/26px "PT Sans", sans-serif;
+  margin: 62px auto 16px;
+  color: #000000;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__menu-title {
+    margin: 24px auto 0;
+    font: normal 14px/18px "PT Sans", sans-serif;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .journal-projito__menu-title {
+    margin: 5px auto 7px;
+  }
+}

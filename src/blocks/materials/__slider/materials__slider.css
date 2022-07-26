@@ -1,0 +1,13 @@
+.materials__slider {
+  display:none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .materials__slider {
+    display: flex;
+    margin-right: 41px;
+  }
+}

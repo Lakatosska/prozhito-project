@@ -1,0 +1,23 @@
+.player__button-stop {
+  border: none;
+  background-color: transparent;
+  background-image: url(../../../images/player\(typical_page\)/stop.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 28px;
+  margin: 0 0 0 25px;
+  cursor: pointer;
+}
+
+.player__button-play:hover {
+  opacity: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .player__button-stop {
+    background-image: url(../../../images/player\(typical_page\)/stop_320px.svg);
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 10px;
+  }
+}

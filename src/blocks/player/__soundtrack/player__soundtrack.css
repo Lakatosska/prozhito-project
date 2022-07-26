@@ -1,0 +1,19 @@
+.player__soundtrack {
+  margin: 0 0 0 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .player__soundtrack {
+    width: 175px;
+    height: 25px;
+    margin: 0 0 0 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .player__soundtrack {
+    max-width: 100px;
+    height: 25px;
+    margin: 0 0 0 10px;
+  }
+}

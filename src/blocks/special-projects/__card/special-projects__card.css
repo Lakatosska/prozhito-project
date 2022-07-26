@@ -1,0 +1,36 @@
+.special-projects__card {
+    background-color: #F7F4F0;
+    width: 100%;
+    max-width: 678px;
+    display: flex;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.special-projects__card:last-child {
+    margin-right: 0;
+}
+
+.special-projects__card:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 1023px) {
+    .special-projects__card {
+        max-width: 361px;
+        min-height: 354px;
+        flex-direction: column;
+        margin-right: 14px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .special-projects__card {
+        width: 100%;
+        margin: 24px 0 0;
+        background-color: #fff;
+    }
+
+    .special-projects__card:first-child {
+        margin: 0;
+    }
+}

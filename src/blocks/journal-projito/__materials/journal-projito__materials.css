@@ -1,0 +1,28 @@
+.journal-projito__materials {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 328px));
+  gap: 62px 80px;
+  margin: 36px 0 0;
+  padding: 0;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 1s ease-in;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__materials {
+    grid-template-columns: repeat(3, 175px);
+    grid-template-rows: repeat(3, 277px);
+    gap: 40px;
+    margin-top: 18px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .journal-projito__materials {
+    grid-template-rows: none;
+    min-height: 352px;
+    max-width: 320px;
+  }
+}
