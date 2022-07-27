@@ -1,0 +1,45 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+/* title */
+@import url(../blocks/section-title/section__title.css);
+@import url(../blocks/section-title/_text-align/section-title_text-align.css);
+@import url(../blocks/section-title/_materials-margin/section-title_materials-margin.css);
+@import url(../blocks/section-title/_slider-margin/section-title_slider-margin.css);
+@import url(../blocks/section-title/_project-margin/section-title_project-margin.css);
+@import url(../blocks/section-title/_family/section-title_family_sans.css);
+/* journal block */
+@import url(../blocks/journal/journal.css);
+@import url(../blocks/journal-projito/journal-projito.css);
+@import url(../blocks/journal-projito/__card/journal-projito__card.css);
+@import url(../blocks/journal-projito/__card/_slider/journal-projito__card_slider.css);
+@import url(../blocks/journal-projito/_margin-bottom/journal-projito_margin-bottom.css);
+@import url(../blocks/journal-projito/__about/journal-projito__about.css);
+@import url(../blocks/journal-projito/__card-container/journal-projito__card-container.css);
+@import url(../blocks/journal-projito/__text-title/journal-projito__text-title.css);
+@import url(../blocks/journal-projito/__text-subtitile/journal-projito__text-subtitle.css);
+@import url(../blocks/journal-projito/__text-quote/journal-projito__text-quote.css);
+@import url(../blocks/journal-projito/__card/_reader/journal-projito__card_reader.css);
+@import url(../blocks/journal-projito/__card/_slider/journal-projito__card_slider.css);
+@import url(../blocks/journal-projito/__text-container/_reader/journal-projito__text-container_reader.css);
+@import url(../blocks/journal-projito/_text-align/journal-projito_text-align.css);
+@import url(../blocks/journal-projito/_margin-top/journal-projito_margin-top.css);
+@import url(../blocks/journal-projito/__reader-photo/journal-projito__reader-photo.css);
+@import url(../blocks/journal-projito/__materials/journal-projito__materials.css);
+@import url(../blocks/journal-projito/__menu-title/journal-projito__menu-title.css);
+@import url(../blocks/journal-projito/__menu-item/journal-projito__menu-item.css);
+@import url(../blocks/journal-projito/__menu-item/_active/journal-projito__menu-item_active.css);
+@import url(../blocks/journal-projito/__menu-link/journal-projito__menu-link.css);
+@import url(../blocks/journal-projito/__sort-menu/journal-projito__sort-menu.css);
+@import url(../blocks/journal-projito/_page-container/journal-projito_page-container.css);
+/* pagination */
+@import url(../blocks/page-numbers/page-numbers.css);
+@import url(../blocks/page-numbers/__arrow-left/page-numbers__arrow-left.css);
+@import url(../blocks/page-numbers/__arrow-right/page-numbers__arrow-right.css);
+@import url(../blocks/page-numbers/__number/page-numbers__number.css);
+@import url(../blocks/page-numbers/__number/_active/page-numbers__number_active.css);
+@import url(../blocks/page-numbers/__number/_flex-end/page-numbers__number_flex-end.css);
+@import url(../blocks/item/_news_width/item_news_width.css);
+@import url(../blocks/slider/__items/_margin-bottom/slider__items_margin-bottom.css);
+/* nav */
+@import url(../blocks/pages-nav/pages-nav.css);
+@import url(../blocks/pages-nav/__link/pages-nav__link.css);

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Проект “Прожито”" />
+    <meta name="keywords" content="Интерактивный сайт, учеба" />
+    <meta name="author" content="Team five" />
+    <link rel="stylesheet" href="pages/header.css" />
+    <link rel="stylesheet" href="pages/journal-projito.css" />
+    <link rel="stylesheet" href="pages/footer.css" />
+    <title>Журнал «Прожито»</title>
+  </head>
+  <body>
+    <div class="journal">
+      <header class="header header_theme_white">
+        <div class="header__container menu">
+          <div class="logo logo_place_header"></div>
+          <nav>
+            <ul class="menu__desktop">
+              <li class="menu__item">
+                <a href="https://prozhito.org/page/archive" class="menu__link"
+                  >Архив</a
+                >
+              </li>
+              <li class="menu__item">
+                <a href="https://prozhito.org/persons" class="menu__link"
+                  >Корпус</a
+                >
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">О проекте</a>
+                <ul class="menu__dropdown">
+                  <li class="menu__dropdown-item">
+                    <a href="#" class="menu__link menu__link_dropdown"
+                      >О&nbsp;прожито</a
+                    >
+                  </li>
+                  <li class="menu__dropdown-item">
+                    <a href="#" class="menu__link menu__link_dropdown"
+                      >Как&nbsp;работать?</a
+                    >
+                  </li>
+                  <li class="menu__dropdown-item">
+                    <a href="#" class="menu__link menu__link_dropdown">Медиа</a>
+                  </li>
+                  <li class="menu__dropdown-item">
+                    <a href="#" class="menu__link menu__link_dropdown"
+                      >Новости</a
+                    >
+                  </li>
+                  <li class="menu__dropdown-item">
+                    <a href="#" class="menu__link menu__link_dropdown"
+                      >Спецпроекты</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <input class="menu__checkbox" id="menu__checkbox" type="checkbox" />
+          <label class="menu__button" for="menu__checkbox">
+            <img
+              alt="открыть"
+              class="menu__open-button"
+              src="images/menu-mobil-open.svg"
+            />
+            <img
+              alt="закрыть"
+              class="menu__close-button"
+              src="images/menu-mobil-close.svg"
+            />
+          </label>
+          <nav class="menu__mobile">
+            <div class="menu__mobile-links-section">
+              <ul class="menu__mobile-links">
+                <li class="menu__item">
+                  <a href="#" class="menu__link">Архив</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#" class="menu__link">Корпус</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#" class="menu__link menu__link_open-submenu"
+                    >О проекте</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div
+              class="menu__mobile-links-section menu__mobile-links-section_dropdown menu__mobile-links-section_closed"
+            >
+              <ul class="menu__mobile-links">
+                <li class="menu__item">
+                  <a href="#" class="menu__link">О&nbsp;прожито</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#" class="menu__link">Как&nbsp;работать?</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#" class="menu__link">Медиа</a>
+                </li>
+              </ul>
+              <ul class="menu__mobile-links">
+                <li class="menu__item">
+                  <a href="#" class="menu__link">Новости</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#" class="menu__link">Спецпроекты</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <main class="content">
+        <p class="pages-nav">
+          <a href="index.html" class="pages-nav__link">Главная страница</a> /
+          Журнал «Прожито»
+        </p>
+        <section class="journal-projito journal-projito_page-container">
+          <h1 class="section-title section-title_family_sans">Журнал «Прожито»</h1>
+          <p class="journal-projito__menu-title">Сортировать :</p>
+          <ul class="journal-projito__sort-menu">
+            <li class="journal-projito__menu-item journal-projito__menu-item_active">
+              <a class="journal-projito__menu-link">Все</a>
+            </li>
+            <li class="journal-projito__menu-item">
+              <a class="journal-projito__menu-link">Техническая подборка</a>
+            </li>
+            <li class="journal-projito__menu-item">
+              <a class="journal-projito__menu-link">Спецпроекты</a>
+            </li>
+            <li class="journal-projito__menu-item">
+              <a class="journal-projito__menu-link">Опыт читателя</a>
+            </li>
+          </ul>
+          <ul class="journal-projito__materials"></ul>
+          <div class="page-numbers">
+            <button
+              class="page-numbers__arrow-left"
+              type="button"
+              disabled
+            ></button>
+            <button
+              class="page-numbers__number page-numbers__number_active"
+              type="button"
+            >
+              1
+            </button>
+            <button class="page-numbers__number" type="button">2</button>
+            <p class="page-numbers__number page-numbers__number_flex-end">...</p>
+            <button class="page-numbers__number" type="button">5</button>
+            <button class="page-numbers__arrow-right" type="button"></button>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <nav class="footer__links-section">
+          <ul class="footer__links">
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">О команде</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Благодарности</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Партнёры</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">FAQ</a>
+            </li>
+            <li class="footer__links-item">
+              <a href="#" class="footer__link">Инструкции</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__logo-section">
+          <div class="logo logo_place_footer"></div>
+          <nav class="footer__social-networks">
+            <ul class="footer__links-list">
+              <li class="footer__list-item">
+                <a href="https://t.me/prozhito" class="footer__link">
+                  <img
+                    src="images/telegram.svg"
+                    class="footer__social-icon"
+                    alt="telegram"
+                  /><span class="footer__link-text">Телеграм</span></a
+                >
+              </li>
+              <li class="footer__list-item">
+                <a href="https://vk.com/prozhito" class="footer__link">
+                  <img
+                    src="images/vk.svg"
+                    class="footer__social-icon"
+                    alt="vk"
+                  /><span class="footer__link-text">Вконтакте</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer__legal-info">
+            <ul class="footer__links-list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Юридическая информация</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Политика конфиденциальности</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    </div>
+    <template id="template-projito">
+      <article class="journal-projito__card item_slider">
+        <div class="journal-projito__card-container">
+          <blockquote
+            class="journal-projito__about journal-projito_margin-top"
+          ></blockquote>
+          <div class="journal-projito__text-container">
+            <h2 class="journal-projito__text-title"></h2>
+            <p class="journal-projito__text-subtitle"></p>
+            <p class="journal-projito__text-quote"></p>
+          </div>
+        </div>
+      </article>
+    </template>
+    <template id="template-reader">
+      <article
+        class="journal-projito__card item_slider journal-projito__card_reader"
+      >
+        <div class="journal-projito__card-container">
+          <div
+            class="journal-projito__text-container journal-projito__text-container_reader"
+          >
+            <h2
+              class="journal-projito__text-title journal-projito_text-align journal-projito_margin-top"
+            ></h2>
+            <img class="journal-projito__reader-photo" src="" alt="" />
+            <p
+              class="journal-projito__text-quote journal-projito_text-align"
+            ></p>
+          </div>
+          <blockquote
+            class="journal-projito__text-quote journal-projito_text-align journal-projito__text-quote_reader"
+          ></blockquote>
+        </div>
+      </article>
+    </template>
+    <script src="scripts/render-cards.js"></script>
+    <script src="scripts/new-materials.js"></script>
+    <script src="scripts/header.js"></script>
+    <script src="scripts/slider.js"></script>
+    <script src="scripts/pages/journal/journal.js"></script>
+  </body>
+</html>

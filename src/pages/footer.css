@@ -1,0 +1,12 @@
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__links-section/footer__links-section.css);
+@import url(../blocks/footer/__links/footer__links.css);
+@import url(../blocks/footer/__link/footer__link.css);
+@import url(../blocks/footer/__links-item/footer__links-item.css);
+@import url(../blocks/footer/__logo-section/footer__logo-section.css);
+@import url(../blocks/footer/__social-networks/footer__social-networks.css);
+@import url(../blocks/footer/__legal-info/footer__legal-info.css);
+@import url(../blocks/footer/__social-icon/footer__social-icon.css);
+@import url(../blocks/footer/__link-text/footer__link-text.css);
+@import url(../blocks/footer/__links-list/footer__links-list.css);
+@import url(../blocks/footer/__list-item/footer__list-item.css);

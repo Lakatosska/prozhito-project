@@ -1,0 +1,25 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+@import url(../blocks/main/main.css);
+@import url(../blocks/news/news.css);
+@import url(../blocks/news-main/news-main.css);
+@import url(../blocks/pages-nav/pages-nav.css);
+@import url(../blocks/pages-nav/__link/pages-nav__link.css);
+@import url(../blocks/page-news/page-news.css);
+@import url(../blocks/news/__title/news__title.css);
+@import url(../blocks/news/__cards/news__cards.css);
+
+@import url(../blocks/item/item.css);
+@import url(../blocks/item/__tag/item__tag.css);
+@import url(../blocks/item/__date/item__date.css);
+@import url(../blocks/item/__title/item__title.css);
+@import url(../blocks/item/__image/item__image.css);
+@import url(../blocks/item/_slider/item_slider.css);
+
+@import url(../blocks/page-numbers/page-numbers.css);
+@import url(../blocks/page-numbers/__arrow-left/page-numbers__arrow-left.css);
+@import url(../blocks/page-numbers/__arrow-right/page-numbers__arrow-right.css);
+@import url(../blocks/page-numbers/__number/page-numbers__number.css);
+@import url(../blocks/page-numbers/__number/_active/page-numbers__number_active.css);
+@import url(../blocks/page-numbers/__number/_flex-end/page-numbers__number_flex-end.css);
+@import url(../blocks/item/_news_width/item_news_width.css);
