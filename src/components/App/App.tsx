@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <p>Prozhito</p>
-      <LinkButton to={"/news"} arrow={true} colorText="white" color={true}>{ "Ссылка на новости"}</LinkButton>
+      <LinkButton to={"/news"} arrow={true} colorText="black" color={false} disabled>{ "Ссылка на новости"}</LinkButton>
     </div>
   );
 }
