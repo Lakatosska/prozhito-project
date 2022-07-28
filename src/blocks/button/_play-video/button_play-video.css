@@ -1,5 +1,5 @@
 .button_play-video {
-  background-image: url(../../../images/play_video.svg);
+  background-image: url(../../../../public/images/play_video.svg);
   width: 112px;
   height: 112px;
   padding: 0;
@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 767px) {
   .button_play-video {
-    background-image: url(../../../images/play_video_360px.svg);
+    background-image: url(../../../../public/images/play_video_360px.svg);
     width: 60px;
     height: 55px;
     top: 73px;

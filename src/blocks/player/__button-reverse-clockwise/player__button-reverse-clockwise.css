@@ -1,7 +1,7 @@
 .player__button-reverse-clockwise {
   border: none;
   background-color: transparent;
-  background-image: url(../../../images/player\(typical_page\)/Reverse_clockwise.svg);
+  background-image: url(../../../../public/images/player\(typical_page\)/Reverse_clockwise.svg);
   background-repeat: no-repeat;
   height: 28px;
   width: 23px;
@@ -11,7 +11,7 @@
 
 @media screen and (max-width: 767px) {
   .player__button-reverse-clockwise {
-    background-image: url(../../../images/player\(typical_page\)/Reverse_clockwise_320px.svg);
+    background-image: url(../../../../public/images/player\(typical_page\)/Reverse_clockwise_320px.svg);
     width: 16px;
     height: 16px;
     margin: 0 0 0 6px;

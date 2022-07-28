@@ -1,7 +1,7 @@
 .page-numbers__arrow-right {
   border: 0;
   background: none;
-  background-image: url(../../../images/Arrow_right.svg);
+  background-image: url(../../../../public/images/Arrow_right.svg);
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
