@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState } from "react";
 import headerStyles from "./Header.module.css";
 import logo from "../../images/logo.svg";
+import logo_mobile from "../../images/logo_mobile.svg";
 import openImg from "../../images/menu-mobil-open.svg";
 import closeImg from "../../images/menu-mobil-close.svg";
 import HeaderNav from "../HeaderNav/HeaderNav";
@@ -26,7 +27,7 @@ const Header: FunctionComponent = () => {
     return (
         <header className={menuOpen?  `${headerStyles.header} ${headerStyles.header_theme_dark}` : headerStyles.header }>
             <div className={`${headerStyles.header__container} ${headerStyles.menu}`}>
-                <img src={logo} alt='Логотип' />
+                <img src={desktop? logo : logo_mobile} alt='Логотип' />
                 <HeaderNav desktop={desktop} open={menuOpen}/>
                 {!desktop&&<button type='button' className={headerStyles.menu__button} onClick={toggleMobileMenu}>
                     <img
