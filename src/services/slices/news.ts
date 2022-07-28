@@ -1,7 +1,6 @@
 import {INewsData} from "../types/news";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {newsAPI} from "../api/news";
-import {BaseQueryMeta} from "@reduxjs/toolkit/dist/query/baseQueryTypes";
 
 const initialState: INewsData = {
   page: 1,
@@ -21,13 +20,11 @@ export const newsSlice = createSlice({
     builder
       .addMatcher(newsAPI.endpoints.getNews.matchFulfilled, (state, action) => {
         if (state.page === 1) {
-          state.data = action.payload
+          state.data = action.payload.data
         } else {
-          state.data.push(...action.payload)
+          state.data.push(...action.payload.data)
         }
-        const headers = (action.meta.baseQueryMeta as BaseQueryMeta<any>).response.headers
-        const total = headers.get('X-Total-Count')
-        state.total = total ? Number(total) : 0
+        state.total = action.payload.total
       })
       .addMatcher(newsAPI.endpoints.getNews.matchRejected, (state, action) => {
         if (action.error.name !== "ConditionError") {

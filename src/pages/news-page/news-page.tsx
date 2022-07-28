@@ -24,7 +24,7 @@ const NewsPage: FC = () => {
                 <div style={{padding: '10px'}}>
                   <p>{item.id}</p>
                   <p>{item.text}</p>
-                  <img width={253} height={306} src={`./images/${item.image}`} alt={'Картинка новости'}/>
+                  <img width={253} height={306} src={require(`../../images/${item.image}`)} alt={'Картинка новости'}/>
                 </div>
               </li>
             ))
