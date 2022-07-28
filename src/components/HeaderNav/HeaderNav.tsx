@@ -1,6 +1,6 @@
 import headerStyles from "../Header/Header.module.css";
 import {Link} from "react-router-dom";
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useState} from "react";
 import HeaderDropdown from "../HeaderDropdown/HeaderDropdown";
 
 interface IHeaderNavProps {
@@ -8,6 +8,8 @@ interface IHeaderNavProps {
     open: boolean
 }
 const HeaderNav: FunctionComponent<IHeaderNavProps> = ({desktop, open}) => {
+
+    const [dropDownVisible, setDropDownVisible] = useState(false);
 
     const style = desktop
     ? headerStyles.menu__desktop
@@ -25,11 +27,13 @@ const HeaderNav: FunctionComponent<IHeaderNavProps> = ({desktop, open}) => {
             <Link to="https://prozhito.org/persons" className={headerStyles.menu__link}
             >Корпус</Link>
         </li>
-        <li className={headerStyles.menu__item}>
-            <Link to="/" className={headerStyles.menu__link}>О проекте</Link>
-            <HeaderDropdown />
+        <li className={headerStyles.menu__item} onMouseEnter={() => setDropDownVisible(true)}
+            onMouseLeave={() => setDropDownVisible(false)}>
+            <Link to="/" className={headerStyles.menu__link}>О&nbsp;проекте</Link>
         </li>
+        <HeaderDropdown visible={dropDownVisible} desktop={desktop} />
     </ul>
+
 </nav>
 )
 }
