@@ -32,11 +32,9 @@ const Header: FunctionComponent = () => {
                 {!desktop&&<button type='button' className={headerStyles.menu__button} onClick={toggleMobileMenu}>
                     <img
                         alt={btnState.alt}
-                        // className={headerStyles.menu__openButton}
                         src={btnState.img}
                     />
                 </button>}
-                {/*{!desktop&&<HeaderNav type='mobile' />}*/}
             </div>
         </header>
     );
