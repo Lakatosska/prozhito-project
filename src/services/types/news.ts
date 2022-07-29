@@ -9,6 +9,7 @@ export interface INewsItem extends IListItem {
 
 export interface INewsData {
   page  : number;
+  size  : number;
   total : number;
   data  : Array<INewsItem>;
 }
