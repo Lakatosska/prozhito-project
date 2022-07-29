@@ -1,10 +1,12 @@
 import {INewsData} from "../types/news";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {newsAPI} from "../api/news";
+import {dataAPI} from "../api/data";
+import {NEWS_PAGE_LIMIT} from "../../constants";
 
 const initialState: INewsData = {
   page: 1,
   total: 0,
+  size: NEWS_PAGE_LIMIT,
   data: [],
 }
 
@@ -18,7 +20,7 @@ export const newsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addMatcher(newsAPI.endpoints.getNews.matchFulfilled, (state, action) => {
+      .addMatcher(dataAPI.endpoints.getNews.matchFulfilled, (state, action) => {
         if (state.page === 1) {
           state.data = action.payload.data
         } else {
@@ -26,7 +28,7 @@ export const newsSlice = createSlice({
         }
         state.total = action.payload.total
       })
-      .addMatcher(newsAPI.endpoints.getNews.matchRejected, (state, action) => {
+      .addMatcher(dataAPI.endpoints.getNews.matchRejected, (state, action) => {
         if (action.error.name !== "ConditionError") {
           state.data = []
           state.total = 0
