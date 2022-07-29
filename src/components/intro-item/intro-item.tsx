@@ -1,5 +1,5 @@
 import { FC } from "react";
-import introStyles from "../intro/intro.module.css";
+import introItemStyles from "./intro-item.module.css";
 
 export interface IntroItemProps {
   title: string;
@@ -11,13 +11,13 @@ export interface IntroItemProps {
 export const IntroItem: FC<IntroItemProps> = (props: IntroItemProps) => {
 
   return(
-    <li className={introStyles.intro__card}>
-      <h3 className={introStyles.intro__cardTitle}>{props.title}</h3>
-      <p className={introStyles.intro__cardSubtitle}>
+    <li className={introItemStyles.intro__card}>
+      <h3 className={introItemStyles.intro__cardTitle}>{props.title}</h3>
+      <p className={introItemStyles.intro__cardSubtitle}>
       {props.text}
       </p>
-      <div className={introStyles.intro__linkContainer}>
-        <p className={introStyles.intro__aboutLink}>{props.action}</p>
+      <div className={introItemStyles.intro__linkContainer}>
+        <p className={introItemStyles.intro__aboutLink}>{props.action}</p>
         <a href={props.link} className="button button_size-intro">
           <img
             src="images/Arrow_right_intro.svg"

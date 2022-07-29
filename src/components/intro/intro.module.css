@@ -1,0 +1,118 @@
+.intro {
+  font: 20px "WF", "PT Sans", sans-serif;
+  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f4f0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro {
+    font-size: 14px;
+  }
+}
+
+.intro__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: calc(100% - 64px);
+  text-align: left;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro__container {
+    margin: 0 auto;
+    max-width: 736px;
+    width: calc(100% - 24px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro__container {
+    margin: 0 auto;
+    width: calc(100% - 24px);
+    max-width: 336px;
+  }
+}
+
+.intro__title {
+  font: 2.3em/1.2em "WF", sans-serif;
+  font-weight: 400;
+  max-width: 1163px;
+  width: 100%;
+  color: #323232;
+  padding: 70px 0 0 0;
+  word-wrap: normal;
+  margin: 0;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro__title {
+    max-width: 676px;
+    width: 100%;
+    padding-top: 40px;
+    font-size: 2.14em;
+    line-height: 1.23em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro__title {
+    max-width: 336px;
+    width: 100%;
+    padding: 20px 0 0 0;
+    font-size: 1.86em;
+    line-height: 1em;
+  }
+}
+
+.intro__cardContainer {
+  max-width: 1144px;
+  margin: auto;
+  box-sizing: border-box;
+  margin-top: 114px;
+  margin-bottom: 164px;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro__cardContainer {
+    margin-top: 28px;
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro__cardContainer {
+    margin-top: 93px;
+    margin-bottom: 96px;
+  }
+}
+
+.intro__cards {
+  box-sizing: border-box;
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 1023px) {
+  .intro__cards {
+    gap: 24px 12px;
+    grid-template-columns: repeat(2, 362px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro__cards {
+    grid-template-columns: minmax(30%, 334px);
+    gap: 10px;
+  }
+}
