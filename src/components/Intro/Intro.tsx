@@ -1,5 +1,32 @@
 import { FC } from "react";
-import introStyles from "./Intro.module.css";
+import introStyles from "./intro.module.css";
+import { IntroItem, IntroItemProps } from "../intro-item/intro-item";
+
+const introData: IntroItemProps[] = [{
+  title: 'Передать документы',
+  text: 'Передайте в «Прожито» копии документов из семейного архива, чтобы сделать их доступнее исследователям и читателям',
+  action: 'Подробнее',
+  link: ''
+},
+{
+  title: 'Стать волонтёром',
+  text: 'Вы можете помочь нашему делу — для работы с документами нужен компьютер и несколько свободных часов в неделю',
+  action: 'Узнать больше',
+  link: ''
+},
+{
+  title: 'Дневники и воспоминания',
+  text: 'Мы собрали тексты опубликованных дневников и воспоминаний и сделали по ним  расширенный поиск',
+  action: 'Ознакомиться',
+  link: ''
+},
+{
+  title: 'Работа с архивом',
+  text: 'Как устроен наш архив и поиск по сохранённым документам',
+  action: 'Перейти к архиву',
+  link: ''
+}];
+
 
 export const Intro: FC = () => {
 
@@ -16,73 +43,15 @@ export const Intro: FC = () => {
 
         <div className={introStyles.intro__cardContainer}>
           <ul className={introStyles.intro__cards}>
-            <li className={introStyles.intro__card}>
-              <h3 className={introStyles.intro__cardTitle}>Передать документы</h3>
-              <p className={introStyles.intro__cardSubtitle}>
-                Передайте в «Прожито» копии документов из семейного архива,
-                чтобы сделать их доступнее исследователям и читателям
-              </p>
-              <div className={introStyles.intro__linkContainer}>
-                <p className={introStyles.intro__aboutLink}>Подробнее</p>
-                <a href="typical.html" className="button button_size-intro">
-                  <img
-                    src="images/Arrow_right_intro.svg"
-                    alt="Стрелка влево"
-                    className="arrow arrow_intro"
-                  />
-                </a>
-              </div>
-            </li>
-            <li className={introStyles.intro__card}>
-              <h3 className={introStyles.intro__cardTitle}>Стать волонтёром</h3>
-              <p className={introStyles.intro__cardSubtitle}>
-                Вы можете помочь нашему делу — для работы с документами
-                нужен компьютер и несколько свободных часов в неделю
-              </p>
-              <div className={introStyles.intro__linkContainer}>
-                <p className={introStyles.intro__aboutLink}>Узнать больше</p>
-                <a href="typical.html" className="button button_size-intro">
-                  <img
-                    src="images/Arrow_right_intro.svg"
-                    alt="Стрелка влево"
-                    className="arrow arrow_intro"
-                  />
-                </a>
-              </div>
-            </li>
-            <li className={introStyles.intro__card}>
-              <h3 className={introStyles.intro__cardTitle}>Дневники и воспоминания</h3>
-              <p className={introStyles.intro__cardSubtitle}>
-                Мы собрали тексты опубликованных дневников и воспоминаний
-                и сделали по ним  расширенный поиск
-              </p>
-              <div className={introStyles.intro__linkContainer}>
-                <p className={introStyles.intro__aboutLink}>Ознакомиться</p>
-                <a href="typical.html" className="button button_size-intro">
-                  <img
-                    src="images/Arrow_right_intro.svg"
-                    alt="Стрелка влево"
-                    className="arrow arrow_intro"
-                  />
-                </a>
-              </div>
-            </li>
-            <li className={introStyles.intro__card}>
-              <h3 className={introStyles.intro__cardTitle}>Работа с архивом</h3>
-              <p className={introStyles.intro__cardSubtitle}>
-                Как устроен наш архив и поиск по сохранённым документам
-              </p>
-              <div className={introStyles.intro__linkContainer}>
-                <p className={introStyles.intro__aboutLink}>Перейти к архиву</p>
-                <a href="typical.html" className="button button_size-intro">
-                  <img
-                    src="images/Arrow_right_intro.svg"
-                    alt="Стрелка влево"
-                    className="arrow arrow_intro"
-                  />
-                </a>
-              </div>
-            </li>
+            {introData.map((item: IntroItemProps, index) =>
+              <IntroItem
+                title={item.title}
+                text={item.text}
+                action={item.action}
+                link={item.link}
+                key={index}
+              />
+            )}
           </ul>
         </div>
       </div>

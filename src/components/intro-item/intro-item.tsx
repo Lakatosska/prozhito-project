@@ -1,5 +1,5 @@
 import { FC } from "react";
-import introStyles from "../intro2/intro2.module.css";
+import introStyles from "../intro/intro.module.css";
 
 export interface IntroItemProps {
   title: string;
