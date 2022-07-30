@@ -1,3 +1,27 @@
+.materials{
+  width: 100%;
+  max-width: 1440px;
+  min-width: 310px;
+  margin: 0 auto;
+  padding: 56px 148px 75px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1023px) {
+  .materials {
+    padding: 32px 0;
+    width: calc(100% - 34px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .materials {
+    overflow: hidden;
+    width: calc(100% - 41px);
+    margin-right: 0;
+  }
+}
+
 .title {
   margin: 0;
   margin-bottom: 40px;
@@ -21,7 +45,12 @@
 }
 
 .cards {
-  
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 1s ease-in;
 }
 
 
