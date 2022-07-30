@@ -4,6 +4,7 @@ import NewsPage from "../../pages/news-page/news-page";
 import MainPage from "../../pages/main-page/main-page";
 import JournalPage from "../../pages/journal-page/journal-page";
 import { Intro } from '../intro/intro';
+import { Footer } from '../footer/footer';
 
 const App: FC = () => {
   return (
@@ -13,6 +14,7 @@ const App: FC = () => {
       <MainPage />
       <NewsPage />
       <JournalPage />
+      <Footer />
     </div>
   );
 }
