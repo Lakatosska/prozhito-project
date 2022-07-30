@@ -53,7 +53,7 @@ const MainPage: FC = () => {
             diaryData.map((item: IDiaryItem) => (
               <li key={item.id}>
                 <div style={{padding: '10px'}}>
-                  <p>{item.name}</p>
+                  <p>{item.name.field1}</p>
                   <img width={200} height={224} src={require(`../../images/${item.image}`)} alt={'Картинка дневник'}/>
                   <p>{item.text}</p>
                 </div>

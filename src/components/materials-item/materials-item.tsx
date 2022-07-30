@@ -2,6 +2,7 @@ import { FC } from "react";
 import { IDiaryItem } from "../../services/types/diary";
 import materialsItemStyle from "./materials-item.module.css";
 
+
 export const MaterialsItem: FC<IDiaryItem> = (diaryData: IDiaryItem) => {
 
   const { name, image, text, tag } = diaryData;
@@ -11,11 +12,14 @@ export const MaterialsItem: FC<IDiaryItem> = (diaryData: IDiaryItem) => {
       <a href="typical.html" className={materialsItemStyle.card__link}>
         <p className={materialsItemStyle.card__tag}>{tag}</p>
         <p className={`${materialsItemStyle.cardTitle} ${materialsItemStyle.cardTitleTop}`}>
-          {name}
+          {name.field1}
+        </p>
+        <p className={`${materialsItemStyle.cardTitle}`}>
+          {name.field2}
         </p>
         <img
-          src={`./images/${image}`}
-          alt={`фотография ${name}`}
+          src={require(`../../images/${image}`)}
+          alt={`фотография ${name.field1}+${name.field2}`}
           className={materialsItemStyle.card__image}
         />
         <p className={materialsItemStyle.card__text}>
