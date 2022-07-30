@@ -1,0 +1,35 @@
+.newsItem {
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: minmax(min-content, 328px);
+  row-gap: 20px;
+  max-width: 328px;
+  font: normal 400 14px/18px "PT Sans";
+  color: #323232;
+}
+
+.newsItem__image {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  display: block;
+  margin-inline-start: auto;
+}
+
+.newsItem__date {
+  display: block;
+  text-align: start;
+}
+
+.newsItem__title {
+  margin: 0;
+  text-align: start;
+  font-weight: 400;
+}
+
+.newsItem__text {
+  margin: 0;
+  font-size: 20px;
+  line-height: 26px;
+  color: rgba(50, 50, 50, 0.6);
+  grid-column: 1/3;
+}
