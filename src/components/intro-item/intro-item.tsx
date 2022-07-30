@@ -21,7 +21,7 @@ export const IntroItem: FC<IntroItemProps> = (introData: IntroItemProps) => {
       </p>
       <div className={introItemStyles.intro__linkContainer}>
         <p className={introItemStyles.intro__aboutLink}>{action}</p>
-        <LinkButton to={link} type="round"/>
+        <LinkButton to={link} type="round" size="large"/>
       </div>
     </li>
   )

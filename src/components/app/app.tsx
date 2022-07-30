@@ -9,9 +9,6 @@ import { Materials } from '../materials/materials';
 const App: FC = () => {
   return (
     <div className={styles.app}>
-      <p>Prozhito</p>
-      <Intro />
-      <Materials />
       <MainPage />
       <NewsPage />
       <JournalPage />

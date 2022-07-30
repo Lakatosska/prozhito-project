@@ -7,6 +7,8 @@ import {IDiaryItem} from "../../services/types/diary";
 import {IProjectItem} from "../../services/types/project";
 import {formatDate} from "../../utils/dateHelper";
 import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem} from "../../services/types/journal";
+import { Intro } from "../../components/intro/intro";
+import { Materials } from "../../components/materials/materials";
 
 const MainPage: FC = () => {
   const {isLoading: isPopupLoading, data: popupData} = dataAPI.useGetPopupQuery();
@@ -28,6 +30,9 @@ const MainPage: FC = () => {
           <SamplePage name={popupData.sample} />
         </>
       }
+
+      <Intro />
+
       <h1>Новости и события</h1>
       {
         !isNewsLoading && newsData?.data &&
@@ -45,23 +50,9 @@ const MainPage: FC = () => {
           }
         </ul>
       }
-      <h1>Материалы</h1>
-      {
-        !isDiaryLoading && diaryData &&
-        <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none'}}>
-          {
-            diaryData.map((item: IDiaryItem) => (
-              <li key={item.id}>
-                <div style={{padding: '10px'}}>
-                  <p>{item.name.field1}</p>
-                  <img width={200} height={224} src={require(`../../images/${item.image}`)} alt={'Картинка дневник'}/>
-                  <p>{item.text}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-      }
+
+      <Materials />
+
       <h1>Ищем редактора для дневника</h1>
       {
         !isBannerLoading && bannerData &&
