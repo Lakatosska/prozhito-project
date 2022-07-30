@@ -1,0 +1,127 @@
+.linkButton {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #a5cdab;
+  transition: all 0.2s linear;
+}
+
+.linkButton_size_small {
+  width: 24px;
+  height: 24px;
+}
+
+.linkButton_size_medium {
+  width: 32px;
+  height: 32px;
+}
+.linkButton_size_large {
+  width: 50px;
+  height: 50px;
+}
+
+.linkButton_type_rect {
+  border-radius: 8px;
+  gap: 12px;
+  text-decoration: none;
+  color: #323232;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  width: 329px;
+  min-height: 50px;
+  font-size: 20px;
+  line-height: 26px;
+  border: 1px solid #a5cdab;
+}
+
+.linkButton_type_rect:hover {
+  background: #97ba9c;
+  border: 1px solid #97ba9c;
+}
+
+.linkButton_type_rect:active {
+  background: #7a9f80;
+  border: 1px solid #7a9f80;
+}
+
+.linkButton_type_round {
+  border-radius: 50%;
+}
+
+.linkButton__arrow {
+  display: block;
+}
+
+.linkButton__arrow_hide {
+  display: none;
+}
+
+.linkButton_colorText_white {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.linkButton_disabled {
+  pointer-events: none;
+}
+
+.linkButton_type_rect.linkButton_disabled {
+  color: rgba(12, 6, 38, 0.7);
+  background: rgba(165, 205, 171, 0.3);
+  border: none;
+}
+
+.linkButton_type_round.linkButton_disabled {
+  opacity: 0.5;
+}
+
+.linkButton.linkButton_type_round.linkButton_border {
+  border: 1px solid #323232;
+}
+
+@media screen and (max-width: 1000px) {
+  .linkButton_type_rect {
+    width: 335px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .linkButton_type_rect:hover {
+    background: #a5cdab;
+    border: 1px solid #a5cdab;
+  }
+  .linkButton_type_rect:active {
+    background: #7a9f80;
+    border: 1px solid #7a9f80;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .linkButton_type_rect {
+    width: 237px;
+    min-height: 48px;
+  }
+  .link__arrow {
+    width: 11.07px;
+  }
+}
+
+.linkButton_color_transparent {
+  background: transparent;
+}
+
+.linkButton_color_transparent.linkButton_disabled {
+  background: transparent;
+}
+
+.linkButton_type_rect.linkButton_color_transparent.linkButton_disabled {
+  border: 1px solid rgba(165, 205, 171, 0.3);
+}
+
+.linkButton_color_transparent:hover {
+  background: transparent;
+}
+.linkButton_color_transparent:active {
+  background: transparent;
+}
