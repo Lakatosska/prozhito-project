@@ -1,7 +1,10 @@
 import {IListItem} from "./index";
 
 export interface IDiaryItem extends IListItem{
-  name  : string;
+  name  : {
+    field1: string,
+    field2?: string
+  };
   image : string;
   text  : string;
   tag?  : string;
