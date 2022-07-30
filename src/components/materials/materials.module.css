@@ -1,0 +1,61 @@
+.title {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  font: normal 2.3em/1.2 "WF", "PT Sans", sans-serif;
+  color: #323232;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .slider .title {
+    display: none;
+    margin-right: 41px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .title {
+    margin-bottom: 24px;
+  }
+}
+
+.cards {
+  
+}
+
+
+/*
+.section-title {
+  margin: 0;
+  padding: 0;
+  font: normal 2.3em/1.2 "WF", "PT Sans", sans-serif;
+  color: #323232;
+}
+
+@media screen and (max-width: 767px) {
+  .slider .section-title {
+    display: none;
+  }
+}
+
+.section-title_text-align {
+  text-align: center;
+}
+
+.section-title_materials-margin {
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1023px) {
+  .section-title_materials-margin {
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section-title_materials-margin {
+    margin-right: 41px;
+  }
+}
+*/
