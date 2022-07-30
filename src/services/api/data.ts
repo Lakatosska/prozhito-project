@@ -26,7 +26,7 @@ export const dataAPI = createApi({
         url: '/banner',
       }),
     }),
-    getSampleContent: build.query<ReadonlyArray<ISamplePageContent>, string>({
+    getSampleContent: build.query<ReadonlyArray<ISamplePageContent>, string | undefined>({
       query: (name) => ({
         url: '/sample',
         params: {
