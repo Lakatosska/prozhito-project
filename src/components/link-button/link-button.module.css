@@ -5,6 +5,8 @@
   align-items: center;
   background: var(--button-default);
   transition: all 0.2s linear;
+  border: none;
+  cursor: pointer;
 }
 
 .linkButton_size_small {
