@@ -2,7 +2,6 @@ import {FC} from "react";
 import {dataAPI} from "../../services/api/data";
 import {JOURNAL_ITEM_TYPE} from "../../constants";
 import {INewsItem} from "../../services/types/news";
-import {IDiaryItem} from "../../services/types/diary";
 import {IProjectItem} from "../../services/types/project";
 import {formatDate} from "../../utils/dateHelper";
 import {useNavigate} from "react-router-dom";
@@ -16,7 +15,6 @@ const MainPage: FC = () => {
   const navigate = useNavigate();
   const {isLoading: isPopupLoading, data: popupData} = dataAPI.useGetPopupQuery();
   const {isLoading: isNewsLoading, data: newsData} = dataAPI.useGetMainNewsQuery();
-  const {isLoading: isDiaryLoading, data: diaryData} = dataAPI.useGetDiariesQuery();
   const {isLoading: isBannerLoading, data: bannerData} = dataAPI.useGetBannerQuery();
   const {isLoading: isProjectLoading, data: projectData} = dataAPI.useGetProjectsQuery();
   const {isLoading: isJournalLoading, data: journalData} = dataAPI.useGetMainJournalQuery();
@@ -53,23 +51,7 @@ const MainPage: FC = () => {
         </ul>
       }
       <LinkButton to={`/news`}>Ко всем новостям</LinkButton>
-      <h1>Материалы</h1>
-      {
-        !isDiaryLoading && diaryData &&
-        <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none'}}>
-          {
-            diaryData.map((item: IDiaryItem) => (
-              <li key={item.id}>
-                <div style={{padding: '10px'}}>
-                  <p>{item.name}</p>
-                  <img width={200} height={224} src={require(`../../images/${item.image}`)} alt={'Картинка дневник'}/>
-                  <p>{item.text}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-      }
+      <Materials />
       <h1>Ищем редактора для дневника</h1>
       {
         !isBannerLoading && bannerData &&
