@@ -6,10 +6,12 @@ import MainPage from "../../pages/main-page/main-page";
 import JournalPage from "../../pages/journal-page/journal-page";
 import SamplePage from "../../pages/sample-page/sample-page";
 import NotFoundPage from "../../pages/not-found-page/not-found-page";
+import Header from "../header/header";
 
 const App: FC = () => {
   return (
     <div className={styles.app}>
+      <Header />
       <Routes>
         <Route path={"/"} element={<MainPage />} />
         <Route path={"/news"} element={<NewsPage />} />
