@@ -10,27 +10,31 @@ interface IHeaderNavProps {
 const HeaderNav: FunctionComponent<IHeaderNavProps> = ({ desktop, open }) => {
   const [dropDownVisible, setDropDownVisible] = useState(false);
 
+  const isMobileMenuStyle = open
+    ? headerNavStyles.menu__mobile
+    : `${headerNavStyles.menu__mobile} ${headerNavStyles.menu__mobile_open}`
+
+  const isMobileContainerStyle = open
+    ? `${headerNavStyles.menu__mobileContainer} ${headerNavStyles.menu__mobileContainer_open}`
+    : headerNavStyles.menu__mobileContainer
+
   const style = desktop
     ? headerNavStyles.menu__desktop
-    : open
-      ? headerNavStyles.menu__mobile
-      : `${headerNavStyles.menu__mobile} ${headerNavStyles.menu__mobile_open}`;
+    : isMobileMenuStyle;
 
   return (
     <nav
       className={
         desktop
           ? ""
-          : open
-            ? `${headerNavStyles.menu__mobileContainer} ${headerNavStyles.menu__mobileContainer_open}`
-            : headerNavStyles.menu__mobileContainer
+          : isMobileContainerStyle
       }
     >
       <ul className={style}>
         <li className={headerNavStyles.menu__item}>
           <a href="https://prozhito.org/page/archive"
             className={headerNavStyles.menu__link}
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
           >
             Архив
           </a>
@@ -39,7 +43,7 @@ const HeaderNav: FunctionComponent<IHeaderNavProps> = ({ desktop, open }) => {
           <a
             href="https://prozhito.org/persons"
             className={headerNavStyles.menu__link}
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
           >
             Корпус
           </a>

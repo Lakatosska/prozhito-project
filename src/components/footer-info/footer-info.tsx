@@ -7,7 +7,7 @@ export const FooterInfo: FC = () => {
 
   return(
     <section className={footerInfoStyles.info}>
-      <div className={footerInfoStyles.logo}></div>
+      <div className={footerInfoStyles.logo} />
       <section className={footerInfoStyles.social}>
         <ul className={footerInfoStyles.links}>
           <li className={footerInfoStyles.item}>
@@ -32,12 +32,12 @@ export const FooterInfo: FC = () => {
       </section>
 
       <section className={footerInfoStyles.legal}>
-        <ul className={footerInfoStyles.links}>
+        <ul className={footerInfoStyles.legals}>
           <li className={footerInfoStyles.item}>
-            <a href="#" className={footerInfoStyles.link}>Юридическая информация</a>
+            <button className={footerInfoStyles.link}>Юридическая информация</button>
           </li>
           <li className={footerInfoStyles.item}>
-            <a href="#" className={footerInfoStyles.link}>Политика конфиденциальности</a>
+            <button className={footerInfoStyles.link}>Политика конфиденциальности</button>
           </li>
         </ul>
       </section>
