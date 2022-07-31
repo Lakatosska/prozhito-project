@@ -16,6 +16,9 @@ export const FooterLinks: FC = () => {
           <a href="#" className={footerLinksStyles.link}>Партнёры</a>
         </li>
         <li className={footerLinksStyles.item}>
+          <a href="#" className={footerLinksStyles.link}>FAQ</a>
+        </li>
+        <li className={footerLinksStyles.item}>
           <a href="#" className={footerLinksStyles.link}>Инструкции</a>
         </li>
       </ul>
