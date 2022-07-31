@@ -4,6 +4,8 @@ import {Route, Routes} from "react-router-dom";
 import NewsPage from "../../pages/news-page/news-page";
 import MainPage from "../../pages/main-page/main-page";
 import JournalPage from "../../pages/journal-page/journal-page";
+
+import { Footer } from '../footer/footer';
 import SamplePage from "../../pages/sample-page/sample-page";
 import NotFoundPage from "../../pages/not-found-page/not-found-page";
 import Header from "../header/header";
@@ -19,6 +21,8 @@ const App: FC = () => {
         <Route path={`/sample/:page`} element={<SamplePage />} />
         <Route path={"*"} element={<NotFoundPage />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
