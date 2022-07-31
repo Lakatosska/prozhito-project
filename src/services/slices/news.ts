@@ -24,7 +24,8 @@ export const newsSlice = createSlice({
         if (state.page === 1) {
           state.data = action.payload.data
         } else {
-          state.data.push(...action.payload.data)
+          const reduced = state.data.filter(stateItem => !action.payload.data.find(payloadItem => stateItem.id === payloadItem.id))
+          state.data = reduced.concat(action.payload.data);
         }
         state.total = action.payload.total
       })

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import introItemStyles from "./intro-item.module.css";
+import arrowRightIntro from "../../images/Arrow_right_intro.svg";
 
 export interface IntroItemProps {
   title: string;
@@ -22,7 +23,7 @@ export const IntroItem: FC<IntroItemProps> = (introData: IntroItemProps) => {
         <p className={introItemStyles.intro__aboutLink}>{action}</p>
         <a href={link} className="button button_size-intro">
           <img
-            src="images/Arrow_right_intro.svg"
+            src={arrowRightIntro}
             alt="Стрелка влево"
             className="arrow arrow_intro"
           />

@@ -1,6 +1,6 @@
 import {FC} from "react";
 import {dataAPI} from "../../services/api/data";
-import {JOURNAL_ITEM_TYPE, JOURNAL_MAIN_LIMIT, NEWS_MAIN_LIMIT} from "../../constants";
+import {JOURNAL_ITEM_TYPE} from "../../constants";
 import {INewsItem} from "../../services/types/news";
 import {IDiaryItem} from "../../services/types/diary";
 import {IProjectItem} from "../../services/types/project";
@@ -8,15 +8,17 @@ import {formatDate} from "../../utils/dateHelper";
 import {useNavigate} from "react-router-dom";
 
 import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem} from "../../services/types/journal";
+import {Intro} from "../../components/intro/intro";
+import {LinkButton} from "../../components/link-button/link-button";
 
 const MainPage: FC = () => {
   const navigate = useNavigate();
   const {isLoading: isPopupLoading, data: popupData} = dataAPI.useGetPopupQuery();
-  const {isLoading: isNewsLoading, data: newsData} = dataAPI.useGetNewsQuery({page: 1, size: NEWS_MAIN_LIMIT});
+  const {isLoading: isNewsLoading, data: newsData} = dataAPI.useGetMainNewsQuery();
   const {isLoading: isDiaryLoading, data: diaryData} = dataAPI.useGetDiariesQuery();
   const {isLoading: isBannerLoading, data: bannerData} = dataAPI.useGetBannerQuery();
   const {isLoading: isProjectLoading, data: projectData} = dataAPI.useGetProjectsQuery();
-  const {isLoading: isJournalLoading, data: journalData} = dataAPI.useGetJournalQuery({page: 1, size: JOURNAL_MAIN_LIMIT, filter: "all"});
+  const {isLoading: isJournalLoading, data: journalData} = dataAPI.useGetMainJournalQuery();
 
   const handleNavigate = (to: string) => {
     navigate(to)
@@ -31,12 +33,13 @@ const MainPage: FC = () => {
           <p>{popupData.caption}</p>
         </div>
       }
+      <Intro />
       <h1>Новости и события</h1>
       {
-        !isNewsLoading && newsData?.data &&
+        !isNewsLoading && newsData &&
         <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none'}}>
           {
-            newsData.data.map((item: INewsItem) => (
+            newsData.map((item: INewsItem) => (
               <li key={item.id}>
                 <div style={{padding: '10px'}}>
                   <p>{item.id}</p>
@@ -48,7 +51,7 @@ const MainPage: FC = () => {
           }
         </ul>
       }
-      <button onClick={() => handleNavigate(`/news`)}>Ко всем новостям</button>
+      <LinkButton to={`/news`}>Ко всем новостям</LinkButton>
       <h1>Материалы</h1>
       {
         !isDiaryLoading && diaryData &&
@@ -77,13 +80,13 @@ const MainPage: FC = () => {
           </div>
         </>
       }
-      <button onClick={() => handleNavigate(`/sample/banner`)}>Перейти к материалу</button>
+      <LinkButton to={`/sample/banner`}>Перейти к материалу</LinkButton>
       <h1>Журнал “Прожито”</h1>
       {
-        !isJournalLoading && journalData?.data &&
+        !isJournalLoading && journalData &&
         <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none'}}>
           {
-            journalData.data.map((item: IJournalItem) => item.type === "experience" ? (
+            journalData.map((item: IJournalItem) => item.type === "experience" ? (
               <li key={item.id}>
                 <div style={{padding: '10px'}}>
                   <p>{item.id}</p>
@@ -106,7 +109,7 @@ const MainPage: FC = () => {
           }
         </ul>
       }
-      <button onClick={() => handleNavigate(`/journal`)}>Посмотреть всю подборку</button>
+      <LinkButton to={`/journal`}>Посмотреть всю подборку</LinkButton>
       <h1>Спецпроекты</h1>
       {
         !isProjectLoading && projectData &&
@@ -125,6 +128,7 @@ const MainPage: FC = () => {
           }
         </ul>
       }
+      <LinkButton to={`/not/found`}>Все спецпроекты</LinkButton>
     </>
   )
 }

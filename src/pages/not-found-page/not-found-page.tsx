@@ -1,6 +1,7 @@
 import React, {FC} from "react"
 import styles from "./not-found-page.module.css"
 import {Link} from "react-router-dom";
+import {LinkButton} from "../../components/link-button/link-button";
 
 const NotFoundPage: FC = () => {
   return (
@@ -10,9 +11,7 @@ const NotFoundPage: FC = () => {
         Страница не найдена
       </h1>
       <Link className={styles.link} to="/">
-        <button>
-          На главную
-        </button>
+        <LinkButton to={`/`} arrow={false}>На главную</LinkButton>
       </Link>
     </article>
   );

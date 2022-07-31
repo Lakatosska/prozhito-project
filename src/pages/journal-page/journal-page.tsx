@@ -10,11 +10,11 @@ import TabItem from "../../components/tabs/tab-item";
 
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
-  const [selectedTab, setSelectedTab] = useState<TJournalFilter>("all")
+  const filter = useSelector(filterJournalSelector)
   const page = useSelector(pageJournalSelector)
   const total = useSelector(totalJournalSelector)
-  const filter = useSelector(filterJournalSelector)
   const journal = useSelector(dataJournalSelector)
+  const [selectedTab, setSelectedTab] = useState<TJournalFilter>(filter)
 
   const {isLoading: isJournalLoading} = dataAPI.useGetJournalQuery({page, size: JOURNAL_PAGE_LIMIT, filter: filter}, {refetchOnMountOrArgChange: true});
 
