@@ -1,55 +1,52 @@
 import { FC } from "react";
 import { dataAPI } from "../../services/api/data";
-import {
-  JOURNAL_ITEM_TYPE,
-  JOURNAL_MAIN_LIMIT,
-  NEWS_MAIN_LIMIT,
-} from "../../constants";
+import { JOURNAL_ITEM_TYPE } from "../../constants";
 import { INewsItem } from "../../services/types/news";
-import SamplePage from "../sample-page/sample-page";
-import { IDiaryItem } from "../../services/types/diary";
 import { IProjectItem } from "../../services/types/project";
 import { formatDate } from "../../utils/dateHelper";
+import { useNavigate } from "react-router-dom";
+
 import {
   IJournalExperienceItem,
   IJournalItem,
   IJournalMagazineItem,
 } from "../../services/types/journal";
+import { Intro } from "../../components/intro/intro";
+import { LinkButton } from "../../components/link-button/link-button";
+import { Materials } from "../../components/materials/materials";
 import NewsItem from "../../components/news-item/news-item";
 
 const MainPage: FC = () => {
+  const navigate = useNavigate();
   const { isLoading: isPopupLoading, data: popupData } =
     dataAPI.useGetPopupQuery();
-  const { isLoading: isNewsLoading, data: newsData } = dataAPI.useGetNewsQuery({
-    page: 1,
-    size: NEWS_MAIN_LIMIT,
-  });
-  const { isLoading: isDiaryLoading, data: diaryData } =
-    dataAPI.useGetDiariesQuery();
+  const { isLoading: isNewsLoading, data: newsData } =
+    dataAPI.useGetMainNewsQuery();
   const { isLoading: isBannerLoading, data: bannerData } =
     dataAPI.useGetBannerQuery();
   const { isLoading: isProjectLoading, data: projectData } =
     dataAPI.useGetProjectsQuery();
   const { isLoading: isJournalLoading, data: journalData } =
-    dataAPI.useGetJournalQuery({
-      page: 1,
-      size: JOURNAL_MAIN_LIMIT,
-      filter: "all",
-    });
+    dataAPI.useGetMainJournalQuery();
+
+  const handleNavigate = (to: string) => {
+    navigate(to);
+  };
 
   return (
     <>
       {!isPopupLoading && popupData && (
-        <>
-          <div style={{ backgroundColor: "lightgreen" }}>
-            <p style={{ textTransform: "uppercase" }}>{popupData.title}</p>
-            <p>{popupData.caption}</p>
-          </div>
-          <SamplePage name={popupData.sample} />
-        </>
+        <div
+          style={{ backgroundColor: "lightgreen", cursor: "pointer" }}
+          onClick={() => handleNavigate(`/sample/blockade`)}
+        >
+          <p style={{ textTransform: "uppercase" }}>{popupData.title}</p>
+          <p>{popupData.caption}</p>
+        </div>
       )}
+      <Intro />
       <h1>Новости и события</h1>
-      {!isNewsLoading && newsData?.data && (
+      {!isNewsLoading && newsData && (
         <ul
           style={{
             display: "flex",
@@ -57,7 +54,7 @@ const MainPage: FC = () => {
             listStyleType: "none",
           }}
         >
-          {newsData.data.map((item: INewsItem) => (
+          {newsData.map((item: INewsItem) => (
             <NewsItem
               date={item.date}
               tag={item.tag}
@@ -68,35 +65,15 @@ const MainPage: FC = () => {
           ))}
         </ul>
       )}
-      <h1>Материалы</h1>
-      {!isDiaryLoading && diaryData && (
-        <ul
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            listStyleType: "none",
-          }}
-        >
-          {diaryData.map((item: IDiaryItem) => (
-            <li key={item.id}>
-              <div style={{ padding: "10px" }}>
-                <p>{item.name}</p>
-                <img
-                  width={200}
-                  height={224}
-                  src={require(`../../images/${item.image}`)}
-                  alt={"Картинка дневник"}
-                />
-                <p>{item.text}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
+      <LinkButton to={`/news`}>Ко всем новостям</LinkButton>
+      <Materials />
       <h1>Ищем редактора для дневника</h1>
       {!isBannerLoading && bannerData && (
         <>
-          <div style={{ backgroundColor: "lightgrey" }}>
+          <div
+            style={{ backgroundColor: "lightgrey" }}
+            onClick={() => handleNavigate(`/sample/${bannerData.sample}}`)}
+          >
             <img
               width={329}
               height={440}
@@ -106,11 +83,11 @@ const MainPage: FC = () => {
             <p style={{ textTransform: "uppercase" }}>{bannerData.title}</p>
             <p>{bannerData.text}</p>
           </div>
-          <SamplePage name={bannerData.sample} />
         </>
       )}
+      <LinkButton to={`/sample/banner`}>Перейти к материалу</LinkButton>
       <h1>Журнал “Прожито”</h1>
-      {!isJournalLoading && journalData?.data && (
+      {!isJournalLoading && journalData && (
         <ul
           style={{
             display: "flex",
@@ -118,7 +95,7 @@ const MainPage: FC = () => {
             listStyleType: "none",
           }}
         >
-          {journalData.data.map((item: IJournalItem) =>
+          {journalData.map((item: IJournalItem) =>
             item.type === "experience" ? (
               <li key={item.id}>
                 <div style={{ padding: "10px" }}>
@@ -152,6 +129,7 @@ const MainPage: FC = () => {
           )}
         </ul>
       )}
+      <LinkButton to={`/journal`}>Посмотреть всю подборку</LinkButton>
       <h1>Спецпроекты</h1>
       {!isProjectLoading && projectData && (
         <ul
@@ -163,7 +141,10 @@ const MainPage: FC = () => {
         >
           {projectData.map((item: IProjectItem) => (
             <li key={item.id}>
-              <div style={{ padding: "10px" }}>
+              <div
+                style={{ padding: "10px", cursor: "pointer" }}
+                onClick={() => handleNavigate(`/sample/${item.sample}`)}
+              >
                 <p>{item.title}</p>
                 <img
                   width={491}
@@ -174,11 +155,11 @@ const MainPage: FC = () => {
                 <p>{item.text}</p>
                 <p>{formatDate(item.date, "long")}</p>
               </div>
-              <SamplePage name={item.sample} />
             </li>
           ))}
         </ul>
       )}
+      <LinkButton to={`/not/found`}>Все спецпроекты</LinkButton>
     </>
   );
 };

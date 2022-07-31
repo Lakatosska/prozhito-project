@@ -3,8 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #a5cdab;
+  background: var(--button-default);
   transition: all 0.2s linear;
+  border: none;
+  cursor: pointer;
 }
 
 .linkButton_size_small {
@@ -25,7 +27,7 @@
   border-radius: 8px;
   gap: 12px;
   text-decoration: none;
-  color: #323232;
+  color: var(--black-100);
   font-family: "PT Sans", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -33,17 +35,17 @@
   min-height: 50px;
   font-size: 20px;
   line-height: 26px;
-  border: 1px solid #a5cdab;
+  border: 1px solid var(--button-default);
 }
 
 .linkButton_type_rect:hover {
-  background: #97ba9c;
-  border: 1px solid #97ba9c;
+  background: var(--button-hover);
+  border: 1px solid var(--button-hover);
 }
 
 .linkButton_type_rect:active {
-  background: #7a9f80;
-  border: 1px solid #7a9f80;
+  background: var(--button-pressed);
+  border: 1px solid var(--button-pressed);
 }
 
 .linkButton_type_round {
@@ -59,8 +61,8 @@
 }
 
 .linkButton_colorText_white {
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--white-100);
+  border: 1px solid var(--white-100);
 }
 
 .linkButton_disabled {
@@ -68,8 +70,8 @@
 }
 
 .linkButton_type_rect.linkButton_disabled {
-  color: rgba(12, 6, 38, 0.7);
-  background: rgba(165, 205, 171, 0.3);
+  color: var(--color-text-gray);
+  background: var(--button-disabled);
   border: none;
 }
 
@@ -78,7 +80,7 @@
 }
 
 .linkButton.linkButton_type_round.linkButton_border {
-  border: 1px solid #323232;
+  border: 1px solid var(--black-100);
 }
 
 @media screen and (max-width: 1000px) {
@@ -88,12 +90,12 @@
     line-height: 18px;
   }
   .linkButton_type_rect:hover {
-    background: #a5cdab;
-    border: 1px solid #a5cdab;
+    background: var(--button-default);
+    border: 1px solid var(--button-default);
   }
   .linkButton_type_rect:active {
-    background: #7a9f80;
-    border: 1px solid #7a9f80;
+    background: var(--button-pressed);
+    border: 1px solid var(--button-pressed);
   }
 }
 
@@ -116,7 +118,7 @@
 }
 
 .linkButton_type_rect.linkButton_color_transparent.linkButton_disabled {
-  border: 1px solid rgba(165, 205, 171, 0.3);
+  border: 1px solid var(--button-disabled);
 }
 
 .linkButton_color_transparent:hover {
