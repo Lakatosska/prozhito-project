@@ -1,12 +1,12 @@
 .header {
   min-width: 320px;
   position: relative;
-  background-color: #f7f4f0;
+  background-color: var(--bg-orange-lightest);
   z-index: 2;
 }
 
 .header_theme_dark {
-  background-color: #e7e4de;
+  background-color: var(--bg-orange-light);
 }
 
 @media screen and (max-width: 767px) {
@@ -44,7 +44,7 @@
 }
 
 .menu {
-  color: #323232;
+  color: var(--black-100);
 }
 
 .menu__button {

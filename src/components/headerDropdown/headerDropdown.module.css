@@ -1,7 +1,7 @@
 .menu__mobileLinksSection {
   min-height: 158px;
-  border-bottom: 1px solid rgba(50, 50, 50, 0.3);
-  border-top: 1px solid rgba(50, 50, 50, 0.3);
+  border-bottom: 1px solid var(--bg-black-30);
+  border-top: 1px solid var(--bg-black-30);
   padding: 0;
   display: flex;
   width: calc(100% - 24px);
