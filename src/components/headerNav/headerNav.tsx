@@ -28,20 +28,21 @@ const HeaderNav: FunctionComponent<IHeaderNavProps> = ({ desktop, open }) => {
     >
       <ul className={style}>
         <li className={headerNavStyles.menu__item}>
-          <Link
-            to="https://prozhito.org/page/archive"
+          <a href="https://prozhito.org/page/archive"
             className={headerNavStyles.menu__link}
+            target="_blank"
           >
             Архив
-          </Link>
+          </a>
         </li>
         <li className={headerNavStyles.menu__item}>
-          <Link
-            to="https://prozhito.org/persons"
+          <a
+            href="https://prozhito.org/persons"
             className={headerNavStyles.menu__link}
+            target="_blank"
           >
             Корпус
-          </Link>
+          </a>
         </li>
         <li
           className={headerNavStyles.menu__item}
