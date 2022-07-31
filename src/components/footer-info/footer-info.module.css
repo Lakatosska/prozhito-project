@@ -1,0 +1,147 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 0;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1023px) {
+  .info {
+    margin: 28px 0 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .info {
+    flex-direction: column;
+    margin-top: 24px;
+    align-items: center;
+  }
+}
+
+.logo {
+  background-image: url(../../images/logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 290px;
+  height: 30px;
+}
+
+@media screen and (max-width: 1023px) {
+  .logo {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    order: 2;
+    min-width: 256px;
+    height: 26px;
+  }
+}
+
+.social {
+  margin-left: 190px;
+}
+
+@media screen and (max-width: 1023px) {
+  .social {
+    margin-left: 360px;
+    height: 28px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .social {
+    order: 1;
+    margin-left: 0;
+    margin-bottom: 24px;
+  }
+}
+
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font: 16px/1.18 "PT sans", sans-serif;
+}
+
+@media screen and (max-width: 1023px) {
+  .links {
+    font: 14px/1.21 "PT sans", sans-serif;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .links {
+    min-height: 56px;
+    flex-wrap: wrap;
+    max-width: 260px;
+    justify-content: space-around;
+    align-content: space-between;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .item {
+    height: 18px;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: #323232;
+}
+
+.link:hover {
+  border-bottom: 1px solid #323232;
+  margin-bottom: -1px;
+
+}
+
+.icon {
+  padding: 0;
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 1023px) {
+  .icon {
+    width: 28px;
+    height: 28px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .text {
+    display: none;
+  }
+}
+
+.legal {
+  margin-right: 54px;
+}
+
+@media screen and (max-width: 1023px) {
+  .legal{
+    height: fit-content;
+    margin-top: 36px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .legal{
+    order: 3;
+    align-self: flex-start;
+    margin-top: 29px;
+    margin-bottom: 16px;
+  }
+}
