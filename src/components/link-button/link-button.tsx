@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, SyntheticEvent } from "react";
 import { Link, To } from "react-router-dom";
 import "../../vendor/fonts/fonts.css";
 import styles from "./link-button.module.css";
@@ -9,8 +9,9 @@ import arrowImgDisabled from "../../images/arrow_right_disabled.svg";
 import arrowImgDisabledWhite from "../../images/arrow_right_disabled_white.svg";
 
 export const LinkButton: FC<{
-  to: To;
-  type?: "rect" | "round";
+  to?: To;
+  type?: "link" | "button";
+  round?: boolean;
   color?: boolean;
   colorText?: "white" | "black";
   arrow?: boolean;
@@ -19,19 +20,22 @@ export const LinkButton: FC<{
   border?: boolean;
   children?: string | null;
   size?: "small" | "medium" | "large" | null;
+  onClick?: (() => void) | ((e: SyntheticEvent) => void);
 }> = ({
   children = "Текст",
-  to,
+  to = "/",
+  type = "link",
+  round = false,
   disabled = false,
   color = true,
   colorText = "black",
   arrow = true,
-  type = "rect",
   direction = "right",
   size = "medium",
   border = false,
+  onClick,
 }) => {
-  if (type === "rect") {
+  if (!round) {
     direction = "right";
     border = false;
     size = null;
@@ -39,7 +43,10 @@ export const LinkButton: FC<{
     children = null;
     arrow = true;
   }
-  let className = `${styles.linkButton} ${styles["linkButton_type_" + type]} ${
+
+  let className = `${styles.linkButton} ${
+    styles[`${"linkButton_type_"}${round ? "round" : "rect"}`]
+  } ${
     color
       ? ""
       : border
@@ -54,7 +61,7 @@ export const LinkButton: FC<{
     className += " " + styles.linkButton_colorText_white;
   }
   if (disabled) {
-    if (type === "rect") {
+    if (!round) {
       arrowPath =
         colorText === "white" ? arrowImgDisabledWhite : arrowImgDisabled;
     }
@@ -73,10 +80,22 @@ export const LinkButton: FC<{
       }`}
     />
   );
-  return (
-    <Link to={to} className={className}>
+
+  const linkElement = (
+    <Link to={to} className={className} onClick={onClick}>
       {children}
       {arrowImage}
     </Link>
   );
+  const buttonElement = (
+    <button className={className} disabled={disabled} onClick={onClick}>
+      {children}
+      {arrowImage}
+    </button>
+  );
+  if (type === "link") {
+    return linkElement;
+  } else {
+    return buttonElement;
+  }
 };
