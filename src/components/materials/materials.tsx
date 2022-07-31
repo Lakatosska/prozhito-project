@@ -26,6 +26,7 @@ export const Materials: FC = () => {
                 text={item.text}
                 tag={item.tag}
                 key={item.id}
+                sample={item.sample}
               />
             )
           }

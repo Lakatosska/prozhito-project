@@ -11,7 +11,14 @@ type TTabItemProps = {
 const TabItem: FC<TTabItemProps> = ({value, selected, setSelected}) => {
   return (
     <li style={{padding: 10}}>
-      <button style={{textDecoration: selected ? "underline" : "none"}} onClick={() => setSelected(value)}>{JOURNAL_ITEM_TYPE[value]}</button>
+      <button
+        style={{textDecoration: selected ? "underline" : "none"}}
+        onClick={() => {
+          if (!selected) {
+            setSelected(value)
+          }
+        }}
+      >{JOURNAL_ITEM_TYPE[value]}</button>
     </li>
   )
 }

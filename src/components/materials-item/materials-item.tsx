@@ -4,12 +4,11 @@ import materialsItemStyle from "./materials-item.module.css";
 
 
 export const MaterialsItem: FC<IDiaryItem> = (diaryData: IDiaryItem) => {
-
-  const { name, image, text, tag } = diaryData;
+  const { name, image, text, tag, sample } = diaryData;
 
    return(
     <li className={materialsItemStyle.card}>
-      <a href="typical.html" className={materialsItemStyle.card__link}>
+      <a href={`/sample/${sample}`} className={materialsItemStyle.card__link}>
         <p className={materialsItemStyle.card__tag}>{tag}</p>
         <p className={`${materialsItemStyle.cardTitle} ${materialsItemStyle.cardTitleTop}`}>
           {name.field1}
