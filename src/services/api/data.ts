@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
 import {getDefaultHeaders} from "./index";
 import {INewsItem, TNewsRequest} from "../types/news";
-import {BASE_API_URL, PROJECTS_LIMIT, X_TOTAL_COUNT} from "../../constants";
+import {BASE_API_URL, JOURNAL_MAIN_LIMIT, NEWS_MAIN_LIMIT, PROJECTS_LIMIT, X_TOTAL_COUNT} from "../../constants";
 import {IPopup} from "../types/popup";
 import {ISamplePageContent} from "../types/sample";
 import {IDiaryItem} from "../types/diary";
@@ -26,7 +26,7 @@ export const dataAPI = createApi({
         url: '/banner',
       }),
     }),
-    getSampleContent: build.query<ReadonlyArray<ISamplePageContent>, string>({
+    getSampleContent: build.query<ReadonlyArray<ISamplePageContent>, string | undefined>({
       query: (name) => ({
         url: '/sample',
         params: {
@@ -45,6 +45,15 @@ export const dataAPI = createApi({
       transformResponse(data: Array<INewsItem>, meta) {
         return {data, total: Number(meta?.response?.headers.get(X_TOTAL_COUNT))}
       }
+    }),
+    getMainNews: build.query<ReadonlyArray<INewsItem>, void>({
+      query: () => ({
+        url: `/news`,
+        params: {
+          _page: 1,
+          _limit: NEWS_MAIN_LIMIT,
+        },
+      }),
     }),
     getDiaries: build.query<ReadonlyArray<IDiaryItem>, void>({
       query: () => ({
@@ -74,6 +83,15 @@ export const dataAPI = createApi({
       transformResponse(data: Array<IJournalItem>, meta) {
         return {data, total: Number(meta?.response?.headers.get(X_TOTAL_COUNT))}
       }
+    }),
+    getMainJournal: build.query<ReadonlyArray<IJournalItem>, void>({
+      query: () => ({
+        url: `/journal`,
+        params: {
+          _page: 1,
+          _limit: JOURNAL_MAIN_LIMIT,
+        },
+      }),
     }),
   })
 })
