@@ -10,6 +10,7 @@ import {useNavigate} from "react-router-dom";
 import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem} from "../../services/types/journal";
 import {Intro} from "../../components/intro/intro";
 import {LinkButton} from "../../components/link-button/link-button";
+import { Materials } from "../../components/materials/materials";
 
 const MainPage: FC = () => {
   const navigate = useNavigate();
