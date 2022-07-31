@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 import logo_mobile from "../../images/logo_mobile.svg";
 import openImg from "../../images/menu-mobil-open.svg";
 import closeImg from "../../images/menu-mobil-close.svg";
-import HeaderNav from "../headerNav/HeaderNav";
+import HeaderNav from "../headerNav/headerNav";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Header: FunctionComponent = () => {
