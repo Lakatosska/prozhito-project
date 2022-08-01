@@ -12,10 +12,7 @@ export const Popup: FC<IPopupProps> = ({data, closePopup}) => {
 
   return (
     <div className={popupStyles.popup}>
-      <button type="button" onClick={(e)=> {
-        e.preventDefault();
-        closePopup()
-      }} className={popupStyles.popup__closeButton} />
+      <button type="button" onClick={()=> closePopup()} className={popupStyles.popup__closeButton} />
     <Link to='/sample/blockade' className={popupStyles.popup__link}>
     <article
       onClick={() => navigate(`/sample/blockade`)}
