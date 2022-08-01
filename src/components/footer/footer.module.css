@@ -1,10 +1,10 @@
 .footer {
   font: 20px/1.26 "PT sans", sans-serif;
-  max-width: 1375px;
+  max-width: 1376px;
   width: calc(100vw * 1375 / 1440);
   height: 180px;
   margin: 0 auto;
-  margin-bottom: 32px;
+  padding-bottom: 32px;
 }
 
 /*
