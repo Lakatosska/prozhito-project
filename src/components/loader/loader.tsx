@@ -16,7 +16,7 @@ export const Loader: FC = () => {
           secondaryColor="#FBC90B"
           />
       </div>
-      { /* <div className={styles.overlay}></div> */}
+      <div className={styles.overlay}></div>
     </>
   );
 };
