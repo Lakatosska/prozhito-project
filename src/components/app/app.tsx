@@ -9,11 +9,12 @@ import Footer from '../footer/footer';
 import SamplePage from "../../pages/sample-page/sample-page";
 import NotFoundPage from "../../pages/not-found-page/not-found-page";
 import Header from "../header/header";
+import Layout from '../layout/layout';
 
 const App: FC = () => {
   return (
     <div className={styles.app}>
-      <Header />
+      <Layout>
       <Routes>
         <Route path={"/"} element={<MainPage />} />
         <Route path={"/news"} element={<NewsPage />} />
@@ -22,7 +23,7 @@ const App: FC = () => {
         <Route path={"*"} element={<NotFoundPage />} />
       </Routes>
 
-      <Footer />
+      </Layout>
     </div>
   );
 }
