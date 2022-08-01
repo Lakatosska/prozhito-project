@@ -85,7 +85,8 @@
 
 @media screen and (max-width: 1000px) {
   .linkButton_type_rect {
-    width: 335px;
+    width: 237px;
+    height: 48px;
     font-size: 14px;
     line-height: 18px;
   }
@@ -101,10 +102,10 @@
 
 @media screen and (max-width: 480px) {
   .linkButton_type_rect {
-    width: 237px;
-    min-height: 48px;
+    width: 335px;
+    min-height: 50px;
   }
-  .link__arrow {
+  .linkButton__arrow {
     width: 11.07px;
   }
 }
