@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, useState} from "react";
 import {dataAPI} from "../../services/api/data";
 import {JOURNAL_ITEM_TYPE} from "../../constants";
 import {INewsItem} from "../../services/types/news";
@@ -10,6 +10,7 @@ import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem} from "../../
 import {Intro} from "../../components/intro/intro";
 import {LinkButton} from "../../components/link-button/link-button";
 import { Materials } from "../../components/materials/materials";
+import Popup from "../../components/popup/popup";
 
 const MainPage: FC = () => {
   const navigate = useNavigate();
@@ -23,14 +24,13 @@ const MainPage: FC = () => {
     navigate(to)
   }
 
+  const [popupOpen, setPopupOpen]=useState(true);
+
   return (
     <>
       {
-        !isPopupLoading && popupData &&
-        <div style={{backgroundColor: "lightgreen", cursor: "pointer"}} onClick={() => handleNavigate(`/sample/blockade`)}>
-          <p style={{textTransform: 'uppercase'}}>{popupData.title}</p>
-          <p>{popupData.caption}</p>
-        </div>
+        !isPopupLoading && popupData && popupOpen &&
+        <Popup data={popupData} closePopup={()=>setPopupOpen(false) }/>
       }
       <Intro />
       <h1>Новости и события</h1>
