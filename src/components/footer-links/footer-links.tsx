@@ -7,19 +7,19 @@ export const FooterLinks: FC = () => {
     <section className={footerLinksStyles.container}>
       <ul className={footerLinksStyles.links}>
         <li className={footerLinksStyles.item}>
-          <a href="#" className={footerLinksStyles.link}>О команде</a>
+          <button className={footerLinksStyles.link}>О команде</button>
         </li>
         <li className={footerLinksStyles.item}>
-          <a href="#" className={footerLinksStyles.link}>Благодарности</a>
+          <button className={footerLinksStyles.link}>Благодарности</button>
         </li>
         <li className={footerLinksStyles.item}>
-          <a href="#" className={footerLinksStyles.link}>Партнёры</a>
+          <button className={footerLinksStyles.link}>Партнёры</button>
         </li>
         <li className={footerLinksStyles.item}>
-          <a href="#" className={footerLinksStyles.link}>FAQ</a>
+          <button className={footerLinksStyles.link}>FAQ</button>
         </li>
         <li className={footerLinksStyles.item}>
-          <a href="#" className={footerLinksStyles.link}>Инструкции</a>
+          <button className={footerLinksStyles.link}>Инструкции</button>
         </li>
       </ul>
     </section>

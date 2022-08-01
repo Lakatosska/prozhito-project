@@ -10,13 +10,13 @@ export const FooterInfo: FC = () => {
   return(
     <section className={footerInfoStyles.info}>
       <div className={footerInfoStyles.logo}>
-        <a href="#" target="_blank" className={footerInfoStyles.link}>
+        <a href="https://prozhito.org/" target="_blank" rel="noopener noreferrer" className={footerInfoStyles.link}>
         <img
           src={prozhito}
           alt="Прожито"
         />
         </a>
-        <a href="https://eusp.org/" target="_blank" className={footerInfoStyles.link}>
+        <a href="https://eusp.org/" target="_blank" rel="noopener noreferrer" className={footerInfoStyles.link}>
         <img
           src={logo_eu_ru}
           alt="Европейский университет в Санкт-Петербурге"
@@ -26,7 +26,7 @@ export const FooterInfo: FC = () => {
       <section className={footerInfoStyles.social}>
         <ul className={footerInfoStyles.links}>
           <li className={footerInfoStyles.item}>
-            <a href="https://t.me/prozhito" target="_blank" className={footerInfoStyles.link}>
+            <a href="https://t.me/prozhito" target="_blank" rel="noopener noreferrer" className={footerInfoStyles.link}>
               <img
                 src={telegram}
                 className={footerInfoStyles.icon}
@@ -35,7 +35,7 @@ export const FooterInfo: FC = () => {
             >
           </li>
           <li className={footerInfoStyles.item}>
-            <a href="https://vk.com/prozhito" target="_blank" className={footerInfoStyles.link}>
+            <a href="https://vk.com/prozhito" target="_blank" rel="noopener noreferrer" className={footerInfoStyles.link}>
               <img
                 src={vk}
                 className={footerInfoStyles.icon}
@@ -47,12 +47,12 @@ export const FooterInfo: FC = () => {
       </section>
 
       <section className={footerInfoStyles.legal}>
-        <ul className={footerInfoStyles.links}>
+        <ul className={footerInfoStyles.legals}>
           <li className={footerInfoStyles.item}>
-            <a href="#" target="_blank" className={footerInfoStyles.link}>Юридическая информация</a>
+            <button className={footerInfoStyles.link}>Юридическая информация</button>
           </li>
           <li className={footerInfoStyles.item}>
-            <a href="#" target="_blank" className={footerInfoStyles.link}>Политика конфиденциальности</a>
+            <button className={footerInfoStyles.link}>Политика конфиденциальности</button>
           </li>
         </ul>
       </section>
