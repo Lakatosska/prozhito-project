@@ -9,10 +9,12 @@ import Footer from '../footer/footer';
 import SamplePage from "../../pages/sample-page/sample-page";
 import NotFoundPage from "../../pages/not-found-page/not-found-page";
 import Header from "../header/header";
+import { Loader } from '../loader/loader';
 
 const App: FC = () => {
   return (
     <div className={styles.app}>
+      <Loader />
       <Header />
       <Routes>
         <Route path={"/"} element={<MainPage />} />
@@ -21,7 +23,6 @@ const App: FC = () => {
         <Route path={`/sample/:page`} element={<SamplePage />} />
         <Route path={"*"} element={<NotFoundPage />} />
       </Routes>
-
       <Footer />
     </div>
   );
