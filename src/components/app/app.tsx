@@ -14,7 +14,7 @@ import { Loader } from '../loader/loader';
 const App: FC = () => {
   return (
     <div className={styles.app}>
-      <Loader />
+      { /* <Loader /> */}
       <Header />
       <Routes>
         <Route path={"/"} element={<MainPage />} />
