@@ -15,6 +15,7 @@ import { Intro } from "../../components/intro/intro";
 import { LinkButton } from "../../components/link-button/link-button";
 import { Materials } from "../../components/materials/materials";
 import NewsItem from "../../components/news-item/news-item";
+import CardsSlider from "../../components/cards-slider/cards-slider";
 
 const MainPage: FC = () => {
   const navigate = useNavigate();
@@ -65,6 +66,7 @@ const MainPage: FC = () => {
           ))}
         </ul>
       )}
+
       <LinkButton to={`/news`}>Ко всем новостям</LinkButton>
       <Materials />
       <h1>Ищем редактора для дневника</h1>
@@ -160,6 +162,15 @@ const MainPage: FC = () => {
         </ul>
       )}
       <LinkButton to={`/not/found`}>Все спецпроекты</LinkButton>
+      <CardsSlider
+        title="Новости
+и события"
+        textLink="Ко всем новостям"
+      >
+        <NewsItem text="aaa" date="12/02/2022" image="Arrow_left.svg" />
+        <NewsItem text="aaa" date="12/02/2022" image="Arrow_right.svg" />
+        <NewsItem text="aaa" date="12/02/2022" image="Arrow_left.svg" />
+      </CardsSlider>
     </>
   );
 };
