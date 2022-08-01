@@ -8,7 +8,6 @@ import JournalPage from "../../pages/journal-page/journal-page";
 import Footer from '../footer/footer';
 import SamplePage from "../../pages/sample-page/sample-page";
 import NotFoundPage from "../../pages/not-found-page/not-found-page";
-import Header from "../header/header";
 import Layout from '../layout/layout';
 
 const App: FC = () => {
