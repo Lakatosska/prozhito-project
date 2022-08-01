@@ -12,8 +12,8 @@ export const Loader: FC = () => {
           height={220}
           width={220}
           strokeWidth={3}
-          color="#7A9F80"
-          secondaryColor="#FBC90B"
+          color="#E96A41"
+          secondaryColor="#70bf5d"
           />
       </div>
       <div className={styles.overlay}></div>

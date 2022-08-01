@@ -3,6 +3,7 @@ import { dataAPI } from "../../services/api/data";
 import { IDiaryItem } from "../../services/types/diary";
 import materialsStyle from "./materials.module.css";
 import { MaterialsItem } from "../materials-item/materials-item";
+import { Loader } from "../loader/loader";
 
 export const Materials: FC = () => {
 
@@ -14,6 +15,7 @@ export const Materials: FC = () => {
         Материалы
       </h2>
 
+      {isDiaryLoading && <Loader />}
       {
         !isDiaryLoading && diaryData &&
         <ul className={materialsStyle.cards}>
