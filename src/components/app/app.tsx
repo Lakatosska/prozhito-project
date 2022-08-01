@@ -15,14 +15,13 @@ const App: FC = () => {
   return (
     <div className={styles.app}>
       <Layout>
-      <Routes>
-        <Route path={"/"} element={<MainPage />} />
-        <Route path={"/news"} element={<NewsPage />} />
-        <Route path={"/journal"} element={<JournalPage />} />
-        <Route path={`/sample/:page`} element={<SamplePage />} />
-        <Route path={"*"} element={<NotFoundPage />} />
-      </Routes>
-
+        <Routes>
+          <Route path={"/"} element={<MainPage />} />
+          <Route path={"/news"} element={<NewsPage />} />
+          <Route path={"/journal"} element={<JournalPage />} />
+          <Route path={`/sample/:page`} element={<SamplePage />} />
+          <Route path={"*"} element={<NotFoundPage />} />
+        </Routes>
       </Layout>
     </div>
   );
