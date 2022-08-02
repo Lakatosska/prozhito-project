@@ -44,17 +44,16 @@ export const LinkButton: FC<{
     arrow = true;
   }
 
-  let className = `${styles.linkButton} ${
-    styles[`${"linkButton_type_"}${round ? "round" : "rect"}`]
-  } ${
-    color
-      ? ""
-      : border
-      ? `${styles.linkButton_color_transparent}  ${styles.linkButton_border}`
-      : styles.linkButton_color_transparent
-  } ${size ? styles["linkButton_size_" + size] : ""}`;
+  const colorStyles = border
+    ? `${styles.linkButton_color_transparent}  ${styles.linkButton_border}`
+    : styles.linkButton_color_transparent
 
-  let arrowPath = direction === "left" ? arrowImgLeft : arrowImgRight;
+  let className = `${styles.linkButton}
+    ${styles[`linkButton_type_${round ? "round" : "rect"}`]}
+    ${color ? "" : colorStyles}
+    ${size ? styles["linkButton_size_" + size] : ""}`
+
+  let arrowPath = direction === "left" ? arrowImgLeft : arrowImgRight
 
   if (colorText === "white") {
     arrowPath = arrowImgWhite;
@@ -79,23 +78,21 @@ export const LinkButton: FC<{
         arrow ? styles.linkButton__arrow : styles.linkButton__arrow_hide
       }`}
     />
-  );
+  )
 
   const linkElement = (
     <Link to={to} className={className} onClick={onClick}>
       {children}
       {arrowImage}
     </Link>
-  );
+  )
+
   const buttonElement = (
     <button className={className} disabled={disabled} onClick={onClick}>
       {children}
       {arrowImage}
     </button>
-  );
-  if (type === "link") {
-    return linkElement;
-  } else {
-    return buttonElement;
-  }
-};
+  )
+
+  return type === "link" ? linkElement : buttonElement;
+}
