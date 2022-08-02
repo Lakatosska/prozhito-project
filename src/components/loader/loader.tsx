@@ -2,10 +2,9 @@ import { FC } from 'react';
 import { Oval } from 'react-loader-spinner';
 import styles from './loader.module.css';
 
-export const Loader: FC = () => {
+const Loader: FC = () => {
   return (
     <>
-
       <div className={styles.container}>
         <Oval
           ariaLabel="loading-indicator"
@@ -20,3 +19,5 @@ export const Loader: FC = () => {
     </>
   );
 };
+
+export default Loader;
