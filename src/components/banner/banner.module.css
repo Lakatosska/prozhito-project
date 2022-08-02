@@ -47,7 +47,7 @@
 @media screen and (max-width: 1400px) {
   .banner {
     grid-template-columns: 174px 1fr;
-    grid-column-gap: 72px;
+    grid-column-gap: 73px;
     padding: 20px 17px;
   }
   .banner__image {
@@ -61,16 +61,19 @@
   .banner__text{
     font-size: 14px;
     line-height: 1.28;
+    margin: 13px 0 0;
+
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
   .banner {
     grid-template-columns: minmax(30%, 336px);
     grid-row-gap: 16px;
     justify-content: center;
     justify-items: center;
     padding: 20px 12px;
+    min-height: 640px;
   }
   .banner__image {
     grid-column: 1;
@@ -78,4 +81,26 @@
     width: 164px;
     height: 258px;
   }
+  .banner__buttonsWrapper{
+    min-height: 116px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .banner{
+    grid-template-rows: repeat(4, min-content);
+  }
+  .banner__title{
+    max-width: 230px;
+    margin: 0 auto;
+    font-size: 26px;
+    line-height: 1;
+    text-align: center;
+  }
+  .banner__text{
+    margin: 0;
+  }
+
 }
