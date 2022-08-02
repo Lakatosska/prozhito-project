@@ -28,12 +28,12 @@ const Banner: FC<IBannerProps> = ({ data }) => {
             <LinkButton to={`/sample/banner`} color={false}>
           Перейти к материалу
         </LinkButton>
-          <LinkButton to={`/sample/banner`}>Оставить заявку</LinkButton>
+          <LinkButton to={`/`}>Оставить заявку</LinkButton>
             </>
           )
         :(
           <>
-          <LinkButton to={`/sample/banner`}>Оставить заявку</LinkButton>
+          <LinkButton to={`/`}>Оставить заявку</LinkButton>
           <LinkButton to={`/sample/banner`} color={false}>
           Перейти к материалу
           </LinkButton>
