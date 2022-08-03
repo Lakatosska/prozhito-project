@@ -11,13 +11,13 @@ import {Intro} from "../../components/intro/intro";
 import {LinkButton} from "../../components/link-button/link-button";
 import { Materials } from "../../components/materials/materials";
 import Popup from "../../components/popup/popup";
+import Project from "../../components/project/project";
 
 const MainPage: FC = () => {
   const navigate = useNavigate();
   const {isLoading: isPopupLoading, data: popupData} = dataAPI.useGetPopupQuery();
   const {isLoading: isNewsLoading, data: newsData} = dataAPI.useGetMainNewsQuery();
   const {isLoading: isBannerLoading, data: bannerData} = dataAPI.useGetBannerQuery();
-  const {isLoading: isProjectLoading, data: projectData} = dataAPI.useGetProjectsQuery();
   const {isLoading: isJournalLoading, data: journalData} = dataAPI.useGetMainJournalQuery();
 
   const handleNavigate = (to: string) => {
@@ -93,25 +93,9 @@ const MainPage: FC = () => {
         </ul>
       }
       <LinkButton to={`/journal`}>Посмотреть всю подборку</LinkButton>
-      <h1>Спецпроекты</h1>
-      {
-        !isProjectLoading && projectData &&
-        <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none'}}>
-          {
-            projectData.map((item: IProjectItem) => (
-              <li key={item.id}>
-                <div style={{padding: '10px', cursor: "pointer"}}  onClick={() => handleNavigate(`/sample/${item.sample}`)}>
-                  <p>{item.title}</p>
-                  <img width={491} height={352} src={require(`../../images/${item.image}`)} alt={'Картинка проекта'}/>
-                  <p>{item.text}</p>
-                  <p>{formatDate(item.date, "long")}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-      }
-      <LinkButton to={`/not/found`}>Все спецпроекты</LinkButton>
+
+      <Project />
+
     </>
   )
 }
