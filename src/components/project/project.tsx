@@ -1,14 +1,13 @@
 import { FC } from 'react';
 import { dataAPI } from '../../services/api/data';
 import projectStyle from './project.module.css';
-import { MaterialsItem } from "../materials-item/materials-item";
 import { LinkButton } from '../link-button/link-button';
-import { formatDate } from '../../utils/dateHelper';
 import { useNavigate } from 'react-router';
+import ProjectCard from '../project-card/project-card';
 
 export const Project: FC = () => {
   const navigate = useNavigate();
-  const {isLoading: isProjectLoading, data: projectData} = dataAPI.useGetProjectsQuery();
+  const {isLoading, data} = dataAPI.useGetProjectsQuery();
   const handleNavigate = (to: string) => {
     navigate(to)
   }
@@ -17,17 +16,12 @@ export const Project: FC = () => {
     <section className={projectStyle.project}>
       <h1 className={projectStyle.title}>Спецпроекты</h1>
         {
-          !isProjectLoading && projectData &&
+          !isLoading && data &&
           <ul style={{display: 'flex', flexDirection: 'row', listStyleType: 'none'}}>
             {
-              projectData.map((item: IProjectItem) => (
+              data.map(item => (
                 <li key={item.id}>
-                  <div style={{padding: '10px', cursor: "pointer"}}  onClick={() => handleNavigate(`/sample/${item.sample}`)}>
-                    <p>{item.title}</p>
-                    <img width={491} height={352} src={require(`../../images/${item.image}`)} alt={'Картинка проекта'}/>
-                    <p>{item.text}</p>
-                    <p>{formatDate(item.date, "long")}</p>
-                  </div>
+                  <ProjectCard item={item} onClick={(projectId) => handleNavigate(`/sample/${projectId}`)}/>
                 </li>
               ))
             }
@@ -39,17 +33,3 @@ export const Project: FC = () => {
 }
 
 export default Project;
-
-
-/* getProjects: build.query<ReadonlyArray<IProjectItem>, void>({
-      query: () => ({
-        url: '/projects',
-        params: {
-          _limit: PROJECTS_LIMIT,
-        },
-      }),
-    })
-
-*/
-
-
