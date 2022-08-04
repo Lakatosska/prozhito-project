@@ -17,8 +17,9 @@
 @media screen and (max-width: 767px) {
   .project {
     overflow: hidden;
-    width: calc(100% - 41px);
-    margin-right: 0;
+    width: 336px;
+    margin: 0 auto;
+    padding: 0 0 28px 0;
   }
 }
 
@@ -53,8 +54,6 @@
   justify-content: center;
 }
 
-
-
 .title {
   margin: 0;
   margin-bottom: 40px;
@@ -64,15 +63,21 @@
   text-align: center;
 }
 
-@media screen and (max-width: 767px) {
-  .title {
-    display: none;
-    margin-right: 41px;
-  }
-}
-
 @media screen and (max-width: 1023px) {
   .title {
     margin-bottom: 24px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-family: 'WF';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: left;
+  }
+}
+
+

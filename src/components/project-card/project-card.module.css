@@ -24,6 +24,7 @@ opacity: .8;
 @media screen and (max-width: 767px) {
   .card {
       width: 100%;
+      height: 386px;
       margin: 24px 0 0;
       background-color: #fff;
   }
@@ -72,6 +73,8 @@ opacity: .8;
 
 @media screen and (max-width: 767px) {
   .text {
+    height: 186px;
+    width: 334px;
     border: solid 1px #E7E4DE;
     border-top: none;
 }
@@ -103,6 +106,16 @@ opacity: .8;
   .title {
     font: 1.28em/1.22 'WF', sans-serif;
     margin: 12px 0 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-family: 'WF';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 
@@ -152,6 +165,10 @@ opacity: .8;
 @media screen and (max-width: 767px) {
   .date {
     margin: 24px 0 12px 8px;
-    font: 1em/1.22 'PT sans', sans-serif;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
   }
 }
