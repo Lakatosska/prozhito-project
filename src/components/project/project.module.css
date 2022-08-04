@@ -7,10 +7,10 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px) { /* планшетная версия до ширины экрана в 1023px*/
   .project {
     padding: 32px 0;
-    width: calc(100% - 34px);
+    width: 736px;
   }
 }
 
@@ -36,7 +36,6 @@
 @media screen and (max-width: 1023px) {
   .container {
       width: calc(100% - 34px);
-      padding-top: 24px;
   }
 }
 
