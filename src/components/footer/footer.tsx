@@ -6,11 +6,14 @@ import footerStyles from './footer.module.css';
 export const Footer: FC = () => {
 
   return (
-    <section className={footerStyles.footer}>
-      <FooterLinks />
+    <>
+      <div/>
+      <section className={footerStyles.footer}>
+        <FooterLinks />
 
-      <FooterInfo />
-    </section>
+        <FooterInfo />
+      </section>
+    </>
   )
 }
 
