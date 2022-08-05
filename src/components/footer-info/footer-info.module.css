@@ -160,6 +160,7 @@
 }
 
 .legal {
+  margin-right: 52px;
   display: grid;
   grid-gap: 12px;
   grid-template-columns: 1fr;
