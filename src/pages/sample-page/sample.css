@@ -1,6 +1,4 @@
 @import url(../../blocks/typical-page/typical-page.css);
-@import url(../../vendor/normalize.css);
-@import url(../../vendor/fonts/fonts.css);
 @import url(../../blocks/pages-nav/pages-nav.css);
 @import url(../../blocks/pages-nav/__link/pages-nav__link.css);
 @import url(../../blocks/button/_contens/button_contens.css);
@@ -36,12 +34,14 @@
   display: flex;
   flex-direction: column;
 }
+
 .article h1 {
-  font: 2.3em/1.2em "WF", sans-serif;
+  font: 46px "WF", sans-serif;
+  line-height: 55.2px;
   max-width: 678px;
   color: #323232;
   padding: 28px 0 16px;
-  border-bottom: 1px solid #3a543e;
+  border-bottom: 1px solid #E7E4DE;
   font-weight: 400;
   max-width: 677px;
   text-align: center;
@@ -49,7 +49,8 @@
 }
 
 .article h2 {
-  font: 1.3em/1em "WF", sans-serif;
+  font: 26px "WF", sans-serif;
+  line-height: 26px;
   text-align: center;
   font-weight: 400;
   padding: 0 auto 0;
@@ -58,7 +59,8 @@
 }
 
 .article p {
-  font: 0.9em/1.67em "PT Sans", sans-serif;
+  font: 18px "PT Sans", sans-serif;
+  line-height: 30px;
   padding: 32px 0 0;
   max-width: 676px;
   width: 100%;
@@ -76,13 +78,15 @@
 }
 
 .article blockquote {
-  font: 1.3em/1em "WF", sans-serif;
+  font: 26px "WF", sans-serif;
+  line-height: 26px;
   font-weight: 400;
   padding: 0 0 0 16px;
-  border-left: 2px #3a543e solid;
+  border-left: 2px #E7E4DE solid;
   margin: 32px auto 0;
   max-width: 676px;
   position: relative;
+  text-align: start;
 }
 
 .image {
@@ -106,16 +110,44 @@
 }
 
 .image figcaption {
-  font: 0.7em/1.3em "PT Sans", sans-serif;
+  font: 14px "PT Sans", sans-serif;
+  line-height: 18.12px;
+  font-weight: 400;
   text-align: start;
   align-self: center;
   width: 100%;
-  margin: 0 0 0 230px;
+  margin: 0;
   max-width: 550px;
   padding: 16px 0 16px;
-  border-bottom: 1px solid rgba(12, 6, 38, 0.7);
+  border-bottom: 1px solid #E7E4DE;
   background-color: white;
 }
+
+.video figcaption {
+  font: 14px "PT Sans", sans-serif;
+  line-height: 18.12px;
+  font-weight: 400;
+  text-align: start;
+  align-self: center;
+  width: 100%;
+  margin: 0;
+  max-width: 550px;
+  padding: 16px 0 16px;
+  border-bottom: 1px solid #E7E4DE;
+  background-color: white;
+}
+
+.article li {
+  font: 18px "PT Sans", sans-serif;
+  line-height: 30px;
+  text-align: start;
+  font-weight: 400;
+  max-width: 676px;
+  width: 100%;
+  margin: 0 auto 0;
+}
+
+
 @media screen and (max-width: 1023px) {
   .image {
     width: 700px;
