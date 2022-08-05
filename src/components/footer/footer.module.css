@@ -4,7 +4,7 @@
   width: calc(100vw * 1375 / 1440);
   height: 180px;
   margin: 0 auto;
-  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 /*
@@ -16,12 +16,15 @@
     margin-bottom: 20px;
   }
 }
+*/
+
 
 @media screen and (max-width: 767px) {
   .footer {
-    min-width: 296px;
-    width: calc(100% - 24px);
-    margin-bottom: 16px;
+    width: 336px;
+    height: 279px;
+    margin: 0 auto;
+    padding: 0 12px 20px;
+    background-color: antiquewhite;
   }
 }
-*/

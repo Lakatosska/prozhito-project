@@ -7,7 +7,15 @@
 
 @media screen and (max-width: 1023px) {
   .info {
-    padding: 28px 0 20px;
+    padding: 28px 60px 20px;
+    height: 136px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: (294px, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "logo social"
+    "logo legal";
   }
 }
 
@@ -16,6 +24,14 @@
     flex-direction: column;
     padding: 24px 0 0;
     align-items: center;
+    height: 173px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "social"
+    "logo"
+    "legal";
   }
 }
 
@@ -30,13 +46,15 @@
 @media screen and (max-width: 1023px) {
   .logo {
     margin: 0;
+    grid-area: logo;
   }
 }
 
 @media screen and (max-width: 767px) {
   .logo {
+    margin: 0 auto;
     order: 2;
-    min-width: 256px;
+    width: 256px;
     height: 26px;
   }
 }
@@ -47,16 +65,17 @@
 
 @media screen and (max-width: 1023px) {
   .social {
-    margin-left: 360px;
+    margin: 0;
     height: 28px;
+    grid-area: social;
   }
 }
 
 @media screen and (max-width: 767px) {
   .social {
     order: 1;
-    margin-left: 0;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
+    width: 80px;
   }
 }
 
@@ -76,8 +95,10 @@
 
 @media screen and (max-width: 1023px) {
   .links {
+    height: 28px;
     display: flex;
     flex-direction: row;
+    justify-content: right;
     grid-gap: 32px;
     font: 14px/1.21 "PT sans", sans-serif;
   }
@@ -151,6 +172,7 @@
     grid-gap: 32px;
     height: fit-content;
     margin-left: auto;
+    grid-area: legal;
   }
 }
 
