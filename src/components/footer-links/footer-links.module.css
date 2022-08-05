@@ -1,6 +1,6 @@
 .container {
-  border-top: 1px solid rgba(50, 50, 50, 0.3);
-  border-bottom: 1px solid rgba(50, 50, 50, 0.3);
+  border-top: 1px solid #E7E4DE;
+  border-bottom: 1px solid #E7E4DE;
   height: 88px;
   display: flex;
   align-items: center;
@@ -13,6 +13,13 @@
 @media screen and (max-width: 1023px) {
   .container {
     height: 72px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    height: 104px;
+    padding: 24px;
   }
 }
 
@@ -40,6 +47,8 @@
 
 @media screen and (max-width: 767px) {
   .links {
+    width: 246px;
+    gap: 20px 32px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -78,5 +87,15 @@
 @media screen and (max-width: 1023px) {
   .item:not(:last-of-type) {
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .link {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
   }
 }

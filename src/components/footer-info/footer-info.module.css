@@ -24,6 +24,14 @@
     flex-direction: column;
     padding: 24px 0 0;
     align-items: center;
+    height: 173px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "social"
+    "logo"
+    "legal";
   }
 }
 
@@ -44,8 +52,9 @@
 
 @media screen and (max-width: 767px) {
   .logo {
+    margin: 0 auto;
     order: 2;
-    min-width: 256px;
+    width: 256px;
     height: 26px;
   }
 }
@@ -65,8 +74,8 @@
 @media screen and (max-width: 767px) {
   .social {
     order: 1;
-    margin-left: 0;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
+    width: 80px;
   }
 }
 
