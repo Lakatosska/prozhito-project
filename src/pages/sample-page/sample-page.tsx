@@ -3,6 +3,7 @@ import {dataAPI} from "../../services/api/data";
 import {useParams} from "react-router-dom";
 import image1 from '../../images/photo_summer_1938.png';
 import image2 from '../../images/photo_10September_1937.png';
+import soundImage from '../../images/player/soundtrack.svg';
 
 
 /*
@@ -60,7 +61,7 @@ const SamplePage: FC = () => {
             страницей, мы узнавали этого человек: старший таксатор Далматовского
             лесничества, бывший офицер эстонской армии, строгий глава семьи
             Клавдий Васильевич Попов. Так я стала волонтером, который помогает
-            расшифровывать рукописные дневники «обыкновенных людей»
+            расшифровывать рукописные дневники <span>«обыкновенных людей»</span>
           </p>
           <blockquote>
             Дневник, о котором дальше пойдет речь, вел сначала подросток, потом
@@ -83,8 +84,7 @@ const SamplePage: FC = () => {
           </p>
           <figure className='image'>
             <img
-              //src='../../images/photo_summer_1938.png'
-              src={image1}
+              src={require(`../../images/photo_summer_1938.png`)}
               alt='Рисунки из дневника Вени Аронвальда'
             />
             <figcaption>
@@ -104,10 +104,11 @@ const SamplePage: FC = () => {
             Юра.
           </p>
           <figure className='video'>
-            <div className='video__container'>
-              <button className='button button_play-video'></button>
-              <video className='video__source' src='#'></video>
-            </div>
+            <iframe width="678" height="360" src="https://www.youtube.com/embed/kbUP2PAbLTk?controls=0&amp;start=1"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              >
+            </iframe>
             <figcaption>
               Лекция о дневнике Юры Беневольского
             </figcaption>
@@ -122,34 +123,36 @@ const SamplePage: FC = () => {
               - Кому-же?<br/>
             - Мне.<br/>
             </p>
-            <section className='player'>
-            <div className='player__container'>
-              <audio src='audio/1564_Rodoman.mp3' id='audio'></audio>
-              <button
-                type='button'
-                id='button-play'
-                className='player__button-play'
-              ></button>
-              <button
-                type='button'
-                className='player__button-reverse-anticlockwise'
-              ></button>
-              <button
-                type='button'
-                className='player__button-reverse-clockwise'
-              ></button>
-              <img
-                src='images/player(typical_page)/soundtrack.svg'
-                alt='Звуковая дорожка'
-                className='player__soundtrack'
-              />
-              <span className='player__time'>15:20</span>
-              <button type='button' className='player__button-mute'></button>
+          <figure>
+            <div className="player">
+              <div className="player__container">
+                <audio src={require(`../../audio/1564_Rodoman.mp3`)} id="audio"></audio>
+                <button
+                  type="button"
+                  id="button-play"
+                  className="player__button-play"
+                ></button>
+                <button
+                  type="button"
+                  className="player__button-reverse-anticlockwise"
+                ></button>
+                <button
+                  type="button"
+                  className="player__button-reverse-clockwise"
+                ></button>
+                <img
+                  src={soundImage}
+                  alt="Звуковая дорожка"
+                  className="player__soundtrack"
+                />
+                <span className="player__time">15:20</span>
+                <button type="button" className="player__button-mute"></button>
+              </div>
             </div>
-            <span className='player__title'>
-              Запись разговора Юры и Вени Аронвальда, 1937 год</span
-            >
-          </section>
+            <figcaption>
+              Запись разговора Юры и Вени Аронвальда, 1937 год
+            </figcaption>
+          </figure>
           <p>
             Но вскоре подростки дают читать друг другу свои дневники. Дружба
             продлиться до самой войны, становясь то теснее, то прохладней.<br/>
@@ -166,8 +169,7 @@ const SamplePage: FC = () => {
           </p>
           <figure className='image'>
             <img
-              //src='images/photo_december_1937.png'
-              src={image2}
+              src={require(`../../images/photo_10September_1937.png`)}
               alt='Рисунки из дневника Вени Аронвальда'
             />
             <figcaption>
@@ -188,12 +190,14 @@ const SamplePage: FC = () => {
             начинает относится ко мне как к юноше, а не ребенку старшего возраста.
             Я теперь довольно свободно могу уйти из дому в любое время».<br/>
           </p>
-          <p>Факты о Юре:</p>
-          <ul>
-            <li>Юра хорошо учится и это видно не по отметкам (их он не приводит), а потому, как растет его грамотность;</li>
-            <li>Много читает</li>
-            <li>В старших классах он увлечен героями Джека Лондона. Любит кино и мечтает стать кинооператором. А еще влюблен в заслуженную артистку республики Любовь Орлову: собирает ее фотографии и не пропускает ни одного фильма.</li>
-          </ul>
+          <span>
+            <p>Факты о Юре:</p>
+            <ul>
+              <li>Юра хорошо учится и это видно не по отметкам (их он не приводит), а потому, как растет его грамотность;</li>
+              <li>Много читает</li>
+              <li>В старших классах он увлечен героями Джека Лондона. Любит кино и мечтает стать кинооператором. А еще влюблен в заслуженную артистку республики Любовь Орлову: собирает ее фотографии и не пропускает ни одного фильма.</li>
+            </ul>
+          </span>
           <p>
           - Да, днем! А ночью Петербург!!»<br/>
             Многое объясняет фраза, написанная Юрой ранее: «Когда приехал (вернее

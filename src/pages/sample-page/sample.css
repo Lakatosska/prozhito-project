@@ -43,7 +43,6 @@
   padding: 28px 0 16px;
   border-bottom: 1px solid #E7E4DE;
   font-weight: 400;
-  max-width: 677px;
   text-align: center;
   margin: 0 auto 0;
 }
@@ -66,7 +65,7 @@
   width: 100%;
   margin: 0 auto 0;
   font-weight: 400;
-  text-align: left;
+  text-align: start;
 }
 
 .article p:nth-child(3) {
@@ -109,32 +108,21 @@
   padding: 23px 0 36px;
 }
 
-.image figcaption {
-  font: 14px "PT Sans", sans-serif;
-  line-height: 18.12px;
-  font-weight: 400;
-  text-align: start;
-  align-self: center;
-  width: 100%;
-  margin: 0;
-  max-width: 550px;
-  padding: 16px 0 16px;
-  border-bottom: 1px solid #E7E4DE;
-  background-color: white;
+.article figure {
+  margin: 28px auto;
 }
 
-.video figcaption {
+.article figcaption {
   font: 14px "PT Sans", sans-serif;
   line-height: 18.12px;
   font-weight: 400;
   text-align: start;
   align-self: center;
-  width: 100%;
-  margin: 0;
-  max-width: 550px;
+  max-width: 676px;
   padding: 16px 0 16px;
   border-bottom: 1px solid #E7E4DE;
   background-color: white;
+  margin: 0 auto;
 }
 
 .article li {
@@ -145,6 +133,18 @@
   max-width: 676px;
   width: 100%;
   margin: 0 auto 0;
+}
+
+.article span {
+  padding: 0px 4px;
+  background-color: #F7F4F0;
+  border-radius: 4px;
+  max-width: 676px;
+  margin: 0 auto 0;
+}
+
+.article figure span {
+  background-color: #E7E4DE;
 }
 
 
