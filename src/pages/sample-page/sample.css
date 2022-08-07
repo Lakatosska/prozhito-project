@@ -30,7 +30,7 @@
 
 .article {
   max-width: 1440px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -60,20 +60,11 @@
 .article p {
   font: 18px "PT Sans", sans-serif;
   line-height: 30px;
-  padding: 32px 0 0;
   max-width: 676px;
   width: 100%;
-  margin: 0 auto 0;
+  margin: 28px auto;
   font-weight: 400;
   text-align: start;
-}
-
-.article p:nth-child(3) {
-  padding: 26px 0 0;
-}
-
-.article p:last-child {
-  padding: 26px 0 72px;
 }
 
 .article blockquote {
@@ -82,7 +73,6 @@
   font-weight: 400;
   padding: 0 0 0 16px;
   border-left: 2px #E7E4DE solid;
-  margin: 32px auto 0;
   max-width: 676px;
   position: relative;
   text-align: start;
@@ -105,11 +95,12 @@
   object-fit: contain;
   background: #f7f4f0;
   box-sizing: border-box;
-  padding: 23px 0 36px;
+  padding: 30px 0 36px;
 }
 
 .article figure {
-  margin: 28px auto;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .article figcaption {
@@ -147,17 +138,38 @@
   background-color: #E7E4DE;
 }
 
+.article iframe {
+  width: 100%;
+  max-width: 678px;
+  min-height: 360px;
+}
 
 @media screen and (max-width: 1023px) {
+  .article {
+    margin: 0 12px;
+  }
+  .article p {
+    margin: 12px auto;
+  }
   .image {
     width: 700px;
+  }
+  .article blockquote {
+    margin: 0 auto;
+    padding: 0 0 0 12px;
+    width: 100%
+  }
+  .article iframe {
+    min-height: 320px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .image {
-    max-width: 340px;
     width: 100%;
+  }
+  .image img {
+    padding: 84px 12px;
   }
   .image figcaption {
     max-width: 340px;
@@ -165,20 +177,25 @@
     margin: 0;
   }
   .article h1 {
-    max-width: 300px;
     width: 100%;
-    font-size: 2em;
+    font-size: 32px;
+    line-height: 38.4px;
   }
   .article p {
-    max-width: 300px;
     width: 100%;
   }
   .article h2 {
     max-width: 300px;
     width: 100%;
   }
-  .article blockquote {
-    max-width: 300px;
-    width: 100%;
+  .article iframe {
+    max-width: 613px;
+    min-height: 190px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .article iframe {
+    min-height: 168px;
   }
 }

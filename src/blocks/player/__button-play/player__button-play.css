@@ -3,9 +3,10 @@
   background-color: transparent;
   background-image: url(../../../images/player/Play.svg);
   background-repeat: no-repeat;
+  background-position: center;
   width: 24px;
   height: 28px;
-  margin: 0 0 0 25px;
+  margin: 40px 24px 40px 40px;
   cursor: pointer;
 }
 
@@ -13,11 +14,20 @@
   opacity: 50%;
 }
 
+@media screen and (max-width: 1023px) {
+  .player__button-play {
+    background-image: url(../../../images/player/Play_320px.svg);
+    width: 18.06px;
+    height: 20.86px;
+    margin: 31.57px 26px 31.57px 36px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .player__button-play {
     background-image: url(../../../images/player/Play_320px.svg);
     width: 16px;
     height: 16px;
-    margin: 0 0 0 10px;
+    margin: 14px 10px 14px 16px;
   }
 }
