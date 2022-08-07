@@ -1,9 +1,10 @@
-import {FC} from "react";
+import {FC, useState} from "react";
 import {dataAPI} from "../../services/api/data";
 import {useParams} from "react-router-dom";
 import image1 from '../../images/photo_summer_1938.png';
 import image2 from '../../images/photo_10September_1937.png';
 import soundImage from '../../images/player/soundtrack.svg';
+import PopupSample from "./popup/popup";
 
 
 /*
@@ -19,7 +20,9 @@ const SamplePage: FC = () => {
 }
 
 export default SamplePage
+
 */
+
 
 const SamplePage: FC = () => {
   /*
@@ -29,6 +32,9 @@ const SamplePage: FC = () => {
     return null
   }
   */
+
+  const [popupOpen, setPopupOpen] = useState(true);
+
   return (
     <>
       <div className="typical__subtitle">
@@ -36,6 +42,11 @@ const SamplePage: FC = () => {
             <p className="typical__subtitle-part">&#183;</p>
             <p className="typical__subtitle-part">опыт читателя</p>
       </div>
+      <button type="button" className="button button_contens">оглавление</button>
+
+      { popupOpen && (
+      <PopupSample closePopup={() => setPopupOpen(false)}/>
+      )}
 
       <div className='article'>
           <h1>Опыт прочтения одного дневника</h1>
@@ -219,4 +230,4 @@ const SamplePage: FC = () => {
   )
 }
 
-export default SamplePage
+export default SamplePage;
