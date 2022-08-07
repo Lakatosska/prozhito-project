@@ -104,7 +104,7 @@ const SamplePage: FC = () => {
             Юра.
           </p>
           <figure className='video'>
-            <iframe width="678" height="360" src="https://www.youtube.com/embed/kbUP2PAbLTk?controls=0&amp;start=1"
+            <iframe src="https://www.youtube.com/embed/kbUP2PAbLTk?controls=0&amp;start=1"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               >
@@ -191,12 +191,13 @@ const SamplePage: FC = () => {
             Я теперь довольно свободно могу уйти из дому в любое время».<br/>
           </p>
           <span>
-            <p>Факты о Юре:</p>
+            <p>Факты о Юре:<br/>
             <ul>
               <li>Юра хорошо учится и это видно не по отметкам (их он не приводит), а потому, как растет его грамотность;</li>
               <li>Много читает</li>
               <li>В старших классах он увлечен героями Джека Лондона. Любит кино и мечтает стать кинооператором. А еще влюблен в заслуженную артистку республики Любовь Орлову: собирает ее фотографии и не пропускает ни одного фильма.</li>
             </ul>
+            </p>
           </span>
           <p>
           - Да, днем! А ночью Петербург!!»<br/>
