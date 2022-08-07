@@ -5,7 +5,7 @@ import image1 from '../../images/photo_summer_1938.png';
 import image2 from '../../images/photo_10September_1937.png';
 import soundImage from '../../images/player/soundtrack.svg';
 import PopupSample from "./popup/popup";
-
+import ContentsSample from "./contents-sample/contents-sample";
 
 /*
 const SamplePage: FC = () => {
@@ -18,34 +18,38 @@ const SamplePage: FC = () => {
     <article className="article" dangerouslySetInnerHTML={{__html: data[0].content}}/>
   )
 }
-
-export default SamplePage
-
 */
 
 
 const SamplePage: FC = () => {
-  /*
-  const {page} = useParams<{page?: string}>();
-  const {isLoading, data} = dataAPI.useGetSampleContentQuery(page);
-  if (isLoading || !data || data.length === 0) {
-    return null
-  }
-  */
 
   const [popupOpen, setPopupOpen] = useState(true);
+  const [contentsOpen, setContentsOpen] = useState(false);
+
+  const openContents = (): void => {
+    setContentsOpen(true)
+  };
 
   return (
     <>
       <div className="typical__subtitle">
-            <p className="typical__subtitle-part">детство</p>
-            <p className="typical__subtitle-part">&#183;</p>
-            <p className="typical__subtitle-part">опыт читателя</p>
+        <p className="typical__subtitle-part">детство</p>
+        <p className="typical__subtitle-part">&#183;</p>
+        <p className="typical__subtitle-part">опыт читателя</p>
       </div>
-      <button type="button" className="button button_contens">оглавление</button>
 
-      { popupOpen && (
-      <PopupSample closePopup={() => setPopupOpen(false)}/>
+      <button type="button" className="button button_contens"
+        onClick={openContents}>оглавление</button>
+
+      {contentsOpen && (
+        <ContentsSample
+          openContents={() => setContentsOpen(true)}
+          closeContents={() => setContentsOpen(false)}
+        />
+      )}
+
+      {popupOpen && (
+        <PopupSample closePopup={() => setPopupOpen(false)}/>
       )}
 
       <div className='article'>
