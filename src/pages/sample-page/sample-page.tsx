@@ -9,8 +9,6 @@ import ContentsMobile from "./contents-mobile/contents-mobile";
 
 const SamplePage: FC = () => {
 
-  {/* mobile && scroll вверх => показывается оглавление вверху страницы */}
-
   const [popupOpen, setPopupOpen] = useState(true);
   const [contentsOpen, setContentsOpen] = useState(false);
 
@@ -25,31 +23,6 @@ const SamplePage: FC = () => {
   const openContents = (): void => {
     setContentsOpen(true)
   };
-
-  const handleScroll = () => {
-    let lastScroll = 0;
-
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-
-    if (scrollTop < lastScroll) {
-      return true
-    }
-  }
-
-
-/*
-  const handleScroll = () => {
-    let lastScroll = 0;
-
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (scrollTop < lastScroll) {
-      console.log('up');
-
-    } else if (scrollTop > lastScroll) {
-      console.log('down');
-    }
-  }
-  */
 
   return (
     <>
