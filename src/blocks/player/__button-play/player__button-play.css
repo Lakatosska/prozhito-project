@@ -10,6 +10,12 @@
   cursor: pointer;
 }
 
+.player__image-play {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
 .player__button-play:hover {
   opacity: 50%;
 }

@@ -1,5 +1,7 @@
 .contents {
+  font-family: "WF", "PT Sans", sans-serif;
   width: 100vw;
+  height: 48px;
   position: fixed;
   top: 0;
   font-size: 14px;
@@ -7,12 +9,19 @@
 }
 
 .container {
-  padding: 12px 16px 14px;
-  font-size: 14px;
   display: flex;
   justify-content: space-between;
-  min-height: 48px;
   background-color: #fff;
+  outline: 1px solid #E7E4DE;
+  padding: 12px 16px 14px;
+}
+
+.heading {
+  font-size: 18px;
+  line-height: 22.28px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
 .arrow__button {

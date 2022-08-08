@@ -34,7 +34,7 @@ export const ContentsMobile: FC<any> = () => {
             <img src={imgArrowLeft} alt='стрелка назад' />
         </button>
 
-        <h2>оглавление</h2>
+        <h2 className={contentsMobileStyles.heading}>оглавление</h2>
 
         <button type="button" className={contentsMobileStyles.menu__button}
           onClick={()=> openMobileContents()}>
