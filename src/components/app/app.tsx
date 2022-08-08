@@ -7,7 +7,6 @@ import JournalPage from "../../pages/journal-page/journal-page";
 import SamplePage from "../../pages/sample-page/sample-page";
 import NotFoundPage from "../../pages/not-found-page/not-found-page";
 import Layout from '../layout/layout';
-import ContentsMobile from '../../pages/sample-page/contents-mobile/contents-mobile';
 
 const App: FC = () => {
   return (
