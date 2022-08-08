@@ -48,26 +48,6 @@ const MainPage: FC = () => {
       )}
       <LinkButton to={`/news`}>Ко всем новостям</LinkButton>
       <Materials />
-      <h1>Ищем редактора для дневника</h1>
-      {!isBannerLoading && bannerData && (
-        <>
-          <div
-            style={{ backgroundColor: "lightgrey" }}
-            onClick={() => handleNavigate(`/sample/${bannerData.sample}}`)}
-          >
-            <img
-              width={329}
-              height={440}
-              src={require(`../../images/${bannerData.photo}`)}
-              alt={"Картинка баннер"}
-            />
-            <p style={{ textTransform: "uppercase" }}>{bannerData.title}</p>
-            <p>{bannerData.text}</p>
-          </div>
-        </>
-      )}
-      <LinkButton to={`/sample/banner`}>Перейти к материалу</LinkButton>
-      <Materials />
       {!isBannerLoading && bannerData && (
         <section className={pageStyles.page__section}>
           <Banner data={bannerData} />

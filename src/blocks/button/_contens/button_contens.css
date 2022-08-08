@@ -11,12 +11,12 @@
   transform: rotate(-90deg);
   cursor: pointer;
   border-bottom: 1px solid white;
+  display: block;
 }
 
 @media screen and (max-width: 767px) {
   .button_contens {
-    left: -35px;
-    padding: 0 0 0 5px;
+    display: none;
   }
 }
 .button_contens:hover {
