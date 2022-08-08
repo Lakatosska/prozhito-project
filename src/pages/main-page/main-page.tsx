@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { dataAPI } from "../../services/api/data";
 import { JOURNAL_ITEM_TYPE } from "../../constants";
-import { INewsItem } from "../../services/types/news";
 import { IProjectItem } from "../../services/types/project";
 import { formatDate } from "../../utils/dateHelper";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +13,6 @@ import {
 import { Intro } from "../../components/intro/intro";
 import { LinkButton } from "../../components/link-button/link-button";
 import { Materials } from "../../components/materials/materials";
-import NewsItem from "../../components/news-item/news-item";
 import CardsSlider from "../../components/cards-slider/cards-slider";
 
 const MainPage: FC = () => {
@@ -46,27 +44,11 @@ const MainPage: FC = () => {
         </div>
       )}
       <Intro />
+
       <h1>Новости и события</h1>
       {!isNewsLoading && newsData && (
-        <ul
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            listStyleType: "none",
-          }}
-        >
-          {newsData.map((item: INewsItem) => (
-            <NewsItem
-              date={item.date}
-              tag={item.tag}
-              text={item.text}
-              image={item.image}
-              key={item.id}
-            />
-          ))}
-        </ul>
+        <CardsSlider title="Новости" textLink="Текст" cards={newsData} />
       )}
-
       <LinkButton to={`/news`}>Ко всем новостям</LinkButton>
       <Materials />
       <h1>Ищем редактора для дневника</h1>
@@ -162,15 +144,6 @@ const MainPage: FC = () => {
         </ul>
       )}
       <LinkButton to={`/not/found`}>Все спецпроекты</LinkButton>
-      <CardsSlider
-        title="Новости
-и события"
-        textLink="Ко всем новостям"
-      >
-        <NewsItem text="aaa" date="12/02/2022" image="Arrow_left.svg" />
-        <NewsItem text="aaa" date="12/02/2022" image="Arrow_right.svg" />
-        <NewsItem text="aaa" date="12/02/2022" image="Arrow_left.svg" />
-      </CardsSlider>
     </>
   );
 };
