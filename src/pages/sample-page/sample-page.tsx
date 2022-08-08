@@ -3,11 +3,18 @@ import {dataAPI} from "../../services/api/data";
 import {useParams} from "react-router-dom";
 import PopupSample from "./popup/popup";
 import ContentsSample from "./contents-sample/contents-sample";
+import soundImage from "../../images/player/soundtrack.svg";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import ContentsMobile from "./contents-mobile/contents-mobile";
 
 const SamplePage: FC = () => {
 
+  {/* mobile && scroll вверх => показывается оглавление вверху страницы */}
+
   const [popupOpen, setPopupOpen] = useState(true);
   const [contentsOpen, setContentsOpen] = useState(false);
+
+  const mobile = useMediaQuery('(max-width: 767px)');
 
   const {page} = useParams<{page?: string}>();
   const {isLoading, data} = dataAPI.useGetSampleContentQuery(page);
@@ -18,6 +25,31 @@ const SamplePage: FC = () => {
   const openContents = (): void => {
     setContentsOpen(true)
   };
+
+  const handleScroll = () => {
+    let lastScroll = 0;
+
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+    if (scrollTop < lastScroll) {
+      return true
+    }
+  }
+
+
+/*
+  const handleScroll = () => {
+    let lastScroll = 0;
+
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop < lastScroll) {
+      console.log('up');
+
+    } else if (scrollTop > lastScroll) {
+      console.log('down');
+    }
+  }
+  */
 
   return (
     <>
@@ -41,9 +73,12 @@ const SamplePage: FC = () => {
         <PopupSample closePopup={() => setPopupOpen(false)}/>
       )}
 
+      {mobile && <ContentsMobile />}
+
       <article className="article" dangerouslySetInnerHTML={{__html: data[0].content}}/>
 
-      {/*}
+
+{/*
         <h1>Опыт прочтения одного дневника</h1>
         <h2>Часть один</h2>
         <p>
@@ -218,7 +253,10 @@ const SamplePage: FC = () => {
           начинает относится ко мне как к юноше, а не ребенку старшего возраста.
           Я теперь довольно свободно могу уйти из дому в любое время».<br/>
         </p>
-      */}
+         */}
+
+
+
 
     </>
   )

@@ -1,0 +1,30 @@
+.contents {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  font-size: 14px;
+  z-index: 7;
+}
+
+.container {
+  padding: 12px 16px 14px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  min-height: 48px;
+  background-color: #fff;
+}
+
+.arrow__button {
+  margin-right: auto;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.menu__button {
+  margin-left: auto;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
