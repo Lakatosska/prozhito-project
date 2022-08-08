@@ -4,20 +4,6 @@ import {useParams} from "react-router-dom";
 import PopupSample from "./popup/popup";
 import ContentsSample from "./contents-sample/contents-sample";
 
-/*
-const SamplePage: FC = () => {
-  const {page} = useParams<{page?: string}>();
-  const {isLoading, data} = dataAPI.useGetSampleContentQuery(page);
-  if (isLoading || !data || data.length === 0) {
-    return null;
-  }
-  return (
-    <article className="article" dangerouslySetInnerHTML={{__html: data[0].content}}/>
-  )
-}
-*/
-
-
 const SamplePage: FC = () => {
 
   const [popupOpen, setPopupOpen] = useState(true);
