@@ -1,7 +1,7 @@
 .container {
-  border-top: 1px solid rgba(50, 50, 50, 0.3);
-  border-bottom: 1px solid rgba(50, 50, 50, 0.3);
-  min-height: 87px;
+  border-top: 1px solid #E7E4DE;
+  border-bottom: 1px solid #E7E4DE;
+  height: 88px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,22 +10,18 @@
   box-sizing: border-box;
 }
 
-/*
 @media screen and (max-width: 1023px) {
   .container {
-    border-top-color: rgba(165, 205, 171, 0.4);
-    border-bottom-color: rgba(165, 205, 171, 0.4);
-    text-transform: uppercase;
-    min-height: 68px;
+    height: 72px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .container {
-    min-height: 106px;
+    height: 104px;
+    padding: 24px;
   }
 }
-*/
 
 .links {
   list-style: none;
@@ -34,48 +30,72 @@
   display: flex;
   font: 16px/1.18 "PT sans", sans-serif;
 }
-/*
-@media screen and (max-width: 1023px) {
+
+@media screen and (max-width: 1023px) { /* планшетная версия до ширины экрана в 1023px*/
   .links {
-    font: 14px/1.21 "PT sans", sans-serif;
+    width: 612px;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .links {
-    min-height: 56px;
+    width: 246px;
+    gap: 20px 32px;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    max-width: 260px;
-    justify-content: space-around;
-    align-content: space-between;
   }
 }
-*/
 
 .item:not(:last-of-type) {
   margin-right: 60px;
 }
-/*
-@media screen and (max-width: 767px) {
-  .item:not(:last-of-type) {
-    margin-right: 0;
-  }
-  .item {
-    height: 18px;
-  }
-  .item:first-of-type {
-    margin-left: 13px;
-  }
-}
-*/
 
 .link {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 8px;
   color: #323232;
 }
 
 .link:hover {
   border-bottom: 1px solid #323232;
   margin-bottom: -1px;
+}
 
+@media screen and (max-width: 1023px) {
+  .link {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .item:not(:last-of-type) {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .link {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
