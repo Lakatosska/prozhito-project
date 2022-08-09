@@ -1,4 +1,4 @@
-import {FC, useState} from "react";
+import {FC, useState, useRef, useEffect} from "react";
 import {dataAPI} from "../../services/api/data";
 import {useParams} from "react-router-dom";
 import PopupSample from "./popup/popup";
@@ -12,6 +12,10 @@ const SamplePage: FC = () => {
   const [popupOpen, setPopupOpen] = useState(true);
   const [contentsOpen, setContentsOpen] = useState(false);
 
+  const [scrollingUp, setScrollingUp] = useState(false);
+  const prevScrollY = useRef(0);
+
+
   const mobile = useMediaQuery('(max-width: 767px)');
 
   const {page} = useParams<{page?: string}>();
@@ -24,8 +28,29 @@ const SamplePage: FC = () => {
     setContentsOpen(true)
   };
 
+  const onScroll = (e: any): void => {
+    const currentScrollY = e.target.scrollTop;
+    if (prevScrollY.current < currentScrollY && scrollingUp) {
+      setScrollingUp(false);
+    }
+    if (prevScrollY.current > currentScrollY && !scrollingUp) {
+      setScrollingUp(true);
+    }
+    prevScrollY.current = currentScrollY;
+    console.log(scrollingUp, currentScrollY);
+  };
+
+    /*
+  useEffect(() => {
+    document.addEventListener('scroll', onScroll);
+
+    return () =>
+    document.removeEventListener('scroll', onScroll);
+  });
+  */
+
   return (
-    <>
+    <div onScroll={onScroll} style={{height: 900, overflowY: "scroll" }}>
       <div className="typical__subtitle">
         <p className="typical__subtitle-part">детство</p>
         <p className="typical__subtitle-part">&#183;</p>
@@ -46,7 +71,7 @@ const SamplePage: FC = () => {
         <PopupSample closePopup={() => setPopupOpen(false)}/>
       )}
 
-      {mobile && <ContentsMobile />}
+      {mobile && scrollingUp && <ContentsMobile />}
 
       <article className="article" dangerouslySetInnerHTML={{__html: data[0].content}}/>
 
@@ -231,7 +256,7 @@ const SamplePage: FC = () => {
 
 
 
-    </>
+    </div>
   )
 }
 
