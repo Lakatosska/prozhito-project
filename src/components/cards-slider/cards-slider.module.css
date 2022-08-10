@@ -13,7 +13,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 33%;
+  width: 33.5%;
   max-width: 477px;
   background: var(--black-100);
   color: var(--color-text-white);
@@ -43,7 +43,7 @@ ul {
 
   gap: 20px;
   margin-inline-end: 32px;
-  margin-block-end: 40px;
+  margin-block-end: 36px;
 }
 
 .cardsSlider__textLink {
@@ -79,10 +79,13 @@ ul {
 .swiper__btnContainer {
   display: flex;
   gap: 12px;
-  padding-inline-end: 50px;
+  padding-inline-end: 32px;
   padding-block-end: 8px;
 }
 
 .swiper__scrollbar {
   left: 0 !important;
+}
+.swiper-horizontal>.swiper-scrollbar {
+  height: 4px;
 }

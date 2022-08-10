@@ -22,7 +22,7 @@
 .intro__cardTitle {
   font: 1.8em/1em "WF", sans-serif;
   margin: 0 auto 0;
-  max-width: calc(100% - 64px);
+  max-width: calc(100% - 60px);
   width: 100%;
   padding: 32px 0 0 0;
   color: #323232;
@@ -52,11 +52,11 @@
 
 .intro__cardSubtitle {
   font: 1em/1.3em "PT Sans", sans-serif;
-  margin: 12px auto 36px;
-  max-width: calc(100% - 64px);
+  margin: 11px auto 36px;
+  max-width: calc(100% - 60px);
   width: 100%;
   color: #323232;
-  min-height: 75px;
+  min-height: 80px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -81,7 +81,7 @@
 }
 
 .intro__linkContainer {
-  max-width: calc(100% - 64px);
+  max-width: calc(100% - 60px);
   width: 100%;
   margin: 0 auto 0;
   display: flex;

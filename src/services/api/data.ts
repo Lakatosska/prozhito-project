@@ -55,7 +55,7 @@ export const dataAPI = createApi({
         },
       }),
     }),
-    getDiaries: build.query<ReadonlyArray<IDiaryItem>, void>({
+    getDiaries: build.query<Array<IDiaryItem>, void>({
       query: () => ({
         url: '/diaries',
       }),

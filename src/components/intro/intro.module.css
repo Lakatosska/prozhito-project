@@ -1,6 +1,5 @@
 .intro {
   font: 20px "WF", "PT Sans", sans-serif;
-  margin: 0 auto;
   margin: 0;
   padding: 0;
   background-color: #f7f4f0;
@@ -76,7 +75,7 @@
   max-width: 1144px;
   margin: auto;
   box-sizing: border-box;
-  margin-top: 114px;
+  margin-top: 111px;
   margin-bottom: 164px;
 }
 

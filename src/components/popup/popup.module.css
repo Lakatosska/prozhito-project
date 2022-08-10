@@ -23,11 +23,11 @@
   background-size: cover;
   padding: 0;
   border: 0;
-  width: 24px;
-  height: 24px;
+  width: 17px;
+  height: 17px;
   position: absolute;
   top: 2px;
-  left: -27px;
+  left: -23px;
   cursor: pointer;
 }
 .popup__link {
