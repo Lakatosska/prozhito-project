@@ -108,6 +108,11 @@
     grid-template-columns: repeat(2, 362px);
   }
 }
+@media screen and (max-width: 800px) {
+  .intro__cards{
+    grid-template-columns: repeat(2, 354px);
+  }
+}
 
 @media screen and (max-width: 767px) {
   .intro__cards {
