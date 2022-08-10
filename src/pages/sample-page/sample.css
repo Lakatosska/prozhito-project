@@ -5,15 +5,6 @@
 @import url(../../blocks/button/_play-video/button_play-video.css);
 @import url(../../blocks/typical/typical__subtitle.css);
 @import url(../../blocks/typical/__subtitle-part/typical__subtitle-part.css);
-@import url(../../blocks/popup-contens/popup-contens.css);
-@import url(../../blocks/popup-contens/__link-container/popup-contens__link-container.css);
-@import url(../../blocks/popup-contens/__link/popup-content__link.css);
-@import url(../../blocks/popup-contens/__close-button/popup-contens__close-button.css);
-@import url(../../blocks/popup-inf/popup-inf.css);
-@import url(../../blocks/popup-inf/__close-button/popup-inf__close-button.css);
-@import url(../../blocks/popup-inf/__subtitle/popup-inf__subtitle.css);
-@import url(../../blocks/popup-inf/__title/popup-inf__title.css);
-@import url(../../blocks/popup-inf/_opened/popup-inf_opened.css);
 @import url(../../blocks/video/__container/video__container.css);
 @import url(../../blocks/video/video.css);
 @import url(../../blocks/video/__title/video__title.css);

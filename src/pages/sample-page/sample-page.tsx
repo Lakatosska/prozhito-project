@@ -3,7 +3,7 @@ import {dataAPI} from "../../services/api/data";
 import {useParams} from "react-router-dom";
 import PopupSample from "./popup/popup";
 import ContentsSample from "./contents-sample/contents-sample";
-import soundImage from "../../images/player/soundtrack.svg";
+//import soundImage from "../../images/player/soundtrack.svg";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import ContentsMobile from "./contents-mobile/contents-mobile";
 
@@ -51,6 +51,15 @@ const SamplePage: FC = () => {
 
   return (
     <div onScroll={onScroll} style={{height: 900, overflowY: "scroll" }}>
+      <nav>
+      <p className="pages-nav">
+          <a href="index.html" className="pages-nav__link">Главная страница</a> /
+          <a href="journal-projito.html" className="pages-nav__link"
+            >Журнал «Прожито»</a
+          >
+          / Опыт прочтения одного дневника
+        </p>
+      </nav>
       <div className="typical__subtitle">
         <p className="typical__subtitle-part">детство</p>
         <p className="typical__subtitle-part">&#183;</p>
