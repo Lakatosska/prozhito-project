@@ -34,7 +34,9 @@
   .intro__container {
     margin: 0 auto;
     width: calc(100% - 24px);
-    max-width: 336px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -63,7 +65,6 @@
 
 @media screen and (max-width: 767px) {
   .intro__title {
-    max-width: 336px;
     width: 100%;
     padding: 20px 0 0 0;
     font-size: 1.86em;
