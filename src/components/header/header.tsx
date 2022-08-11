@@ -27,7 +27,7 @@ const Header: FunctionComponent = () => {
   return (
     <header className={menuOpen?  `${headerStyles.header} ${headerStyles.header_theme_dark}` : headerStyles.header }>
       <div className={`${headerStyles.header__container} ${headerStyles.menu}`}>
-        <img src={desktop? logo : logo_mobile} alt='Логотип' />
+        <img src={desktop? logo : logo_mobile} alt='Логотип Прожито' />
         <HeaderNav desktop={desktop} open={menuOpen}/>
         {!desktop&&<button type='button' className={headerStyles.menu__button} onClick={toggleMobileMenu}>
           <img

@@ -7,17 +7,23 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 1400px) {
+  .materials {
+    padding: 56px 70px 75px;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .materials {
     padding: 32px 0;
-    width: calc(100% - 34px);
+    width: calc(100vw - 34px);
   }
 }
 
 @media screen and (max-width: 767px) {
   .materials {
     overflow: hidden;
-    width: calc(100% - 41px);
+    width: calc(100vw - 41px);
     margin-right: 0;
   }
 }
@@ -51,4 +57,12 @@
   padding: 0;
   list-style: none;
   transition: transform 1s ease-in;
+}
+
+@media screen and (max-width: 1023px){
+  .cards{
+    column-gap: 12px;
+    margin: 0 auto;
+    width: fit-content;
+  }
 }

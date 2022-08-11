@@ -1,6 +1,6 @@
 .card {
   width: 328px;
-  height: 428px;
+  min-height: 428px;
   background-color: #E7E4DE;
 }
 
@@ -13,7 +13,7 @@
 @media screen and (max-width: 1023px) {
   .card {
     width: 238px;
-    height: 360px;
+    min-height: 360px;
   }
 }
 
@@ -45,7 +45,11 @@
 .card__link:active {
   opacity: 0.8;
 }
-
+@media screen and (max-width: 1023px){
+  .card__link{
+    padding: 24px 12px 16px;
+  }
+}
 .card__tag {
   position: absolute;
   top: -16px;
@@ -85,21 +89,21 @@
   font-size: 26px;
   line-height: 1;
   font-family: 'WF', 'Times New Roman', serif;
-  height: 52px;
 }
 .cardTitle_short{
   max-width: 130px;
 }
 
-.cardTitleTop {
-  margin-bottom: 0;
-}
 
 @media screen and (max-width: 1023px) {
   .cardTitle {
     max-width: 213px;
-    max-height: 44px;
     line-height: 1.22;
+    font-size: 24px;
+    min-height: 44px;
+  }
+  .cardTitle_short{
+    max-width: 100px;
   }
 }
 
@@ -107,6 +111,7 @@
   .cardTitle {
     max-width: 252px;
     margin-bottom: 0;
+    font-size: 18px;
   }
 }
 
@@ -145,7 +150,6 @@
 .card__text {
   width: 100%;
   max-width: 296px;
-  height: 100%;
   margin: 0;
   padding: 0;
   font: normal 16px/1.31 'PT Sans', sans-serif;
@@ -156,7 +160,7 @@
 @media screen and (max-width: 1023px) {
   .card__text {
     max-width: 213px;
-    font-size: 1em;
+    font-size: 14px;
     line-height: 1.28;
   }
 }
@@ -164,7 +168,7 @@
 @media screen and (max-width: 767px) {
   .card__text {
     max-width: 252px;
-    font-size: 0.85em;
+    font-size: 12px;
     line-height: 1.33;
   }
 }
