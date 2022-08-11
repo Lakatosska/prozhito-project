@@ -59,3 +59,8 @@
     display: none;
   }
 }
+
+.header__links {
+  display: flex;
+  gap: 20px;
+}
