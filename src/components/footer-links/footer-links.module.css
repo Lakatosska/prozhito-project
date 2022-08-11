@@ -7,6 +7,7 @@
   justify-content: center;
   margin: 0;
   padding: 0;
+  padding-left: 12px;
   box-sizing: border-box;
 }
 
@@ -37,7 +38,6 @@
     gap: 60px;
     justify-content: space-between;
     align-items: center;
-    font-family: 'PT Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -47,7 +47,7 @@
 
 @media screen and (max-width: 767px) {
   .links {
-    width: 246px;
+    width: calc(100% - 30px);
     gap: 20px 32px;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@
   display: flex;
   align-items: center;
   margin: 0;
-  padding: 8px;
+  padding: 0;
   color: #323232;
 }
 
@@ -92,7 +92,7 @@
 
 @media screen and (max-width: 767px) {
   .link {
-    font-family: 'PT Sans';
+    font-family: 'PT Sans', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
