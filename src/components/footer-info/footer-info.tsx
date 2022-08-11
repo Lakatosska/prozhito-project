@@ -1,24 +1,29 @@
 import { FC } from 'react';
 import footerInfoStyles from './footer-info.module.css';
-import prozhito from '../../images/logo_Prozhito.svg';
 import logo_eu_ru from '../../images/logo_eu_ru.svg';
+import logo_eu_ru_mobile from '../../images/eu_logo_ru_mobile.svg';
+import logo from "../../images/logo_prozhito.svg";
+import logo_mobile from "../../images/logo_prozhito_mobile.svg"
 import telegram from '../../images/telegram.svg';
 import vk from '../../images/vk.svg';
+import useMediaQuery from "../../hooks/useMediaQuery";
+
 
 export const FooterInfo: FC = () => {
+  const desktop = useMediaQuery('(min-width: 768px)');
 
   return(
     <section className={footerInfoStyles.info}>
       <div className={footerInfoStyles.logo}>
         <a href="https://prozhito.org/" target="_blank" rel="noopener noreferrer" className={footerInfoStyles.link}>
-        <img
-          src={prozhito}
-          alt="Прожито"
+          <img
+          src={desktop? logo : logo_mobile}
+          alt={desktop.toString()}
         />
         </a>
         <a href="https://eusp.org/" target="_blank" rel="noopener noreferrer" className={footerInfoStyles.link}>
         <img
-          src={logo_eu_ru}
+          src={desktop? logo_eu_ru : logo_eu_ru_mobile}
           alt="Европейский университет в Санкт-Петербурге"
         />
         </a>

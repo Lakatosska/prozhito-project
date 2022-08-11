@@ -12,9 +12,9 @@
 opacity: .8;
 }
 
-@media screen and (max-width: 1023px) { /* планшетная версия до ширины экрана в 1023px*/
+@media screen and (max-width: 1400px) { /* планшетная версия до ширины экрана в 1023px*/
   .card {
-      max-width: 361px;
+      max-width: 359px;
       min-height: 354px;
       flex-direction: column;
       margin-right: 14px;
@@ -41,7 +41,7 @@ opacity: .8;
   margin-right: 32px;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1400px) {
   .image {
       max-width: 359px;
       height: 182px;
@@ -63,7 +63,7 @@ opacity: .8;
   text-align: left;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1400px) {
   .text {
     width: 338px;
     height: 172px;
@@ -79,7 +79,7 @@ opacity: .8;
     border-top: none;
 }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1400px) {
   .field {
       margin: 0 auto;
       width: 338px;
@@ -94,7 +94,7 @@ opacity: .8;
 }
 
 .title {
-  font-family: 'WF';
+  font-family: 'WF', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -102,16 +102,17 @@ opacity: .8;
   margin: 28px 0 0;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1400px) {
   .title {
-    font: 1.28em/1.22 'WF', sans-serif;
     margin: 12px 0 0;
+    font-size: 18px;
+    line-height: 1.22;
   }
 }
 
 @media screen and (max-width: 767px) {
   .title {
-    font-family: 'WF';
+    font-family: 'WF', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -120,7 +121,7 @@ opacity: .8;
 }
 
 .description {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -131,9 +132,9 @@ opacity: .8;
   margin: 18px 0 0;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1400px) {
   .description {
-    font-family: 'PT Sans';
+    font-family: 'PT Sans', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -144,17 +145,17 @@ opacity: .8;
 }
 
 .date {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;margin: 0 0 17px;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1400px) {
   .date {
     margin: 0 0 12px 0;
-    font-family: 'PT Sans';
+    font-family: 'PT Sans', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -165,7 +166,7 @@ opacity: .8;
 @media screen and (max-width: 767px) {
   .date {
     margin: 24px 0 12px 8px;
-    font-family: 'PT Sans';
+    font-family: 'PT Sans', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

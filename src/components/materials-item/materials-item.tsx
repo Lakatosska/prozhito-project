@@ -6,19 +6,21 @@ import materialsItemStyle from "./materials-item.module.css";
 export const MaterialsItem: FC<IDiaryItem> = (diaryData: IDiaryItem) => {
   const { name, image, text, tag, sample } = diaryData;
 
+  const titleClassName = name.split(' ').length<3
+  ? `${materialsItemStyle.cardTitle} ${materialsItemStyle.cardTitle_short}`
+    : `${materialsItemStyle.cardTitle}`
+
+
    return(
     <li className={materialsItemStyle.card}>
       <a href={`/sample/${sample}`} className={materialsItemStyle.card__link}>
         <p className={materialsItemStyle.card__tag}>{tag}</p>
-        <p className={`${materialsItemStyle.cardTitle} ${materialsItemStyle.cardTitleTop}`}>
-          {name.field1}
-        </p>
-        <p className={`${materialsItemStyle.cardTitle}`}>
-          {name.field2}
+        <p className={titleClassName}>
+          {name}
         </p>
         <img
           src={require(`../../images/${image}`)}
-          alt={`фотография ${name.field1}+${name.field2}`}
+          alt={`фотография ${name}`}
           className={materialsItemStyle.card__image}
         />
         <p className={materialsItemStyle.card__text}>
