@@ -98,8 +98,8 @@
 @media screen and (max-width: 1023px) {
   .cardTitle {
     max-width: 213px;
-    line-height: 1.22;
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 22px;
     min-height: 44px;
   }
   .cardTitle_short{

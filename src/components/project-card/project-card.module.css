@@ -14,7 +14,7 @@ opacity: .8;
 
 @media screen and (max-width: 1400px) { /* планшетная версия до ширины экрана в 1023px*/
   .card {
-      max-width: 361px;
+      max-width: 359px;
       min-height: 354px;
       flex-direction: column;
       margin-right: 14px;
@@ -104,8 +104,9 @@ opacity: .8;
 
 @media screen and (max-width: 1400px) {
   .title {
-    font: 1.28em/1.22 'WF', sans-serif;
     margin: 12px 0 0;
+    font-size: 18px;
+    line-height: 1.22;
   }
 }
 

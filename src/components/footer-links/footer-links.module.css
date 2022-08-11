@@ -13,7 +13,8 @@
 
 @media screen and (max-width: 1023px) {
   .container {
-    height: 72px;
+    height: 70px;
+    padding: 0;
   }
 }
 

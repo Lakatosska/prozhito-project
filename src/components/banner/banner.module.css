@@ -66,7 +66,12 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 780px) {
+  .banner{
+    column-gap: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
   .banner {
     grid-template-columns: minmax(30%, 336px);
     grid-row-gap: 16px;

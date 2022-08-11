@@ -98,6 +98,10 @@
     background: var(--button-pressed);
     border: 1px solid var(--button-pressed);
   }
+  .linkButton_size_large{
+    height: 32px;
+    width: 32px;
+  }
 }
 
 @media screen and (max-width: 480px) {

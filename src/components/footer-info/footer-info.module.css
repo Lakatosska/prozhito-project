@@ -7,7 +7,7 @@
 
 @media screen and (max-width: 1023px) {
   .info {
-    padding: 28px 60px 20px;
+    padding: 28px 70px 20px;
     height: 136px;
     box-sizing: border-box;
     display: grid;
@@ -102,6 +102,7 @@
     justify-content: right;
     grid-gap: 32px;
     font: 14px/1.21 "PT sans", sans-serif;
+    padding-right: 3px;
   }
 }
 
@@ -201,6 +202,8 @@
 @media screen and (max-width: 1023px) {
   .legals {
     padding-top: 12px;
+    padding-right: 3px;
+    margin: 0;
     flex-direction: column;
     justify-items: flex-end;
     font: 14px/1.21 "PT sans", sans-serif;
