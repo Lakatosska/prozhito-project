@@ -85,8 +85,8 @@
 @media screen and (max-width: 767px) {
   .popup {
     padding: 12px 16px;
-    width: 160px;
-    top: 53px;
+    width: 157px;
+    top: 54px;
     display: flex;
   }
   .popup__closeButton{
@@ -103,7 +103,7 @@
   }
   .popup__subtitle {
     width: 130px;
-    padding-top: 4px;
+    padding-top: 5px;
     font-size: 12px;
     margin: auto;
   }

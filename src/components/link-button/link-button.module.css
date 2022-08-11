@@ -113,6 +113,13 @@
     width: 11.07px;
   }
 }
+.linkButton_size_large{
+  height: 50px;
+  width: 50px;
+}
+.linkButton_size_large .linkButton__arrow{
+  width: 21.61px;
+}
 
 .linkButton_color_transparent {
   background: transparent;

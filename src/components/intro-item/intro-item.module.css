@@ -74,7 +74,7 @@
     max-width: calc(100% - 24px);
     width: 100%;
     min-height: 35px;
-    margin: 10px auto 12px;
+    margin: 10px auto 13px;
     font-size: 1em;
     line-height: 1.29em;
   }
@@ -97,7 +97,7 @@
 
 @media screen and (max-width: 767px) {
   .intro__linkContainer {
-    padding-bottom: 15px;
+    padding-bottom: 12px;
     max-width: calc(100% - 24px);
   }
 }
