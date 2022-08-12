@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from "react";
 import headerStyles from "./header.module.css";
-import logo from "../../images/logo_prozhito.svg";
+import logo from "../../images/logo_Prozhito.svg";
 import logo_mobile from "../../images/logo_prozhito_mobile.svg";
 import logo_eu_ru from "../../images/logo_eu_ru.svg";
 import openImg from "../../images/menu-mobil-open.svg";

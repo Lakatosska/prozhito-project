@@ -11,7 +11,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import useMediaQuery from "../../hooks/useMediaQuery";
-import styles from "../cards-slider/cards-slider.module.css";
 
 interface IMaterialsProps{
   data: IDiaryItem[]
@@ -46,15 +45,16 @@ export const Materials: FC<IMaterialsProps> = ({data}) => {
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={12}
-        slidesPerView={1.1}
+        slidesPerView={'auto'}
         pagination={{ el: '.pagination',
-          clickable: true }}
+        clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
         className={materialsStyle.swiper}
         >
           {data.map((item) =>
-            <SwiperSlide><MaterialsItem
+            <SwiperSlide
+            className={materialsStyle.swiperSlide}><MaterialsItem
               id={item.id}
               name={item.name}
               image={item.image}
