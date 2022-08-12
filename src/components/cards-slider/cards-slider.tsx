@@ -54,7 +54,7 @@ const Slider: FC<{ arr: readonly any[]; coef: number }> = ({ arr, coef }) => {
         horizontalClass: `${styles.swiper__scrollbar}`,
       }}
       spaceBetween={20}
-      slidesPerView={coef}
+      slidesPerView={2.6}
       className={styles.swiper}
     >
       <div className={styles.swiper__navContainer}>
@@ -88,20 +88,23 @@ const CardsSlider: FC<ICardsSliderProps> = ({
   textLink,
   cards,
 }: ICardsSliderProps) => {
-  const testRef = useRef(null);
+  const sliderContainerRef = useRef(null);
 
   const getWidth = () => window.innerWidth;
   const [width, setWidth] = useState(getWidth());
-  const [sliderContainer, setSliderContainer] = useState(0);
+  const [sliderContainer, setSliderContainer] = useState(2.78);
   const getWidthEl = (a: any) => {
-    const x = a.current.offsetWidth;
-    return x / 328;
+    // const x = a.current.offsetWidth;
+    // return x / 328;
+    return (2.78 / 1440) * 100;
   };
 
   useEffect(() => {
+    setSliderContainer(getWidthEl(sliderContainerRef));
     const resizeListener = () => {
       setWidth(getWidth());
-      testRef.current && setSliderContainer(getWidthEl(testRef));
+      sliderContainerRef.current &&
+        setSliderContainer(getWidthEl(sliderContainerRef));
     };
     window.addEventListener("resize", resizeListener);
     return () => {
@@ -124,7 +127,10 @@ const CardsSlider: FC<ICardsSliderProps> = ({
           <LinkButton size="large" round />
         </div>
       </div>
-      <div className={styles.cardsSlider__sliderContainer} ref={testRef}>
+      <div
+        className={styles.cardsSlider__sliderContainer}
+        ref={sliderContainerRef}
+      >
         <Slider arr={cards} coef={sliderContainer} />
       </div>
     </div>

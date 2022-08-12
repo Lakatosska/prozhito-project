@@ -24,10 +24,10 @@ const MainPage: FC = () => {
 
   return (
     <main>
-      {!isPopupLoading && popupData && popupOpen && (
+      {/* {!isPopupLoading && popupData && popupOpen && (
         <Popup data={popupData} closePopup={() => setPopupOpen(false)} />
       )}
-      <Intro />
+      <Intro /> */}
       {!isNewsLoading && newsData && (
         <section>
           <CardsSlider
@@ -37,22 +37,22 @@ const MainPage: FC = () => {
           />
         </section>
       )}
-      {!isDiaryLoading && diaryData && <Materials data={diaryData} />}
+      {/* {!isDiaryLoading && diaryData && <Materials data={diaryData} />}
       {!isBannerLoading && bannerData && (
         <section className={pageStyles.page__section}>
           <Banner data={bannerData} />
         </section>
-      )}
-      {!isJournalLoading && journalData && (
-        <section>
-          {/*<CardsSlider*/}
-          {/*  title="Журнал «Прожито»"*/}
-          {/*  textLink="Посмотреть всю подборку"*/}
-          {/*  cards={journalData}*/}
-          {/*/>*/}
-        </section>
-      )}
-      <Project />
+      )} */}
+      {/* {!isJournalLoading && journalData && ( */}
+      <section>
+        {/*<CardsSlider*/}
+        {/*  title="Журнал «Прожито»"*/}
+        {/*  textLink="Посмотреть всю подборку"*/}
+        {/*  cards={journalData}*/}
+        {/*/>*/}
+      </section>
+      {/* )} */}
+      {/* <Project /> */}
     </main>
   );
 };
