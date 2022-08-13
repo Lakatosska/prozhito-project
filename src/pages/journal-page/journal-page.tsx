@@ -8,6 +8,8 @@ import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem, TJournalFilt
 import Tabs from "../../components/tabs/tabs";
 import TabItem from "../../components/tabs-item/tabs-item";
 import journalPageStyles from "./journal-page.module.css";
+import JournalItems from "../../components/journal-items/journal-items";
+
 
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
@@ -29,7 +31,7 @@ const JournalPage: FC = () => {
   }
 
   return (
-    <>
+    <main className={journalPageStyles.main}>
       <h1 className={journalPageStyles.heading}>Журнал "Прожито"</h1>
       <Tabs>
         <TabItem value={"all"} selected={selectedTab === "all"} setSelected={handleFilter} />
@@ -38,37 +40,17 @@ const JournalPage: FC = () => {
         <TabItem value={"experience"} selected={selectedTab === "experience"} setSelected={handleFilter} />
       </Tabs>
       {
-        !isJournalLoading && journal &&
-        <ul style={{listStyleType: 'none'}}>
-          {
-            journal.map((item: IJournalItem) => item.type === "experience" ? (
-              <li key={item.id}>
-                <div style={{padding: '10px'}}>
-                  <p>{item.id}</p>
-                  <p>{JOURNAL_ITEM_TYPE[item.type]}</p>
-                  <img width={204} height={204} src={require(`../../images/${item.image}`)} alt={'Картинка журнала'}/>
-                  <p>{(item as IJournalExperienceItem).name}</p>
-                </div>
-              </li>
-            ) : (
-              <li key={item.id}>
-                <div style={{padding: '10px'}}>
-                  <p>{item.id}</p>
-                  <p>{JOURNAL_ITEM_TYPE[item.type]}</p>
-                  <img width={328} height={526} src={require(`../../images/${item.image}`)} alt={'Картинка журнала'}/>
-                  <p>{(item as IJournalMagazineItem).title}</p>
-                  <p>{(item as IJournalMagazineItem).subtitle}</p>
-                </div>
-              </li>
-            ))
-          }
+        !isJournalLoading && journal && (
+        <div>
+          <JournalItems />
           {
             total > journal.length &&
             <button onClick={handleLoad}>Загрузить еще</button>
           }
-        </ul>
+        </div>
+        )
       }
-    </>
+    </main>
   )
 }
 
