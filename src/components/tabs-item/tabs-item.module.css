@@ -1,0 +1,21 @@
+.tab {
+  padding: 16px 10px;
+  margin-right: 32px;
+}
+
+.tab:last-child {
+  margin-right: 0;
+}
+
+.button {
+  font: normal 14px "PT Sans", sans-serif;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.line {
+  text-decoration-line: underline;
+  text-underline-offset: 16px;
+}

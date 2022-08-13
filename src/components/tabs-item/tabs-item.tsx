@@ -1,6 +1,7 @@
 import {FC} from "react";
 import {TJournalFilter} from "../../services/types/journal";
 import {JOURNAL_ITEM_TYPE} from "../../constants";
+import tabsItemStyles from "./tabs-item.module.css";
 
 type TTabItemProps = {
   value : TJournalFilter,
@@ -8,11 +9,11 @@ type TTabItemProps = {
   setSelected : (value: TJournalFilter) => void
 }
 
-const TabItem: FC<TTabItemProps> = ({value, selected, setSelected}) => {
+const TabsItem: FC<TTabItemProps> = ({value, selected, setSelected}) => {
   return (
-    <li style={{padding: 10}}>
-      <button
-        style={{textDecoration: selected ? "underline" : "none"}}
+    <li className={tabsItemStyles.tab}>
+      <button className={`${tabsItemStyles.button}
+        ${selected && `${tabsItemStyles.line}`}`}
         onClick={() => {
           if (!selected) {
             setSelected(value)
@@ -23,4 +24,4 @@ const TabItem: FC<TTabItemProps> = ({value, selected, setSelected}) => {
   )
 }
 
-export default TabItem
+export default TabsItem

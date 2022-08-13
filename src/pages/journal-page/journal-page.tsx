@@ -6,7 +6,8 @@ import {dataJournalSelector, filterJournalSelector, pageJournalSelector, totalJo
 import {setJournalFilter, setJournalPage} from "../../services/slices/journal";
 import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem, TJournalFilter} from "../../services/types/journal";
 import Tabs from "../../components/tabs/tabs";
-import TabItem from "../../components/tabs/tab-item";
+import TabItem from "../../components/tabs-item/tabs-item";
+import journalPageStyles from "./journal-page.module.css";
 
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const JournalPage: FC = () => {
 
   return (
     <>
-      <h1>Страница журнала</h1>
+      <h1 className={journalPageStyles.heading}>Журнал "Прожито"</h1>
       <Tabs>
         <TabItem value={"all"} selected={selectedTab === "all"} setSelected={handleFilter} />
         <TabItem value={"topic"} selected={selectedTab === "topic"} setSelected={handleFilter} />

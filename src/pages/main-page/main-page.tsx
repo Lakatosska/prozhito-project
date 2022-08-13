@@ -30,11 +30,13 @@ const MainPage: FC = () => {
       <Intro />
       {!isNewsLoading && newsData && (
         <section>
+          {/*
           <CardsSlider
             title="Новости и события"
             textLink="Ко всем новостям"
             cards={newsData}
           />
+      */}
         </section>
       )}
       {!isDiaryLoading && diaryData && <Materials data={diaryData} />}
