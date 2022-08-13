@@ -8,8 +8,24 @@ import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem, TJournalFilt
 import Tabs from "../../components/tabs/tabs";
 import TabItem from "../../components/tabs-item/tabs-item";
 import journalPageStyles from "./journal-page.module.css";
-import JournalItems from "../../components/journal-items/journal-items";
+import { JournalItemDefault, JournalItemExperience } from "../../components/journal-item/journal-item";
 
+
+/*
+      "id"       : 1,
+      "type"     : "experience",
+      "image"    : "lipkina.jpg",
+      "text"     : "историк, доцент кафедры теологии иудаизма, библеистики и иудаики РГГУ и ст. н. с. ШАГИ РАНХиГС",
+      "name"     : "Галина Зеленина о дневниках Леонида Липкина"
+    },
+    {
+      "id"       : 2,
+      "type"     : "topic",
+      "image"    : "stalin.jpg",
+      "text"     : "Все газеты впервые опубликовали портреты т.Сталина и многочисленные статьи. В них т.Сталин именуется вождём мирового пролетариата.",
+      "title"    : "Сталин умер",
+      "subtitle"
+*/
 
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
@@ -42,7 +58,35 @@ const JournalPage: FC = () => {
       {
         !isJournalLoading && journal && (
         <div>
-          <JournalItems />
+          <ul className={journalPageStyles.list}>
+          <JournalItemDefault />
+          <JournalItemExperience />
+          <JournalItemExperience />
+
+        {/*}
+          {
+            journal.map((item: IJournalItem) => item.type === "experience" ? (
+              <JournalItemExperience
+                name={item.name}
+                image={item.image}
+                text={item.text}
+                type={item.type}
+                key={item.id}
+              />
+            ) : (
+              <JournalItemDefault
+                title={item.title}
+                subtitle={item.subtitle}
+                image={item.image}
+                text={item.text}
+                type={item.type}
+                key={item.id}
+              />
+            ))
+          }
+
+        */}
+          </ul>
           {
             total > journal.length &&
             <button onClick={handleLoad}>Загрузить еще</button>
@@ -55,3 +99,38 @@ const JournalPage: FC = () => {
 }
 
 export default JournalPage
+
+/*
+{
+        !isJournalLoading && journal &&
+        <ul style={{listStyleType: 'none'}}>
+          {
+            journal.map((item: IJournalItem) => item.type === "experience" ? (
+              <li key={item.id}>
+                <div style={{padding: '10px'}}>
+                  <p>{item.id}</p>
+                  <p>{JOURNAL_ITEM_TYPE[item.type]}</p>
+                  <img width={204} height={204} src={require(`../../images/${item.image}`)} alt={'Картинка журнала'}/>
+                  <p>{(item as IJournalExperienceItem).name}</p>
+                </div>
+              </li>
+            ) : (
+              <li key={item.id}>
+                <div style={{padding: '10px'}}>
+                  <p>{item.id}</p>
+                  <p>{JOURNAL_ITEM_TYPE[item.type]}</p>
+                  <img width={328} height={526} src={require(`../../images/${item.image}`)} alt={'Картинка журнала'}/>
+                  <p>{(item as IJournalMagazineItem).title}</p>
+                  <p>{(item as IJournalMagazineItem).subtitle}</p>
+                </div>
+              </li>
+            ))
+          }
+          {
+            total > journal.length &&
+            <button onClick={handleLoad}>Загрузить еще</button>
+          }
+        </ul>
+      }
+
+*/

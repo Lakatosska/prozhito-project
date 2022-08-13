@@ -15,12 +15,6 @@ import journalItemStyles from "./journal-item.module.css";
 
 export const JournalItemDefault: FC = () => {
 
-  const dispatch = useDispatch();
-  const filter = useSelector(filterJournalSelector);
-  const page = useSelector(pageJournalSelector);
-  const total = useSelector(totalJournalSelector);
-  const journal = useSelector(dataJournalSelector);
-
   return (
     <li className={journalItemStyles.item} key={1}>
       <article className={journalItemStyles.card}>
@@ -40,11 +34,6 @@ export const JournalItemDefault: FC = () => {
 
 
 export const JournalItemExperience: FC = () => {
-  const dispatch = useDispatch();
-  const filter = useSelector(filterJournalSelector);
-  const page = useSelector(pageJournalSelector);
-  const total = useSelector(totalJournalSelector);
-  const journal = useSelector(dataJournalSelector);
 
   return (
     <li className={journalItemStyles.item} key={1}>
