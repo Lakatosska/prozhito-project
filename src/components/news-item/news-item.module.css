@@ -3,6 +3,8 @@ li {
 }
 
 .newsItem {
+  max-width: 328px;
+  min-width: 180px;
   display: grid;
   grid-template-columns: minmax(min-content, 100px) minmax(min-content, 255px);
   row-gap: 1.3888vw;
@@ -17,6 +19,8 @@ li {
   display: block;
   justify-self: end;
   width: 14.7222vw;
+  max-width: 212px;
+  min-width: 102px;
   aspect-ratio: 212/223;
   height: auto;
 }

@@ -15,6 +15,7 @@ ul {
   justify-content: space-between;
   width: 33.5%;
   max-width: 477px;
+  min-width: 253px;
   background: var(--black-100);
   color: var(--color-text-white);
 }

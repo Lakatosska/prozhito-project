@@ -1,11 +1,4 @@
-import {
-  FC,
-  MutableRefObject,
-  ReactElement,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { FC } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper";
 import "swiper/css";
@@ -14,13 +7,13 @@ import "swiper/css/scrollbar";
 
 import { LinkButton } from "../link-button/link-button";
 
-import NewsItem from "../news-item/news-item";
 import styles from "./cards-slider.module.css";
 
 interface ICardsSliderProps {
   title: string;
   textLink: string;
   cards: readonly any[];
+  sliderTitle: string;
 }
 
 const NavBtn: FC<{ direction: "left" | "right" }> = ({ direction }) => {
@@ -43,7 +36,7 @@ const NavBtn: FC<{ direction: "left" | "right" }> = ({ direction }) => {
  *
  * @arr Подготовленный массив элементов для слайдера
  */
-const Slider: FC<{ arr: readonly any[]; coef: number }> = ({ arr, coef }) => {
+const Slider: FC<{ arr: readonly any[]; title: string }> = ({ arr, title }) => {
   return (
     <Swiper
       wrapperTag="ul"
@@ -54,14 +47,14 @@ const Slider: FC<{ arr: readonly any[]; coef: number }> = ({ arr, coef }) => {
         horizontalClass: `${styles.swiper__scrollbar}`,
       }}
       spaceBetween={20}
-      slidesPerView={2.6}
+      slidesPerView={2.78}
       className={styles.swiper}
     >
       <div className={styles.swiper__navContainer}>
         <h2
           className={`${styles.cardsSlider__title} ${styles.cardsSlider__sliderTitle}`}
         >
-          Свежее
+          {title}
         </h2>
         <div className={styles.swiper__btnContainer}>
           <NavBtn direction="left" />
@@ -70,13 +63,7 @@ const Slider: FC<{ arr: readonly any[]; coef: number }> = ({ arr, coef }) => {
       </div>
       {arr.map((item: any) => (
         <SwiperSlide key={item.id} tag="li" className={styles.swiper__slide}>
-          <NewsItem
-            date={item.date}
-            tag={item.tag}
-            text={item.text}
-            image={item.image}
-            key={item.id}
-          />
+          {item}
         </SwiperSlide>
       ))}
     </Swiper>
@@ -87,33 +74,8 @@ const CardsSlider: FC<ICardsSliderProps> = ({
   title,
   textLink,
   cards,
+  sliderTitle,
 }: ICardsSliderProps) => {
-  const sliderContainerRef = useRef(null);
-
-  const getWidth = () => window.innerWidth;
-  const [width, setWidth] = useState(getWidth());
-  const [sliderContainer, setSliderContainer] = useState(2.78);
-  const getWidthEl = (a: any) => {
-    // const x = a.current.offsetWidth;
-    // return x / 328;
-    return (2.78 / 1440) * 100;
-  };
-
-  useEffect(() => {
-    setSliderContainer(getWidthEl(sliderContainerRef));
-    const resizeListener = () => {
-      setWidth(getWidth());
-      sliderContainerRef.current &&
-        setSliderContainer(getWidthEl(sliderContainerRef));
-    };
-    window.addEventListener("resize", resizeListener);
-    return () => {
-      window.removeEventListener("resize", resizeListener);
-    };
-  }, []);
-
-  console.log(width, sliderContainer);
-
   return (
     <div className={styles.cardsSlider}>
       <div className={styles.cardsSlider__bgSection}>
@@ -127,11 +89,8 @@ const CardsSlider: FC<ICardsSliderProps> = ({
           <LinkButton size="large" round />
         </div>
       </div>
-      <div
-        className={styles.cardsSlider__sliderContainer}
-        ref={sliderContainerRef}
-      >
-        <Slider arr={cards} coef={sliderContainer} />
+      <div className={styles.cardsSlider__sliderContainer}>
+        <Slider arr={cards} title={sliderTitle} />
       </div>
     </div>
   );

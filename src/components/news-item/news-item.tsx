@@ -9,9 +9,11 @@ const NewsItem: FC<TNewsItemProps> = ({ date, tag, image, text }) => {
   return (
     <article className={styles.newsItem}>
       <div className={styles.newsItem__titleContainer}>
-        <time dateTime={date} className={styles.newsItem__date}>
-          {formatDate(date, "short")}
-        </time>
+        {date && (
+          <time dateTime={date} className={styles.newsItem__date}>
+            {formatDate(date, "short")}
+          </time>
+        )}
         <h3 className={styles.newsItem__title}>{tag}</h3>
       </div>
       <img
