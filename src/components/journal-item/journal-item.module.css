@@ -5,7 +5,7 @@
 
 @media screen and (max-width: 1023px) {
   .item {
-    height: 277px;
+    height: 280px;
   }
 }
 
@@ -60,6 +60,7 @@
   color: var(--black-100);
 }
 
+
 .type {
   margin: 0;
   position: relative;
@@ -73,6 +74,10 @@
     font-size: 12px;
     line-height: 16px;
     padding: 12px 8px 0;
+  }
+  .name{
+    font-size: 18px;
+    line-height: 1.22;
   }
 }
 
@@ -128,6 +133,11 @@
   @media screen and (max-width: 1023px) {
     .quote {
       display: none;
+    }
+    .quote_type_experience{
+      display: block;
+      font-size: 12px;
+      line-height: 16px;
     }
 }
 

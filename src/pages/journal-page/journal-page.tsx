@@ -9,6 +9,7 @@ import TabItem from "../../components/tabs-item/tabs-item";
 import journalPageStyles from "./journal-page.module.css";
 import { JournalItem } from "../../components/journal-item/journal-item";
 import {LinkButton} from "../../components/link-button/link-button";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 
 /*
@@ -33,20 +34,27 @@ const JournalPage: FC = () => {
   const page = useSelector(pageJournalSelector)
   const total = useSelector(totalJournalSelector)
   const journal = useSelector(dataJournalSelector);
-  console.log(journal)
   const [selectedTab, setSelectedTab] = useState<TJournalFilter>(filter)
 
   const { isLoading: isJournalLoading, data: journalData } =
     dataAPI.useGetMainJournalQuery();
   console.log(journalData)
   const handleLoad = () => {
-    dispatch(setJournalPage(page + 1))
+    dispatch(setJournalPage(page + 1));
+    console.log(page)
   }
 
   const handleFilter = (value: TJournalFilter) => {
     setSelectedTab(value)
     dispatch(setJournalFilter(value))
   }
+  const tablet = useMediaQuery("(max-width: 1024px)");
+  const mobile = useMediaQuery("(max-width: 425px)");
+  let journalDataToShow = journalData;
+  if(tablet&&journalData) journalDataToShow = journalData.slice(0,6);
+  if(mobile&&journalData) journalDataToShow = journalData.slice(0,3)
+
+
 
   return (
     <main className={journalPageStyles.main}>
@@ -58,9 +66,9 @@ const JournalPage: FC = () => {
         <TabItem value={"project"} selected={selectedTab === "project"} setSelected={handleFilter} />
         <TabItem value={"experience"} selected={selectedTab === "experience"} setSelected={handleFilter} />
       </Tabs>
-      {!isJournalLoading && journalData && (
+      {!isJournalLoading && journalDataToShow && (
         <ul className={journalPageStyles.list}>
-          {journalData.map(item =>
+          {journalDataToShow.map(item =>
             <JournalItem key={item.id} item={item}/>)}
         </ul>
       )

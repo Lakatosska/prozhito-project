@@ -19,3 +19,16 @@
   text-decoration-line: underline;
   text-underline-offset: 16px;
 }
+@media screen and (max-width: 1023px) {
+  .tab {
+    padding: 0;
+    margin-right: 17px;
+  }
+  .line {
+    text-underline-offset: 5px;
+  }
+  .button {
+    font-size: 12px;
+    line-height: 1.33;
+  }
+}

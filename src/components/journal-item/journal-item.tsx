@@ -16,7 +16,7 @@ console.log(item.type)
         <article className={`${journalItemStyles.cardExp}`}>
           <p className={journalItemStyles.name}>{item.name}</p>
           <img src={require(`../../images/${item.image}`)} className={journalItemStyles.imgExp} alt={'Картинка журнала'}/>
-          <p className={journalItemStyles.quote}>{item.text}</p>
+          <p className={`${journalItemStyles.quote} ${journalItemStyles.quote_type_experience}`}>{item.text}</p>
           <p className={journalItemStyles.typeExp}>Опыт читателя</p>
         </article>
       </li>)
