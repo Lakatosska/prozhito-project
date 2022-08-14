@@ -84,12 +84,12 @@ const SamplePage: FC = () => {
 
         {mobile && scrollingUp && <ContentsMobile />}
 
-        {/*}
+
 
         <article className="article" dangerouslySetInnerHTML={{__html: data[0].content}}/>
-        */}
 
 
+        {/*}
         <article className="article">
           <h1>Опыт прочтения одного дневника</h1>
           <h2>Часть один</h2>
@@ -184,22 +184,24 @@ const SamplePage: FC = () => {
                   type='button'
                   id='button-play'
                   className='player__button-play'
-                ></button>
+                ><img src='/images/player/Play.svg'alt='Кнопка play'/></button>
                 <button
                   type='button'
                   className='player__button-reverse-anticlockwise'
-                ></button>
+                ><img src='/images/player/Reverse_anticlockwise.svg'alt='Кнопка'/></button>
                 <button
                   type='button'
                   className='player__button-reverse-clockwise'
-                ></button>
+                ><img src='/images/player/Reverse_clockwise.svg'alt='Кнопка'/></button>
                 <img
                   src={soundImage}
                   alt='Звуковая дорожка'
                   className='player__soundtrack'
                 />
                 <span className='player__time'>15:20</span>
-                <button type='button' className='player__button-mute'></button>
+                <button type='button' className='player__button-mute'>
+                  <img src='/images/player/Mute.svg'alt='Кнопка'/>
+                </button>
               </div>
             </div>
             <figcaption>
@@ -266,9 +268,7 @@ const SamplePage: FC = () => {
             Я теперь довольно свободно могу уйти из дому в любое время».<br/>
           </p>
           </article>
-
-
-
+        */}
 
       </div>
     </main>
