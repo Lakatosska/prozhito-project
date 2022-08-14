@@ -7,11 +7,11 @@
 
 @media screen and (max-width: 1023px) {
   .info {
-    padding: 28px 60px 20px;
+    padding: 28px 70px 20px;
     height: 136px;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: (294px, 1fr);
+    grid-template-columns: 294px 1fr;
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
     "logo social"
@@ -54,13 +54,14 @@
   .logo {
     margin: 0 auto;
     order: 2;
-    width: 256px;
-    height: 26px;
+    width: calc(100% - 80px);
+    max-width: 500px;
+    min-width: 256px;
   }
 }
 
 .social {
-  margin-left: 190px;
+  margin-left: 197px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -90,7 +91,8 @@
   grid-template-columns: 1fr;
   justify-content: space-between;
   text-align: left;
-  font: 16px/1.18 "PT sans", sans-serif;
+  font: 20px/1.3 "PT sans", sans-serif;
+  color: var(--black-100);
 }
 
 @media screen and (max-width: 1023px) {
@@ -101,13 +103,13 @@
     justify-content: right;
     grid-gap: 32px;
     font: 14px/1.21 "PT sans", sans-serif;
+    padding-right: 3px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .links {
     min-height: 56px;
-    flex-wrap: wrap;
     max-width: 260px;
     grid-gap: 24px;
     justify-content: space-around;
@@ -140,8 +142,8 @@
 
 .icon {
   padding: 0;
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
   margin: 0 8px 0 0;
 }
 
@@ -180,7 +182,7 @@
 @media screen and (max-width: 767px) {
   .legal{
     order: 3;
-    margin-top: 29px;
+    margin-top: 25px;
     margin-bottom: 16px;
     margin-left: 0;
   }
@@ -189,17 +191,20 @@
 .legals {
   list-style: none;
   margin: 0;
+  margin-right: 50px;
   padding: 0;
   display: grid;
   grid-gap: 12px;
   grid-template-columns: 1fr;
   text-align: left;
-  font: 16px/1.18 "PT sans", sans-serif;
+  font: 20px/1.3 "PT sans", sans-serif;
 }
 
 @media screen and (max-width: 1023px) {
   .legals {
     padding-top: 12px;
+    padding-right: 3px;
+    margin: 0;
     flex-direction: column;
     justify-items: flex-end;
     font: 14px/1.21 "PT sans", sans-serif;
@@ -210,6 +215,7 @@
   .legals {
     padding-top: 0;
     justify-items: center;
+    margin-bottom: 20px;
   }
 }
 

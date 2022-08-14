@@ -5,12 +5,15 @@
   min-height: 532px;
   margin: 0 auto;
   box-sizing: border-box;
+  margin-bottom: 70px;
 }
 
-@media screen and (max-width: 1023px) { /* планшетная версия до ширины экрана в 1023px*/
+@media screen and (max-width: 1400px) { /* планшетная версия до ширины экрана в 1023px*/
   .project {
-    padding: 32px 0;
+    padding: 32px 0 0;
     width: 736px;
+    margin-bottom: 50px;
+    min-height: unset;
   }
 }
 
@@ -27,16 +30,17 @@
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  margin: 0 auto 20px;
+  margin: 0 auto 32px;
   padding: 0;
   width: calc(100% - 64px);
   justify-content: center;
   gap: 20px;
  }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1400px) {
   .container {
       width: calc(100% - 34px);
+    margin-bottom: 23px;
   }
 }
 
@@ -58,20 +62,22 @@
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
-  font: normal 2.3em/1.2 "WF", "PT Sans", sans-serif;
+  font: normal 46px/1.2 "WF", "PT Sans", sans-serif;
   color: #323232;
   text-align: center;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1400px) {
   .title {
     margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 37px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .title {
-    font-family: 'WF';
+    font-family: 'WF', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
