@@ -21,7 +21,6 @@ const JournalPage: FC = () => {
   const [selectedTab, setSelectedTab] = useState<TJournalFilter>(filter)
 
   const {isLoading: isJournalLoading} = dataAPI.useGetJournalQuery({page, size: JOURNAL_PAGE_LIMIT, filter: filter}, {refetchOnMountOrArgChange: true});
-
   const handleLoad = () => {
     dispatch(setJournalPage(page + 1));
   }

@@ -93,6 +93,12 @@
     padding: 0 8px 12px 8px;
   }
 }
+@media screen and (max-width: 425px) {
+  .text {
+    gap: 4px;
+    padding-bottom: 25px;
+  }
+}
 
 .title {
   margin: 0;
@@ -144,6 +150,8 @@
 @media screen and (max-width: 425px) {
   .quote {
     display: block;
+    font-size: 12px;
+    line-height: 1.33;
   }
 }
 
