@@ -8,6 +8,13 @@
 .header_theme_dark {
   background-color: var(--bg-orange-light);
 }
+.header_theme_white {
+  background-color: var(--bg-white);
+}
+
+.header_theme_white nav {
+  background-color: var(--bg-white);
+}
 
 @media screen and (max-width: 767px) {
   .header {

@@ -25,9 +25,9 @@ const HeaderNav: FunctionComponent<IHeaderNavProps> = ({ desktop, open }) => {
   return (
     <nav
       className={
-        desktop
+        `${desktop
           ? ""
-          : isMobileContainerStyle
+          : isMobileContainerStyle} header__nav`
       }
     >
       <ul className={style}>
