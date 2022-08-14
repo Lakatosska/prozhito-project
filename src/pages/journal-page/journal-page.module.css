@@ -58,7 +58,7 @@
 
 @media screen and (max-width: 425px) {
   .list {
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     min-height: 352px;
   }
 }
@@ -83,4 +83,9 @@
   .buttonContainer{
     margin-bottom: 50px;
   }
+}
+@media screen and (max-width: 425px) {
+.breadcrumps{
+  display: none;
+}
 }

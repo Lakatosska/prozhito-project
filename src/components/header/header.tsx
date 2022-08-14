@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
+import {useLocation} from "react-router-dom";
 import headerStyles from "./header.module.css";
 import logo from "../../images/logo_prozhito.svg";
 import logo_mobile from "../../images/logo_prozhito_mobile.svg";
@@ -11,7 +12,8 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 const Header: FunctionComponent = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const desktop = useMediaQuery("(min-width: 768px)");
-
+  const location = useLocation();
+  
   const btnState = menuOpen
     ? { img: closeImg, alt: "закрыть" }
     : { img: openImg, alt: "открыть" };
@@ -25,9 +27,9 @@ const Header: FunctionComponent = () => {
   return (
     <header
       className={
-        menuOpen
+        `${menuOpen
           ? `${headerStyles.header} ${headerStyles.header_theme_dark}`
-          : headerStyles.header
+          : headerStyles.header} ${location.pathname != '/' ? headerStyles.header_theme_white : null}`
       }
     >
       <div className={`${headerStyles.header__container} ${headerStyles.menu}`}>
