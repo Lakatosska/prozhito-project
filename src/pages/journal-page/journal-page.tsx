@@ -12,23 +12,6 @@ import {LinkButton} from "../../components/link-button/link-button";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import {JOURNAL_PAGE_LIMIT} from "../../constants";
 
-
-/*
-      "id"       : 1,
-      "type"     : "experience",
-      "image"    : "lipkina.jpg",
-      "text"     : "историк, доцент кафедры теологии иудаизма, библеистики и иудаики РГГУ и ст. н. с. ШАГИ РАНХиГС",
-      "name"     : "Галина Зеленина о дневниках Леонида Липкина"
-    },
-    {
-      "id"       : 2,
-      "type"     : "topic",
-      "image"    : "stalin.jpg",
-      "text"     : "Все газеты впервые опубликовали портреты т.Сталина и многочисленные статьи. В них т.Сталин именуется вождём мирового пролетариата.",
-      "title"    : "Сталин умер",
-      "subtitle"
-*/
-
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
   const filter = useSelector(filterJournalSelector)
@@ -38,19 +21,14 @@ const JournalPage: FC = () => {
   const [selectedTab, setSelectedTab] = useState<TJournalFilter>(filter)
 
   const {isLoading: isJournalLoading} = dataAPI.useGetJournalQuery({page, size: JOURNAL_PAGE_LIMIT, filter: filter}, {refetchOnMountOrArgChange: true});
-  const data = dataAPI.useGetJournalQuery({page, size:JOURNAL_PAGE_LIMIT, filter: filter}, {refetchOnMountOrArgChange: true});
-
 
   const handleLoad = () => {
     dispatch(setJournalPage(page + 1));
-    console.log(page)
   }
 
   const handleFilter = (value: TJournalFilter) => {
     setSelectedTab(value)
     dispatch(setJournalFilter(value));
-    console.log(data)
-    console.log(journal)
   }
   const tablet = useMediaQuery("(max-width: 1024px)");
   const mobile = useMediaQuery("(max-width: 425px)");
@@ -84,39 +62,4 @@ const JournalPage: FC = () => {
   )
 }
 
-export default JournalPage
-
-/*
-{
-        !isJournalLoading && journal &&
-        <ul style={{listStyleType: 'none'}}>
-          {
-            journal.map((item: IJournalItem) => item.type === "experience" ? (
-              <li key={item.id}>
-                <div style={{padding: '10px'}}>
-                  <p>{item.id}</p>
-                  <p>{JOURNAL_ITEM_TYPE[item.type]}</p>
-                  <img width={204} height={204} src={require(`../../images/${item.image}`)} alt={'Картинка журнала'}/>
-                  <p>{(item as IJournalExperienceItem).name}</p>
-                </div>
-              </li>
-            ) : (
-              <li key={item.id}>
-                <div style={{padding: '10px'}}>
-                  <p>{item.id}</p>
-                  <p>{JOURNAL_ITEM_TYPE[item.type]}</p>
-                  <img width={328} height={526} src={require(`../../images/${item.image}`)} alt={'Картинка журнала'}/>
-                  <p>{(item as IJournalMagazineItem).title}</p>
-                  <p>{(item as IJournalMagazineItem).subtitle}</p>
-                </div>
-              </li>
-            ))
-          }
-          {
-            total > journal.length &&
-            <button onClick={handleLoad}>Загрузить еще</button>
-          }
-        </ul>
-      }
-
-*/
+export default JournalPage;
