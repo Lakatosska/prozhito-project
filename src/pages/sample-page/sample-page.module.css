@@ -1,4 +1,42 @@
-.typical__subtitle {
+.main {
+  position: relative;
+}
+
+.pagesNav {
+  font: 1em/1.3em "PT Sans", sans-serif;
+  color: #323232;
+  padding: 20px 0 0 32px;
+  margin: 0;
+  text-align: start;
+}
+
+@media screen and (max-width: 767px) {
+  .pagesNav {
+    padding: 20px 0 0 10px;
+    max-width: 300px;
+    width: 100%;
+  }
+}
+
+.pagesNavLink {
+  font: 1em/1.3em "PT Sans", sans-serif;
+  text-decoration: none;
+  color: #323232;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .pagesNavLink {
+    padding-bottom: 2px;
+  }
+}
+
+.pagesNavLink:hover {
+  border-bottom: #323232 solid 1px;
+}
+
+.tag {
   font: 0.7em/1.29em "PT Sans", sans-serif;
   margin: 0 auto 0;
   text-align: center;
@@ -11,7 +49,7 @@
   justify-content: center;
 }
 
-.typical__subtitle-part {
+.tagPart {
   margin: 0;
   padding: 0;
 }
@@ -38,10 +76,10 @@
   }
 }
 
-.button_contens {
-  font: 1.3em/1em "WF", sans-serif;
+.buttonContens {
+  font: normal 26px "WF", sans-serif;
   color: #323232;
-  position: fixed;
+  position: absolute;
   margin: 0;
   padding: 0;
   top: 435px;
@@ -54,15 +92,24 @@
   display: block;
 }
 
+@media screen and (max-width: 1023px) {
+  .buttonContens {
+    font-size: 18px;
+    left: -5px;
+  }
+}
+
 @media screen and (max-width: 767px) {
-  .button_contens {
+  .buttonContens {
     display: none;
   }
 }
-.button_contens:hover {
+
+.buttonontens:hover {
   border-bottom: 1px solid #323232;
 }
 
+/*
 .video {
   max-width: 678px;
   width: 100%;
@@ -247,3 +294,4 @@
 .player__button-mute:hover {
   opacity: 50%;
 }
+*/

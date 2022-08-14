@@ -1,10 +1,4 @@
-@import url(../../blocks/typical-page/typical-page.css);
-@import url(../../blocks/pages-nav/pages-nav.css);
-@import url(../../blocks/pages-nav/__link/pages-nav__link.css);
-@import url(../../blocks/button/_contens/button_contens.css);
 @import url(../../blocks/button/_play-video/button_play-video.css);
-@import url(../../blocks/typical/typical__subtitle.css);
-@import url(../../blocks/typical/__subtitle-part/typical__subtitle-part.css);
 @import url(../../blocks/video/__container/video__container.css);
 @import url(../../blocks/video/video.css);
 @import url(../../blocks/video/__title/video__title.css);
@@ -65,6 +59,7 @@
   padding: 0 0 0 16px;
   border-left: 2px #E7E4DE solid;
   max-width: 676px;
+  margin: 0 auto;
   position: relative;
   text-align: start;
 }
