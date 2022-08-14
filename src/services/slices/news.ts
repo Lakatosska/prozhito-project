@@ -1,12 +1,12 @@
 import {INewsData} from "../types/news";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {dataAPI} from "../api/data";
-import {NEWS_PAGE_LIMIT} from "../../constants";
+import {NEWS_PAGE_LIMIT_DESKTOP} from "../../constants";
 
 const initialState: INewsData = {
   page: 1,
   total: 0,
-  size: NEWS_PAGE_LIMIT,
+  size: NEWS_PAGE_LIMIT_DESKTOP,
   data: [],
 }
 
