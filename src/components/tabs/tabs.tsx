@@ -1,5 +1,6 @@
 import {FC, ReactElement} from "react";
-import TabItem from "./tab-item";
+import TabsItem from "../tabs-item/tabs-item";
+import tabsStyles from "./tabs.module.css";
 
 type TProps = {
   children: Array<ReactElement>
@@ -7,17 +8,18 @@ type TProps = {
 
 const Tabs: FC<TProps> = ({ children }) => {
   return (
-    <div>
-      <ul style={{display: 'flex', flexDirection: "row", listStyleType: 'none'}}>
+    <>
+      <p className={tabsStyles.heading}>Сортировать :</p>
+      <ul className={tabsStyles.tabs}>
         {children.map((item) => (
-          <TabItem
+          <TabsItem
             value={item.props.value}
             selected={item.props.selected}
             setSelected={item.props.setSelected}
           />
         ))}
       </ul>
-    </div>
+    </>
   )
 }
 
