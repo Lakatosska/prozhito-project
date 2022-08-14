@@ -3,13 +3,14 @@ import {dataAPI} from "../../services/api/data";
 import {useDispatch, useSelector} from "../../hooks";
 import {dataJournalSelector, filterJournalSelector, pageJournalSelector, totalJournalSelector} from "../../services/selectors/journal";
 import {setJournalFilter, setJournalPage} from "../../services/slices/journal";
-import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem, TJournalFilter} from "../../services/types/journal";
+import {TJournalFilter} from "../../services/types/journal";
 import Tabs from "../../components/tabs/tabs";
 import TabItem from "../../components/tabs-item/tabs-item";
 import journalPageStyles from "./journal-page.module.css";
 import { JournalItem } from "../../components/journal-item/journal-item";
 import {LinkButton} from "../../components/link-button/link-button";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import {JOURNAL_PAGE_LIMIT} from "../../constants";
 
 
 /*
@@ -36,9 +37,10 @@ const JournalPage: FC = () => {
   const journal = useSelector(dataJournalSelector);
   const [selectedTab, setSelectedTab] = useState<TJournalFilter>(filter)
 
-  const { isLoading: isJournalLoading, data: journalData } =
-    dataAPI.useGetMainJournalQuery();
-  console.log(journalData)
+  const {isLoading: isJournalLoading} = dataAPI.useGetJournalQuery({page, size: JOURNAL_PAGE_LIMIT, filter: filter}, {refetchOnMountOrArgChange: true});
+  const data = dataAPI.useGetJournalQuery({page, size:JOURNAL_PAGE_LIMIT, filter: filter}, {refetchOnMountOrArgChange: true});
+
+
   const handleLoad = () => {
     dispatch(setJournalPage(page + 1));
     console.log(page)
@@ -46,13 +48,15 @@ const JournalPage: FC = () => {
 
   const handleFilter = (value: TJournalFilter) => {
     setSelectedTab(value)
-    dispatch(setJournalFilter(value))
+    dispatch(setJournalFilter(value));
+    console.log(data)
+    console.log(journal)
   }
   const tablet = useMediaQuery("(max-width: 1024px)");
   const mobile = useMediaQuery("(max-width: 425px)");
-  let journalDataToShow = journalData;
-  if(tablet&&journalData) journalDataToShow = journalData.slice(0,6);
-  if(mobile&&journalData) journalDataToShow = journalData.slice(0,3)
+  let journalDataToShow = journal;
+  if(tablet&&journal) journalDataToShow = journal.slice(0,6);
+  if(mobile&&journal) journalDataToShow = journal.slice(0,3)
 
 
 
@@ -63,8 +67,8 @@ const JournalPage: FC = () => {
       <Tabs>
         <TabItem value={"all"} selected={selectedTab === "all"} setSelected={()=>handleFilter('all')} />
         <TabItem value={"topic"} selected={selectedTab === "topic"} setSelected={()=>handleFilter('topic')} />
-        <TabItem value={"project"} selected={selectedTab === "project"} setSelected={handleFilter} />
-        <TabItem value={"experience"} selected={selectedTab === "experience"} setSelected={handleFilter} />
+        <TabItem value={"project"} selected={selectedTab === "project"} setSelected={()=>handleFilter('project')} />
+        <TabItem value={"experience"} selected={selectedTab === "experience"} setSelected={()=>handleFilter('experience')} />
       </Tabs>
       {!isJournalLoading && journalDataToShow && (
         <ul className={journalPageStyles.list}>
