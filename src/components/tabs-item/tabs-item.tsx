@@ -24,4 +24,4 @@ const TabsItem: FC<TTabItemProps> = ({value, selected, setSelected}) => {
   )
 }
 
-export default TabsItem
+export default TabsItem;

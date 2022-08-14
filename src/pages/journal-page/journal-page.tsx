@@ -1,14 +1,14 @@
 import {FC, useState} from "react";
 import {dataAPI} from "../../services/api/data";
 import {useDispatch, useSelector} from "../../hooks";
-import {JOURNAL_ITEM_TYPE, JOURNAL_PAGE_LIMIT} from "../../constants";
 import {dataJournalSelector, filterJournalSelector, pageJournalSelector, totalJournalSelector} from "../../services/selectors/journal";
 import {setJournalFilter, setJournalPage} from "../../services/slices/journal";
 import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem, TJournalFilter} from "../../services/types/journal";
 import Tabs from "../../components/tabs/tabs";
 import TabItem from "../../components/tabs-item/tabs-item";
 import journalPageStyles from "./journal-page.module.css";
-import { JournalItemDefault, JournalItemExperience } from "../../components/journal-item/journal-item";
+import { JournalItem } from "../../components/journal-item/journal-item";
+import {LinkButton} from "../../components/link-button/link-button";
 
 
 /*
@@ -32,11 +32,13 @@ const JournalPage: FC = () => {
   const filter = useSelector(filterJournalSelector)
   const page = useSelector(pageJournalSelector)
   const total = useSelector(totalJournalSelector)
-  const journal = useSelector(dataJournalSelector)
+  const journal = useSelector(dataJournalSelector);
+  console.log(journal)
   const [selectedTab, setSelectedTab] = useState<TJournalFilter>(filter)
 
-  const {isLoading: isJournalLoading} = dataAPI.useGetJournalQuery({page, size: JOURNAL_PAGE_LIMIT, filter: filter}, {refetchOnMountOrArgChange: true});
-
+  const { isLoading: isJournalLoading, data: journalData } =
+    dataAPI.useGetMainJournalQuery();
+  console.log(journalData)
   const handleLoad = () => {
     dispatch(setJournalPage(page + 1))
   }
@@ -48,52 +50,24 @@ const JournalPage: FC = () => {
 
   return (
     <main className={journalPageStyles.main}>
+      <p className={journalPageStyles.breadcrumps}>Главная страница / Журнал «Прожито»</p>
       <h1 className={journalPageStyles.heading}>Журнал "Прожито"</h1>
       <Tabs>
-        <TabItem value={"all"} selected={selectedTab === "all"} setSelected={handleFilter} />
-        <TabItem value={"topic"} selected={selectedTab === "topic"} setSelected={handleFilter} />
+        <TabItem value={"all"} selected={selectedTab === "all"} setSelected={()=>handleFilter('all')} />
+        <TabItem value={"topic"} selected={selectedTab === "topic"} setSelected={()=>handleFilter('topic')} />
         <TabItem value={"project"} selected={selectedTab === "project"} setSelected={handleFilter} />
         <TabItem value={"experience"} selected={selectedTab === "experience"} setSelected={handleFilter} />
       </Tabs>
-      {
-        !isJournalLoading && journal && (
-        <div>
-          <ul className={journalPageStyles.list}>
-          <JournalItemDefault />
-          <JournalItemExperience />
-          <JournalItemExperience />
-
-        {/*}
-          {
-            journal.map((item: IJournalItem) => item.type === "experience" ? (
-              <JournalItemExperience
-                name={item.name}
-                image={item.image}
-                text={item.text}
-                type={item.type}
-                key={item.id}
-              />
-            ) : (
-              <JournalItemDefault
-                title={item.title}
-                subtitle={item.subtitle}
-                image={item.image}
-                text={item.text}
-                type={item.type}
-                key={item.id}
-              />
-            ))
-          }
-
-        */}
-          </ul>
-          {
-            total > journal.length &&
-            <button onClick={handleLoad}>Загрузить еще</button>
-          }
-        </div>
-        )
+      {!isJournalLoading && journalData && (
+        <ul className={journalPageStyles.list}>
+          {journalData.map(item =>
+            <JournalItem key={item.id} item={item}/>)}
+        </ul>
+      )
       }
+      <div className={journalPageStyles.buttonContainer}>
+        <LinkButton onClick={handleLoad} disabled={total > journal.length}>Загрузить еще</LinkButton>
+      </div>
     </main>
   )
 }

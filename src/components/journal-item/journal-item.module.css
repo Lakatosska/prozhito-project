@@ -32,6 +32,9 @@
   text-align: left;
   color: #F5F5F5;
 }
+.card_type_experience{
+  background-color: var(--bg-orange-light);
+}
 
 .card:hover {
   opacity: .8;
@@ -45,6 +48,16 @@
   height: 100%;
   border-radius: 7px;
   object-fit: cover;
+}
+.name{
+  margin: 0;
+  font-family: 'WF', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 100%;
+  text-align: center;
+  color: var(--black-100);
 }
 
 .type {
@@ -206,6 +219,7 @@
 }
 
 .typeExp {
+  font-family: "PT Sans", sans-serif;
   margin: 0;
   font-size: 14px;
   line-height: 18px;

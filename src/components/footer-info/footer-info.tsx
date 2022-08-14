@@ -2,7 +2,7 @@ import { FC } from 'react';
 import footerInfoStyles from './footer-info.module.css';
 import logo_eu_ru from '../../images/logo_eu_ru.svg';
 import logo_eu_ru_mobile from '../../images/eu_logo_ru_mobile.svg';
-import logo from "../../images/logo_Prozhito.svg";
+import logo from "../../images/logo_prozhito.svg";
 import logo_mobile from "../../images/logo_prozhito_mobile.svg"
 import telegram from '../../images/telegram.svg';
 import vk from '../../images/vk.svg';

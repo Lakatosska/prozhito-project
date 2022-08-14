@@ -4,8 +4,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  align-items: center;
 }
-
 
 .heading {
   font: normal 46px "WF", "PT Sans", sans-serif;
@@ -17,7 +18,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(280px, 328px));
   gap: 62px 80px;
-  margin: 36px 0 0;
+  margin: 0 auto 32px;
   padding: 0;
   justify-content: center;
   position: relative;
@@ -56,3 +57,16 @@
   }
 }
 
+.breadcrumps{
+  font-family: 'PT Sans', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--black-100);
+  text-align: start;
+  margin: 20px auto 39px 20px;
+}
+.buttonContainer{
+  margin-bottom: 48px;
+}
