@@ -24,3 +24,15 @@
     min-height: unset;
   }
 }
+@media screen and (max-width: 480px) {
+.tabs{
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 52px;
+  margin: 17px 82px 15px;
+  align-content: space-between;
+}
+  .heading{
+    display: none;
+  }
+}

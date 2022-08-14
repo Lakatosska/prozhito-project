@@ -13,7 +13,7 @@ const Header: FunctionComponent = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const desktop = useMediaQuery("(min-width: 768px)");
   const location = useLocation();
-  
+
   const btnState = menuOpen
     ? { img: closeImg, alt: "закрыть" }
     : { img: openImg, alt: "открыть" };

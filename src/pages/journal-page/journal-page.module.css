@@ -54,12 +54,20 @@
     gap: 36px;
     margin-top: 18px;
   }
+
 }
 
 @media screen and (max-width: 425px) {
   .list {
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 352px);
     min-height: 352px;
+    row-gap: 16px;
+    margin: 0 auto 28px;
+  }
+  .heading{
+    font-size: 32px;
+    line-height: 120%;
   }
 }
 
@@ -85,7 +93,8 @@
   }
 }
 @media screen and (max-width: 425px) {
-.breadcrumps{
+.breadcrumps, .buttonContainer{
   display: none;
 }
+
 }
