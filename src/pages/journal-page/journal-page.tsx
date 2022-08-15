@@ -11,6 +11,7 @@ import { JournalItem } from "../../components/journal-item/journal-item";
 import {LinkButton} from "../../components/link-button/link-button";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import {JOURNAL_PAGE_LIMIT} from "../../constants";
+import {Link} from "react-router-dom";
 
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const JournalPage: FC = () => {
 
   return (
     <main className={journalPageStyles.main}>
-      <p className={journalPageStyles.breadcrumps}>Главная страница / Журнал «Прожито»</p>
+      <p className={journalPageStyles.breadcrumbs}><Link to='/' className={journalPageStyles.breadcrumbsLink}>Главная страница</Link> / Журнал «Прожито»</p>
       <h1 className={journalPageStyles.heading}>Журнал &laquo;Прожито&raquo;</h1>
       <Tabs>
         <TabItem value={"all"} selected={selectedTab === "all"} setSelected={()=>handleFilter('all')} />
