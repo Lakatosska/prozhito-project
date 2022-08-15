@@ -49,6 +49,7 @@ const MainPage: FC = () => {
             cards={newsForSlider}
             sliderTitle="Свежее"
           />
+      */}
         </section>
       )}
       {!isDiaryLoading && diaryData && <Materials data={diaryData} />}

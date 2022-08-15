@@ -1,27 +1,22 @@
 import {FC, useState} from "react";
+import { useNavigate } from 'react-router-dom';
 import contentsMobileStyles from "./contents-mobile.module.css";
 import imageBurger from "../../../images/menu-mobil-open.svg";
 import imgArrowLeft from "../../../images/Arrow_left.svg";
 import ContentsSample from "../contents-sample/contents-sample";
 
-/*
-interface IPopupProps{
-  closePopup: ()=> void
-}
-*/
 
-export const ContentsMobile: FC<any> = () => {
-
-  const [contentsOpen, setContentsOpen] = useState(true);
+export const ContentsMobile: FC = () => {
 
   const [contentsBurgerOpen, setContentsBurgerOpen] = useState(false);
-
-  const hideContents = (): void => {
-    setContentsOpen(false)
-  };
+  const navigate = useNavigate();
 
   const openMobileContents = (): void => {
     setContentsBurgerOpen(true)
+  };
+
+  const returnBack = () => {
+    navigate("/");
   };
 
 
@@ -30,7 +25,7 @@ export const ContentsMobile: FC<any> = () => {
       <div className={contentsMobileStyles.container}>
 
         <button type="button" className={contentsMobileStyles.arrow__button}
-          onClick={()=> hideContents()}>
+          onClick={()=> returnBack()}>
             <img src={imgArrowLeft} alt='стрелка назад' />
         </button>
 

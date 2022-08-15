@@ -23,7 +23,8 @@
 @media screen and (max-width: 767px) {
   .materials {
     overflow: hidden;
-    width: calc(100vw - 41px);
+    width: calc(100vw - 22px);
+    padding-left: 0;
     margin-right: 0;
   }
 }
@@ -38,15 +39,14 @@
 }
 
 @media screen and (max-width: 767px) {
-  .slider .title {
-    display: none;
-    margin-right: 41px;
+  .title {
+    margin-right: 10px;
   }
 }
 
 @media screen and (max-width: 1023px) {
   .title {
-    margin-bottom: 24px;
+    margin-bottom: 0;
     font-size: 30px;
     line-height: 1.23;
   }
@@ -67,4 +67,17 @@
     margin: 0 auto;
     width: fit-content;
   }
+}
+
+.pagination{
+  margin-top: 20px;
+  width: fit-content;
+}
+
+.materials .swiper{
+  margin-left: 30px;
+}
+
+.materials .swiperSlide {
+  width: 276px;
 }
