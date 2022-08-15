@@ -50,6 +50,11 @@
     padding: 24px 12px 16px;
   }
 }
+@media screen and (max-width: 767px){
+  .card__link{
+    padding-top: 35px;
+  }
+}
 .card__tag {
   position: absolute;
   top: -16px;
@@ -144,6 +149,7 @@
   .card__image {
     width: 160px;
     height: 180px;
+    margin-top: 0;
   }
 }
 

@@ -19,4 +19,9 @@
   --button-hover: #97ba9c;
   --button-default: #a5cdab;
   --button-disabled: rgba(165, 205, 171, 0.3);
+  --swiper-pagination-bullet-inactive-color: #A5CDAB;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+  --swiper-pagination-color: #3A543E;
 }
