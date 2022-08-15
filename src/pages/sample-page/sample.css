@@ -179,6 +179,37 @@
   background-color: transparent;
 }
 
+.article audio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E7E4DE;
+  max-width: 678px;
+  width: 100%;
+  height: 112px;
+  margin: 32px auto 0;
+  border-radius: 35px;
+}
+
+.article audio::-webkit-media-controls-mute-button {
+  width: 300px;
+
+}
+
+/*
+.audio controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #E7E4DE;
+  max-width: 678px;
+  width: 100%;
+  height: 112px;
+  margin: 32px auto 0;
+  border-radius: 35px;
+}
+*/
+
 .player {
   display: flex;
   flex-direction: column;

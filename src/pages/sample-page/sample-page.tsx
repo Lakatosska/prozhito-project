@@ -193,7 +193,7 @@ const SamplePage: FC = () => {
                   <img src='/images/player/Mute.svg'alt='Кнопка'/>
                 </button>
               </div>
-            </audio>
+            </div>
             <figcaption>
               Запись разговора Юры и Вени Аронвальда, 1937 год
             </figcaption>
