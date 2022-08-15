@@ -96,6 +96,8 @@ ul {
   align-items: flex-start;
   padding: 0.5555vw 3.3333vw 0;
   min-width: 360px;
+  box-sizing: border-box;
+  gap: 16px;
 }
 
 .sliderMobile__title {
@@ -121,9 +123,6 @@ ul {
   .cardsSlider__bgSection {
     width: 33.2%;
   }
-}
-
-@media screen and (max-width: 1023px) {
   .cardsSlider__bgTitle {
     font-size: 30px;
     line-height: 37px;
