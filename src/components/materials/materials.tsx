@@ -48,7 +48,7 @@ export const Materials: FC<IMaterialsProps> = ({ data }) => {
             className={materialsStyle.swiper}
           >
             {data.map((item) => (
-              <SwiperSlide className={materialsStyle.swiperSlide}>
+              <SwiperSlide className={materialsStyle.swiperSlide} key={item.id}>
                 <MaterialsItem
                   id={item.id}
                   name={item.name}
