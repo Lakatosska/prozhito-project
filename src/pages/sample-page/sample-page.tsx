@@ -1,4 +1,4 @@
-import {FC, useState, useRef} from "react";
+import {FC, useState, useRef, useEffect, useCallback} from "react";
 import {dataAPI} from "../../services/api/data";
 import {useParams} from "react-router-dom";
 import PopupSample from "./popup/popup";
@@ -13,8 +13,32 @@ const SamplePage: FC = () => {
   const [contentsOpen, setContentsOpen] = useState(false);
 
   const [scrollingUp, setScrollingUp] = useState(false);
-  const prevScrollY = useRef(0);
 
+  const [scrollValue, setScrollValue] = useState(0);
+
+  const onScroll = useCallback((e: any): void => {
+
+    const currentScrollY = window.pageYOffset;
+
+    if (scrollValue < currentScrollY && scrollingUp) {
+      setScrollingUp(false);
+    }
+
+    if (scrollValue > currentScrollY && !scrollingUp) {
+      setScrollingUp(true);
+    }
+
+    setScrollValue(currentScrollY)
+
+  }, [scrollValue, setScrollValue]);
+
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
+
+    return () => window.removeEventListener('scroll', onScroll)
+
+  }, [onScroll])
 
   const mobile = useMediaQuery('(max-width: 767px)');
 
@@ -28,21 +52,9 @@ const SamplePage: FC = () => {
     setContentsOpen(true)
   };
 
-  const onScroll = (e: any): void => {
-    const currentScrollY = e.target.scrollTop;
-    if (prevScrollY.current < currentScrollY && scrollingUp) {
-      setScrollingUp(false);
-    }
-    if (prevScrollY.current > currentScrollY && !scrollingUp) {
-      setScrollingUp(true);
-    }
-    prevScrollY.current = currentScrollY;
-    console.log(scrollingUp, currentScrollY);
-  };
 
   return (
     <main className={samplePageStyles.main}>
-      <div onScroll={onScroll} style={{height: 900, overflowY: "scroll" }}>
         <nav>
           <p className={samplePageStyles.pagesNav}>
               <a href="/" className={samplePageStyles.pagesNavLink}>Главная страница</a> /
@@ -167,30 +179,29 @@ const SamplePage: FC = () => {
             - Мне.<br/>
             </p>
           <figure>
-            <div className='player'>
-              <div className='player__container'>
+            <div class='player'>
+              <div class='player__container'>
                 <source src={require(`../../audio/1564_Rodoman.mp3`)} type='audio/mpeg' id='audio'></source>
                 <button button-play
                   type='button'
                   id='button-play'
-                  className='player__button-play'
-                ><img src='/images/player/Play.svg'alt='Кнопка play'/></button>
+                  class='player__button-play'
+                ></button>
                 <button
                   type='button'
-                  className='player__button-reverse-anticlockwise'
-                ><img src='/images/player/Reverse_anticlockwise.svg'alt='Кнопка'/></button>
+                  class='player__button-reverse-anticlockwise'
+                ></button>
                 <button
                   type='button'
-                  className='player__button-reverse-clockwise'
-                ><img src='/images/player/Reverse_clockwise.svg'alt='Кнопка'/></button>
+                  class='player__button-reverse-clockwise'
+                ></button>
                 <img
                   src={soundImage}
                   alt='Звуковая дорожка'
-                  className='player__soundtrack'
+                  class='player__soundtrack'
                 />
-                <span className='player__time'>15:20</span>
-                <button type='button' className='player__button-mute'>
-                  <img src='/images/player/Mute.svg'alt='Кнопка'/>
+                <span class='player__time'>15:20</span>
+                <button type='button' class='player__button-mute'>
                 </button>
               </div>
             </div>
@@ -259,8 +270,6 @@ const SamplePage: FC = () => {
           </p>
           </article>
         */}
-
-      </div>
     </main>
   )
 }
