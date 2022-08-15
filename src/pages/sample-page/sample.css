@@ -173,7 +173,7 @@
 
 /*  AUDIOPLAYER STYLES */
 
-.button {
+.article button {
   outline: none;
   border: none;
   background-color: transparent;
@@ -222,6 +222,20 @@
   margin: 40px 24px 40px 40px;
   cursor: pointer;
 }
+
+/*
+.player__button-play {
+  border: none;
+  background-color: transparent;
+  background-image: url(/public/images/player/Play.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 28px;
+  margin: 40px 24px 40px 40px;
+  cursor: pointer;
+}
+*/
 
 .player__image-play {
   outline: none;
