@@ -1,8 +1,8 @@
 .intro {
-  font: 20px "WF", "PT Sans", sans-serif;
+  font: 20px var(--font-family-wf-pt-sans);
   margin: 0;
   padding: 0;
-  background-color: #f7f4f0;
+  background-color: var(--bg-gray);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -41,11 +41,11 @@
 }
 
 .intro__title {
-  font: 2.3em/1.2em "WF", sans-serif;
+  font: 2.3em/1.2em var(--font-family-wf);
   font-weight: 400;
   max-width: 1163px;
   width: 100%;
-  color: #323232;
+  color: var(--black-100);
   padding: 70px 0 0 0;
   word-wrap: normal;
   margin: 0;
@@ -74,10 +74,8 @@
 
 .intro__cardContainer {
   max-width: 1144px;
-  margin: auto;
   box-sizing: border-box;
-  margin-top: 111px;
-  margin-bottom: 164px;
+  margin: 111px auto 164px;
 }
 
 @media screen and (max-width: 1023px) {

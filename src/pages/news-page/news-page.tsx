@@ -8,6 +8,7 @@ import NewsCard from "../../components/news-card/news-card";
 import newsPageStyle from './news-page.module.css';
 import { LinkButton } from "../../components/link-button/link-button";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import {Link} from "react-router-dom";
 
 const NewsPage: FC = () => {
   const dispatch = useDispatch();
@@ -32,7 +33,8 @@ const NewsPage: FC = () => {
   }
 
   return (
-    <>
+    <div className={newsPageStyle.main}>
+      <p className={newsPageStyle.breadcrumbs}><Link to='/' className={newsPageStyle.breadcrumbsLink}>Главная страница</Link> / <Link to='/journal' className={newsPageStyle.breadcrumbsLink}>Журнал «Прожито»</Link></p>
       <h1  className={newsPageStyle.title}>Новости и события</h1>
       {
         !isLoading && data &&
@@ -56,7 +58,7 @@ const NewsPage: FC = () => {
           }
         </>
       }
-    </>
+    </div>
   )
 }
 

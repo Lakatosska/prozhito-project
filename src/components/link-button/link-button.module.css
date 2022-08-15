@@ -9,6 +9,10 @@
   cursor: pointer;
 }
 
+.linkButton:hover {
+  background: var(--button-hover);
+}
+
 .linkButton_size_small {
   width: 24px;
   height: 24px;
@@ -28,7 +32,7 @@
   gap: 12px;
   text-decoration: none;
   color: var(--black-100);
-  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-pt-sans);
   font-style: normal;
   font-weight: 400;
   width: 329px;
@@ -61,8 +65,8 @@
 }
 
 .linkButton_colorText_white {
-  color: var(--white-100);
-  border: 1px solid var(--white-100);
+  color: var(--bg-white);
+  border: 1px solid var(--bg-white);
 }
 
 .linkButton_disabled {
@@ -110,7 +114,7 @@
     min-height: 50px;
   }
   .linkButton__arrow {
-    width: 11.07px;
+    width: 11px;
   }
 }
 .linkButton_size_large {
@@ -118,7 +122,7 @@
   width: 50px;
 }
 .linkButton_size_large .linkButton__arrow {
-  width: 21.61px;
+  width: 22px;
 }
 
 .linkButton_color_transparent {

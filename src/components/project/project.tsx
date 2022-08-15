@@ -21,7 +21,7 @@ export const Project: FC = () => {
             {
               data.map(item => (
                 <li key={item.id}>
-                  <ProjectCard item={item} onClick={(projectId) => handleNavigate(`/sample/${projectId}`)}/>
+                  <ProjectCard item={item} onClick={() => handleNavigate(`/sample/${item.sample}`)}/>
                 </li>
               ))
             }
@@ -38,33 +38,3 @@ export const Project: FC = () => {
 }
 
 export default Project;
-/*
-<section class="special-projects">
-  <div class="special-projects__title-container">
-
-  </div>
-  <div class="special-projects__container">
-    <div class="special-projects__card">
-
-    <div class="special-projects__card">
-      <img
-        class="special-projects__image"
-        alt="люди"
-        src="./images/special-projects-card2.png"
-      />
-      <div class="special-projects__main-text">
-        <div class="special-projects__field">
-          <h3 class="special-projects__subtitle">Блокада</h3>
-          <p class="special-projects__description">
-            В условиях катастрофического голода, холода, вражеских
-            бомбардировок и обстрелов сотни тысяч людей оказались
-            заперты в городе. У многих из них был доступ к бумаге
-            и чернилам, и некоторые начали вести дневники.
-          </p>
-        </div>
-        <p class="special-projects__date">13 декабря 2021</p>
-      </div>
-    </div>
-  </div>
-</section>
-*/

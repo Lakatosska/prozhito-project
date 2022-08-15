@@ -1,7 +1,7 @@
 .card {
   width: 328px;
   min-height: 428px;
-  background-color: #E7E4DE;
+  background-color: var(--bg-orange-light);
 }
 
 @media screen and (max-width: 1300px) {
@@ -57,11 +57,11 @@
   margin: 0;
   padding: 8px 32px;
   box-sizing: border-box;
-  background: #A5CDAB;
+  background: var(--button-default);
   border-radius: 8px;
-  font: normal 14px/1.28 'PT Sans', sans-serif;
+  font: normal 14px/1.28 var(--font-family-pt-sans);
   text-transform: uppercase;
-  color: #323232;
+  color: var(--black-100);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -88,7 +88,7 @@
   margin: 0;
   font-size: 26px;
   line-height: 1;
-  font-family: 'WF', 'Times New Roman', serif;
+  font-family: var(--font-family-wf);
 }
 .cardTitle_short{
   max-width: 130px;
@@ -152,7 +152,7 @@
   max-width: 296px;
   margin: 0;
   padding: 0;
-  font: normal 16px/1.31 'PT Sans', sans-serif;
+  font: normal 16px/1.31 var(--font-family-pt-sans);
   text-align: center;
   color: rgb(50, 50, 50);
 }

@@ -7,7 +7,7 @@
   top: 120px;
   right: 0;
   order: 3;
-  z-index: 1;
+  z-index: 99;
 
 }
 .popup__content {
@@ -37,7 +37,7 @@
 }
 
 .popup__title {
-  font-family: "WF", Arial, sans-serif;
+  font-family: var(--font-family-wf);
   font-size: 26px;
   line-height: 1;
   text-transform: uppercase;
@@ -49,7 +49,7 @@
   font-weight: 400;
 }
 .popup__subtitle {
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: var(--font-family-pt-sans);
   text-align: start;
   font-size: 14px;
   line-height: 1.28;
@@ -90,8 +90,8 @@
     display: flex;
   }
   .popup__closeButton{
-    width: 11.5px;
-    height: 11.5px;
+    width: 12px;
+    height: 12px;
     left: -13.5px;
   }
   .popup__title {

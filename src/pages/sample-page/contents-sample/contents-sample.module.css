@@ -21,12 +21,12 @@
   text-align: center;
   margin: 0 auto;
   padding: 36px 0 46px;
-  font-family: 'WF', 'Times New Roman', serif;
+  font-family: var(--font-family-wf);
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
   line-height: 100%;
-  color: #323232;
+  color: var(--black-100);
   width: 100%;
   border-bottom:  1px solid rgba(50, 50, 50, 0.5);
 }
@@ -39,9 +39,9 @@
   background-size: cover;
   background-position: center;
   position: absolute;
-  width: 22.28px;
-  height: 22.28px;
-  top: 36.86px;
+  width: 22px;
+  height: 22px;
+  top: 37px;
   right: -23%;
   cursor: pointer;
 }
@@ -49,7 +49,7 @@
 @media screen and (max-width: 1023px) {
   .table__title {
     font-size: 24px;
-    line-height: 29.71px;
+    line-height: 30px;
     padding: 32px 0;
   }
 }

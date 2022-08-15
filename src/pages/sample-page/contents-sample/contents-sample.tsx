@@ -1,15 +1,7 @@
 import {FC} from "react";
 import contentsSampleStyles from "./contents-sample.module.css";
 
-/*
-interface IPopupProps{
-  closePopup: ()=> void
-}
-*/
-
 export const ContentsSample: FC<any> = ({ closeContents }) => {
-
-
   return (
     <div className={contentsSampleStyles.table}>
       <div className={contentsSampleStyles.table__container}>
@@ -21,7 +13,7 @@ export const ContentsSample: FC<any> = ({ closeContents }) => {
         <h2 className={contentsSampleStyles.table__title}>Часть три</h2>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ContentsSample;
+export default ContentsSample

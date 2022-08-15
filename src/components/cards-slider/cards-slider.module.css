@@ -21,7 +21,7 @@ ul {
 }
 
 .cardsSlider__title {
-  font: normal 400 46px/46px "WF", Arial, sans-serif;
+  font: normal 400 46px/46px var(--font-family-wf);
   margin: 0;
 }
 
@@ -47,7 +47,7 @@ ul {
 }
 
 .cardsSlider__textLink {
-  font: normal 400 20px/26px "PT Sans", Arial, sans-serif;
+  font: normal 400 20px/26px var(--font-family-pt-sans);
 }
 
 .cardsSlider__sliderContainer {
@@ -100,7 +100,7 @@ ul {
 
 .sliderMobile__title {
   margin: 0;
-  font: normal 400 32px/120% "WF", Arial, sans-serif;
+  font: normal 400 32px/120% var(--font-family-wf);
 }
 .sliderMobile__linkButtonContainer {
   display: flex;

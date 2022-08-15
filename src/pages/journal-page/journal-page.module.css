@@ -9,7 +9,7 @@
 }
 
 .heading {
-  font: normal 46px "WF", "PT Sans", sans-serif;
+  font: normal 46px var(--font-family-wf-pt-sans);
   margin: 0;
   padding: 0;
 }
@@ -73,7 +73,7 @@
 }
 
 .breadcrumbs{
-  font-family: 'PT Sans', serif;
+  font-family: var(--font-family-pt-sans);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -87,7 +87,7 @@
   color: var(--black-100);
 }
 .breadcrumbsLink:hover{
-  border-bottom: #323232 solid 1px;
+  border-bottom: var(--black-100) solid 1px;
 }
 .buttonContainer{
   margin-bottom: 48px;

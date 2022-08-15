@@ -30,11 +30,10 @@
 }
 
 .title {
-  margin: 0;
-  margin-bottom: 40px;
+  margin: 0 0 40px;
   padding: 0;
-  font: normal 46px "WF", "PT Sans", sans-serif;
-  color: #323232;
+  font: normal 46px var(--font-family-wf-pt-sans);
+  color: var(--black-100);
   text-align: center;
 }
 

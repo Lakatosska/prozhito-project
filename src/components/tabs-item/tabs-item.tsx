@@ -10,10 +10,10 @@ type TTabItemProps = {
 }
 
 const TabsItem: FC<TTabItemProps> = ({value, selected, setSelected}) => {
+  const tabsItemStylesLine = `${tabsItemStyles.line}`
   return (
     <li className={tabsItemStyles.tab}>
-      <button className={`${tabsItemStyles.button}
-        ${selected && `${tabsItemStyles.line}`}`}
+      <button className={`${tabsItemStyles.button} ${selected && tabsItemStylesLine}`}
         onClick={() => {
           if (!selected) {
             setSelected(value)

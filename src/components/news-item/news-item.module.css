@@ -8,8 +8,8 @@ li {
   display: grid;
   grid-template-columns: minmax(min-content, 100px) minmax(min-content, 255px);
   row-gap: 1.3888vw;
-  font: normal 400 14px/18px "PT Sans";
-  color: #323232;
+  font: normal 400 14px/18px var(--font-family-pt-sans);
+  color: var(--black-100);
   aspect-ratio: 328/373;
 }
 
