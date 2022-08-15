@@ -18,7 +18,6 @@ interface IMaterialsProps {
 export const Materials: FC<IMaterialsProps> = ({ data }) => {
   const desktop = useMediaQuery("(min-width: 768px)");
 
-  console.log(data);
   return (
     <section className={materialsStyle.materials}>
       <h2 className={materialsStyle.title}>Материалы</h2>

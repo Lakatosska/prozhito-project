@@ -1,17 +1,18 @@
-import { FC, useEffect, useState } from "react";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, Scrollbar } from "swiper";
+import {FC, useEffect, useState} from "react";
+import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
+import {Navigation, Scrollbar} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
-import { LinkButton } from "../link-button/link-button";
+import {LinkButton} from "../link-button/link-button";
 
 import styles from "./cards-slider.module.css";
-import { matchesMediaQuery } from "../../utils/functions";
-import { MOBYLE_MEDIA_QUERY } from "../../constants";
+import {matchesMediaQuery} from "../../utils/functions";
+import {MOBYLE_MEDIA_QUERY} from "../../constants";
 
 interface ICardsSliderProps {
+  to: string;
   title: string;
   textLink: string;
   cards: readonly any[];
@@ -85,6 +86,7 @@ const Slider: FC<{ arr: readonly any[]; title: string }> = ({ arr, title }) => {
 };
 
 const CardsSlider: FC<ICardsSliderProps> = ({
+  to,
   title,
   textLink,
   cards,
@@ -94,7 +96,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
     matchesMediaQuery(MOBYLE_MEDIA_QUERY)
   );
 
-  const desctopAndTablet = (
+  const desktopAndTablet = (
     <div className={styles.cardsSlider}>
       <div className={styles.cardsSlider__bgSection}>
         <h2
@@ -104,7 +106,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
         </h2>
         <div className={styles.cardsSlider__linkButtonContainer}>
           <p className={styles.cardsSlider__textLink}>{textLink}</p>
-          <LinkButton size="large" round to="/news" />
+          <LinkButton size="large" round to={to} />
         </div>
       </div>
       <div className={styles.cardsSlider__sliderContainer}>
@@ -117,7 +119,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
     <div className={styles.sliderMobile}>
       <h2 className={`${styles.sliderMobile__title}`}>{title}</h2>
       <div className={styles.sliderMobile__linkButtonContainer}>
-        <LinkButton size="small" color={false} border={false} to="/news">
+        <LinkButton size="small" color={false} border={false} to={to}>
           {textLink}
         </LinkButton>
       </div>
@@ -144,9 +146,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
     return () => window.removeEventListener("resize", changeIsMobile);
   }, [isMobile]);
 
-  const resultToRender = isMobile ? mobile : desctopAndTablet;
-
-  return resultToRender;
+  return isMobile ? mobile : desktopAndTablet;
 };
 
 export default CardsSlider;

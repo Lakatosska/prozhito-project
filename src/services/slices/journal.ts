@@ -1,12 +1,12 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {dataAPI} from "../api/data";
-import {JOURNAL_PAGE_LIMIT} from "../../constants";
+import {JOURNAL_PAGE_LIMIT_DESKTOP} from "../../constants";
 import {IJournalData, TJournalFilter} from "../types/journal";
 
 const initialState: IJournalData = {
   page: 1,
   total: 0,
-  size: JOURNAL_PAGE_LIMIT,
+  size: JOURNAL_PAGE_LIMIT_DESKTOP,
   filter : "all",
   data: [],
 }

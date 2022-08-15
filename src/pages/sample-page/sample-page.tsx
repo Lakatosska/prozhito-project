@@ -45,8 +45,8 @@ const SamplePage: FC = () => {
       <div onScroll={onScroll} style={{height: 900, overflowY: "scroll" }}>
         <nav>
           <p className={samplePageStyles.pagesNav}>
-              <a href="index.html" className={samplePageStyles.pagesNavLink}>Главная страница</a> /
-              <a href="journal-projito.html" className={samplePageStyles.pagesNavLink}
+              <a href="/" className={samplePageStyles.pagesNavLink}>Главная страница</a> /
+              <a href="/journal" className={samplePageStyles.pagesNavLink}
                 >Журнал «Прожито»</a
               >
               / Опыт прочтения одного дневника
