@@ -1,0 +1,19 @@
+.button__arrow {
+  width: 16.5px;
+  height: 12px;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 1400px) {
+  .button__arrow {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .button__arrow {
+    width: 11px;
+    height: 8px;
+    margin-left: 14.5px;
+  }
+}

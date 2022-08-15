@@ -1,0 +1,10 @@
+.journal-projito_margin-top_reader {
+  margin-top: 32px;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .journal-projito_margin-top_reader {
+    margin-top: 12px;
+  }
+}

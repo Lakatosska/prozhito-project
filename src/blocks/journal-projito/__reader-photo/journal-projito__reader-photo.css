@@ -1,0 +1,15 @@
+.journal-projito__reader-photo {
+  width: 204px;
+  height: 204px;
+  border-radius: 100%;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__reader-photo {
+    width: 86px;
+    height: 86px;
+    background-size: contain;
+    margin: 4px 0;
+  }
+}

@@ -1,0 +1,12 @@
+.chapter__tablet-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .chapter__tablet-container {
+    justify-content: flex-start;
+    margin-top: 4px;
+  }
+}

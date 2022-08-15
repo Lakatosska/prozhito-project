@@ -1,0 +1,22 @@
+.special-projects__container {
+    display: flex;
+    margin: 0 auto;
+    width: calc(100% - 64px);
+    justify-content: center;
+    padding-top: 41px;
+   }
+
+@media screen and (max-width: 1023px) {
+    .special-projects__container {
+        width: calc(100% - 34px);
+        padding-top: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .special-projects__container {
+        width: calc(100% - 24px);
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,18 @@
+.special-projects__date {
+    font: .7em/1.3 'PT sans', sans-serif;
+    margin: 0 0 17px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    .special-projects__date {
+      margin: 0 0 12px 12px;
+      font: .85em/1.3 'PT sans', sans-serif;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .special-projects__date {
+      margin: 24px 0 12px 8px;
+      font: 1em/1.22 'PT sans', sans-serif;
+    }
+  }

@@ -1,0 +1,9 @@
+@media screen and (min-width: 768px) {
+  .menu__button {
+    display: none;
+  }
+}
+
+.menu__button {
+  margin-left: auto;
+}

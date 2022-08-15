@@ -1,0 +1,9 @@
+.slider__indicator {
+  position: absolute;
+  width: 355px;
+  height: 4px;
+  background-color: #323232;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.5s ease-in;
+}

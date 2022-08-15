@@ -1,0 +1,23 @@
+.special-projects__button {
+    max-width: 329px;
+    margin: 0 auto;
+    padding-top: 31px;
+    padding-bottom: 72px;
+}
+
+
+@media screen and (max-width: 1023px) {
+    .special-projects__button {
+        max-width: 237px;
+        padding-top: 24px;
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .special-projects__button {
+        max-width: calc(100% - 24px);
+        padding-bottom: 28px;
+        text-align: center;
+    }
+}

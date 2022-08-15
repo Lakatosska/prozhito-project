@@ -1,0 +1,16 @@
+.typical-page {
+  font: 20px "WF", "PT Sans", sans-serif;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1023px) {
+  .typical-page {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .typical-page {
+    width: calc(100% - 40px);
+  }
+}

@@ -1,0 +1,27 @@
+.item_slider + .item_slider {
+  margin-left: 20px;
+}
+
+.journal-projito__materials .item_slider + .item_slider {
+  margin: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .item_slider + .item_slider {
+    margin-left: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .item_slider + .item_slider {
+    margin: 16px 0 0;
+  }
+  .journal-projito .item_slider + .item_slider {
+    margin: 0;
+  }
+  .materials .item_slider + .item_slider {
+    margin: 0;
+    margin-right: 12px;
+  }
+
+}

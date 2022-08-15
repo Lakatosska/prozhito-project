@@ -1,0 +1,23 @@
+.journal-projito__sort-menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  min-width: 574px;
+  height: 50px;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__sort-menu {
+    min-width: 482px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .journal-projito__sort-menu {
+    flex-direction: column;
+    height: fit-content;
+  }
+}

@@ -1,0 +1,14 @@
+
+@media screen and (max-width: 1023px) {
+    .special-projects__field {
+        margin: 0 auto;
+        width: calc(100% - 24px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .special-projects__field {
+        margin-left: 8px;
+        max-width: 327px;
+    }
+}

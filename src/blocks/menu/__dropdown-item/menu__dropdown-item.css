@@ -1,0 +1,17 @@
+.menu__dropdown-item {
+  height: 100%;
+  display: inline;
+  text-decoration: none;
+}
+
+.menu__dropdown-item + .menu__dropdown-item{
+  margin-left: 60px;
+}
+
+
+
+@media screen and (max-width: 1023px) {
+  .menu__dropdown-item + .menu__dropdown-item {
+    margin-left: 32px;
+  }
+}

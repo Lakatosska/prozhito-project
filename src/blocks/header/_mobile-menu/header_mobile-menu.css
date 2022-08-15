@@ -1,0 +1,9 @@
+.header_mobile-menu {
+  background: #e7e4de;
+}
+
+@media screen and (min-width: 768px) {
+  .header_mobile-menu {
+    background-color: #f7f4f0;
+  }
+}

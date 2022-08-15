@@ -1,0 +1,28 @@
+.journal-projito__menu-item {
+  display: inline;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.journal-projito__menu-item:hover {
+  border-bottom: 1px solid #323232;
+}
+
+.journal-projito__menu-item:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__menu-item:not(:last-of-type) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .journal-projito__menu-item:not(:last-of-type) {
+    margin-right: 0;
+  }
+}

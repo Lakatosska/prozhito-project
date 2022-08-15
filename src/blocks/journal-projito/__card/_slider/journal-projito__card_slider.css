@@ -1,0 +1,10 @@
+.journal-projito__card_slider {
+  min-width: 328px;
+}
+
+@media screen and (max-width: 1023px) {
+  .journal-projito__card_slider {
+    min-width: 180px;
+    min-height: 280px;
+  }
+}

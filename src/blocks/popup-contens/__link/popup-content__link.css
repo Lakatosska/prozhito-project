@@ -1,0 +1,26 @@
+.popup-contens__link {
+  color: #323232;
+  text-decoration: none;
+  padding: 0 0 40px;
+  margin: 36px auto 0;
+  font-size: 2.3em;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.5);
+  width: 926px;
+  text-align: center;
+}
+
+.popup-contens__link:nth-child(2) {
+  margin: 221px auto 0;
+}
+
+@media screen and (max-width: 960px) {
+  .popup-contens__link {
+    width: 300px;
+    font-size: 1.5em;
+    margin: 24px auto 0;
+    padding: 0 0 24px;
+  }
+  .popup-contens__link:nth-child(2) {
+    margin: 100px auto 0;
+  }
+}

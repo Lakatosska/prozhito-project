@@ -1,0 +1,10 @@
+.player__time {
+  font: 0.9em/1.67em "PT Sans", sans-serif;
+  margin: 0 0 0 33px;
+}
+
+@media screen and (max-width: 767px) {
+  .player__time {
+    margin: 0 0 0 16px;
+  }
+}

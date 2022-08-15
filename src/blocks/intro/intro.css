@@ -1,0 +1,9 @@
+.intro {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f4f0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}

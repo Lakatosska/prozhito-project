@@ -1,0 +1,6 @@
+.menu__mobile-links {
+  padding: 0;
+  margin: 24px 87px 0 0;
+  display: flex;
+  flex-direction: column;
+}

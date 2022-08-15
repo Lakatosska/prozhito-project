@@ -1,0 +1,23 @@
+.menu__desktop {
+  min-width: 345px;
+  list-style-type: none;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu__desktop {
+    min-width: 284px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu__desktop {
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+.slider__indicators {
+  border-bottom: 4px solid #E7E4DE;
+  max-height: 4px;
+}
+
+@media screen and (max-width: 767px) {
+  .slider__indicators {
+    display: none;
+  }
+}

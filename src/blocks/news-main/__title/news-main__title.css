@@ -1,0 +1,11 @@
+.news-main__title {
+  font: 400 2.3em/1 'WF', sans-serif;
+  max-width: 360px;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .news-main__title {
+    min-width: 300px;
+  }
+}

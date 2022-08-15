@@ -1,0 +1,8 @@
+.menu__mobile-links-section {
+  min-height: 158px;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.3);
+  display: flex;
+  width: calc(100vw * 336 / 360);
+  min-width: 336px;
+  margin: 0 auto;
+}

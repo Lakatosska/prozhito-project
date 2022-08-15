@@ -1,0 +1,14 @@
+.footer__links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .footer__social-networks .footer__links-list {
+    width: 80px;
+    height: 28px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

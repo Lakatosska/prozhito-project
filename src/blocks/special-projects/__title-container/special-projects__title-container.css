@@ -1,0 +1,14 @@
+.special-projects__title-container {
+  max-width: 1440px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+@media screen and (max-width: 420px) {
+  .special-projects__title-container {
+    max-width: 336px;
+    justify-content: flex-start;
+    margin: 0 3.5% 0;
+  }
+}

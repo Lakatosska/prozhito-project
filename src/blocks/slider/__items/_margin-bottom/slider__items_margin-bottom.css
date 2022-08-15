@@ -1,0 +1,16 @@
+.slider__items_margin-bottom {
+  margin-bottom: 46px;
+}
+
+@media screen and (max-width: 1023px) {
+  .slider__items_margin-bottom {
+    margin-bottom: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider__items_margin-bottom {
+    margin-bottom: 0;
+  }
+}
+

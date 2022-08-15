@@ -1,0 +1,30 @@
+.card {
+  width: 328px;
+  height: 428px;
+  background-color: #E7E4DE;
+}
+
+@media screen and (max-width: 1300px) {
+  .card {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .card {
+    width: 238px;
+    height: 360px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    flex-shrink: 0;
+    width: 276px;
+    margin-right: 12px;
+  }
+
+  .card:last-child {
+    margin-right: 0;
+  }
+}

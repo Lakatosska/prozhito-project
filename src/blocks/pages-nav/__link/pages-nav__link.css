@@ -1,0 +1,17 @@
+.pages-nav__link {
+  font: 1em/1.3em "PT Sans", sans-serif;
+  text-decoration: none;
+  color: #323232;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .pages-nav__link {
+    padding-bottom: 2px;
+  }
+}
+
+.pages-nav__link:hover {
+  border-bottom: #323232 solid 1px;
+}
