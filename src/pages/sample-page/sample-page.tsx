@@ -169,8 +169,8 @@ const SamplePage: FC = () => {
           <figure>
             <div className='player'>
               <div className='player__container'>
-                <audio src={require(`../../audio/1564_Rodoman.mp3`)} id='audio'></audio>
-                <button
+                <source src={require(`../../audio/1564_Rodoman.mp3`)} type='audio/mpeg' id='audio'></source>
+                <button button-play
                   type='button'
                   id='button-play'
                   className='player__button-play'
