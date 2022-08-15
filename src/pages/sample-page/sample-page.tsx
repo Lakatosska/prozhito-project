@@ -1,9 +1,8 @@
-import {FC, useState, useRef, useEffect} from "react";
+import {FC, useState, useRef} from "react";
 import {dataAPI} from "../../services/api/data";
 import {useParams} from "react-router-dom";
 import PopupSample from "./popup/popup";
 import ContentsSample from "./contents-sample/contents-sample";
-import soundImage from "../../images/player/soundtrack.svg";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import ContentsMobile from "./contents-mobile/contents-mobile";
 import samplePageStyles from "./sample-page.module.css";
@@ -40,15 +39,6 @@ const SamplePage: FC = () => {
     prevScrollY.current = currentScrollY;
     console.log(scrollingUp, currentScrollY);
   };
-
-    /*
-  useEffect(() => {
-    document.addEventListener('scroll', onScroll);
-
-    return () =>
-    document.removeEventListener('scroll', onScroll);
-  });
-  */
 
   return (
     <main className={samplePageStyles.main}>

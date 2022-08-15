@@ -1,30 +1,35 @@
 import {FC} from "react";
 import {dataAPI} from "../../services/api/data";
 import {useDispatch, useSelector} from "../../hooks";
-import {pageNewsSelector} from "../../services/selectors/news";
+import {dataNewsSelector, pageNewsSelector, totalNewsSelector} from "../../services/selectors/news";
 import {setNewsPage} from "../../services/slices/news";
-import {NEWS_PAGE_LIMIT_DESKTOP, NEWS_PAGE_LIMIT_TABLET, NEWS_PAGE_LIMIT_MOBILE} from "../../constants";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import {NEWS_PAGE_LIMIT_DESKTOP, NEWS_PAGE_LIMIT_MOBILE, NEWS_PAGE_LIMIT_TABLET} from "../../constants";
 import NewsCard from "../../components/news-card/news-card";
 import newsPageStyle from './news-page.module.css';
 import { LinkButton } from "../../components/link-button/link-button";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const NewsPage: FC = () => {
   const dispatch = useDispatch();
   const page = useSelector(pageNewsSelector)
-  const {isLoading, data} = dataAPI.useGetNewsQuery({page, size: NEWS_PAGE_LIMIT_DESKTOP});
-  const handleLoad = () => {
-    dispatch(setNewsPage(page + 1))
-  }
+  const data = useSelector(dataNewsSelector)
+  const total = useSelector(totalNewsSelector)
+
   const tablet = useMediaQuery("(max-width: 1023px)");
   const mobile = useMediaQuery("(max-width: 767px)");
   let pageLimit = NEWS_PAGE_LIMIT_DESKTOP;
-  if(tablet) {
+  if (tablet) {
     pageLimit = NEWS_PAGE_LIMIT_TABLET
-  };
-  if(mobile) {
+  }
+  if (mobile) {
     pageLimit = NEWS_PAGE_LIMIT_MOBILE
-  };
+  }
+
+  const {isLoading} = dataAPI.useGetNewsQuery({page, size: pageLimit}, {refetchOnMountOrArgChange: true})
+
+  const handleLoad = () => {
+    dispatch(setNewsPage(page + 1))
+  }
 
   return (
     <>
@@ -34,8 +39,7 @@ const NewsPage: FC = () => {
         <>
         <ul className={newsPageStyle.container}>
           {
-            data.data
-              .slice(0, pageLimit)
+            data
               .map(item => (
                 <li key={item.id}>
                   <NewsCard  item={item} />
@@ -45,9 +49,9 @@ const NewsPage: FC = () => {
 
         </ul>
         {
-          data.total > data.data.length &&
+          total > data.length &&
           <div className={newsPageStyle.button}>
-            <LinkButton onClick={handleLoad}>Загрузить еще</LinkButton>
+            <LinkButton type={"button"} onClick={handleLoad}>Загрузить еще</LinkButton>
           </div>
           }
         </>
@@ -57,14 +61,3 @@ const NewsPage: FC = () => {
 }
 
 export default NewsPage
-
-/*
-<li key={item.id}>
-  <div style={{padding: '10px'}}>
-    <p>{item.id}</p>
-    <p>{item.text}</p>
-    <img width={253} height={306} src={require(`../../images/${item.image}`)} alt={'Картинка новости'}/>
-    <p>{formatDate(item.date, "short")}</p>
-  </div>
-</li>
-*/

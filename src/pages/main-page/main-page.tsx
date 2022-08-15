@@ -41,7 +41,8 @@ const MainPage: FC = () => {
         <Popup data={popupData} closePopup={() => setPopupOpen(false)} />
       )}
       <Intro />
-      {!isNewsLoading && newsForSlider && (
+      {
+        !isNewsLoading && newsForSlider &&
         <section style={{ margin: "0 auto", maxWidth: "1440px" }}>
           <CardsSlider
             title="Новости и события"
@@ -49,9 +50,8 @@ const MainPage: FC = () => {
             cards={newsForSlider}
             sliderTitle="Свежее"
           />
-      */}
         </section>
-      )}
+      }
       {!isDiaryLoading && diaryData && <Materials data={diaryData} />}
       {!isBannerLoading && bannerData && (
         <section className={pageStyles.page__section}>

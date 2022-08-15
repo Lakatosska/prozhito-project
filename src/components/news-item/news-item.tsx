@@ -23,7 +23,7 @@ const NewsItem: FC<TNewsItemProps> = ({
     changeImageSrc();
     window.addEventListener("resize", changeImageSrc);
     return () => window.removeEventListener("resize", changeImageSrc);
-  }, []);
+  }, [image, imageMobile]);
   return (
     <article className={styles.newsItem}>
       <div className={styles.newsItem__titleContainer}>
