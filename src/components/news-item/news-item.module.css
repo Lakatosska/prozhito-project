@@ -76,6 +76,8 @@ li {
   .newsItem {
     width: 100%;
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+    aspect-ratio: auto;
     max-width: none;
   }
   .newsItem__titleContainer {
