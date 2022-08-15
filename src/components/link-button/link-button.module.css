@@ -98,7 +98,7 @@
     background: var(--button-pressed);
     border: 1px solid var(--button-pressed);
   }
-  .linkButton_size_large{
+  .linkButton_size_large {
     height: 32px;
     width: 32px;
   }
@@ -113,11 +113,11 @@
     width: 11.07px;
   }
 }
-.linkButton_size_large{
+.linkButton_size_large {
   height: 50px;
   width: 50px;
 }
-.linkButton_size_large .linkButton__arrow{
+.linkButton_size_large .linkButton__arrow {
   width: 21.61px;
 }
 

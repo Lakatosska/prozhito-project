@@ -29,6 +29,7 @@ const MainPage: FC = () => {
         tag={news.tag}
         text={news.text}
         image={news.image}
+        imageMobile={news.imageMobile}
         key={news.id}
       />
     );
@@ -41,7 +42,7 @@ const MainPage: FC = () => {
       )}
       <Intro />
       {!isNewsLoading && newsForSlider && (
-        <section>
+        <section style={{ margin: "0 auto", maxWidth: "1440px" }}>
           <CardsSlider
             title="Новости и события"
             textLink="Ко всем новостям"
@@ -62,7 +63,8 @@ const MainPage: FC = () => {
           <CardsSlider
             title="Журнал «Прожито»"
             textLink="Посмотреть всю подборку"
-            cards={journalData}
+            cards={jurnalCards}
+            sliderTitle="Журнал"
           />
         </section>
       )} */}

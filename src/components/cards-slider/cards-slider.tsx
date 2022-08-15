@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper";
 import "swiper/css";
@@ -8,6 +8,8 @@ import "swiper/css/scrollbar";
 import { LinkButton } from "../link-button/link-button";
 
 import styles from "./cards-slider.module.css";
+import { matchesMediaQuery } from "../../utils/functions";
+import { MOBYLE_MEDIA_QUERY } from "../../constants";
 
 interface ICardsSliderProps {
   title: string;
@@ -16,9 +18,13 @@ interface ICardsSliderProps {
   sliderTitle: string;
 }
 
-const NavBtn: FC<{ direction: "left" | "right" }> = ({ direction }) => {
+const NavBtn: FC<{ direction: "left" | "right"; disabled: boolean }> = ({
+  direction,
+  disabled,
+}) => {
   const swiper = useSwiper();
   const directionSlide = direction === "left" ? "slidePrev" : "slideNext";
+
   return (
     <LinkButton
       type="button"
@@ -27,6 +33,7 @@ const NavBtn: FC<{ direction: "left" | "right" }> = ({ direction }) => {
       color={false}
       border
       direction={direction}
+      disabled={disabled}
       onClick={() => swiper[directionSlide]()}
     />
   );
@@ -34,9 +41,11 @@ const NavBtn: FC<{ direction: "left" | "right" }> = ({ direction }) => {
 
 /**
  *
- * @arr Подготовленный массив элементов для слайдера
+ * @arr Массив элементов для слайдера
  */
 const Slider: FC<{ arr: readonly any[]; title: string }> = ({ arr, title }) => {
+  const [disabledPrevBtn, setDisabledPrevBtn] = useState(true);
+  const [disabledNextBtn, setDisabledNextBtn] = useState(false);
   return (
     <Swiper
       wrapperTag="ul"
@@ -49,6 +58,11 @@ const Slider: FC<{ arr: readonly any[]; title: string }> = ({ arr, title }) => {
       spaceBetween={20}
       slidesPerView={2.78}
       className={styles.swiper}
+      onSlideChange={(e) => {
+        !e.isBeginning ? setDisabledPrevBtn(false) : setDisabledPrevBtn(true);
+        !e.isEnd && setDisabledNextBtn(false);
+      }}
+      onReachEnd={() => setDisabledNextBtn(true)}
     >
       <div className={styles.swiper__navContainer}>
         <h2
@@ -57,12 +71,12 @@ const Slider: FC<{ arr: readonly any[]; title: string }> = ({ arr, title }) => {
           {title}
         </h2>
         <div className={styles.swiper__btnContainer}>
-          <NavBtn direction="left" />
-          <NavBtn direction="right" />
+          <NavBtn direction="left" disabled={disabledPrevBtn} />
+          <NavBtn direction="right" disabled={disabledNextBtn} />
         </div>
       </div>
       {arr.map((item: any) => (
-        <SwiperSlide key={item.id} tag="li" className={styles.swiper__slide}>
+        <SwiperSlide key={item.key} tag="li" className={styles.swiper__slide}>
           {item}
         </SwiperSlide>
       ))}
@@ -76,7 +90,11 @@ const CardsSlider: FC<ICardsSliderProps> = ({
   cards,
   sliderTitle,
 }: ICardsSliderProps) => {
-  return (
+  const [isMobile, setIsMobile] = useState(
+    matchesMediaQuery(MOBYLE_MEDIA_QUERY)
+  );
+
+  const desctopAndTablet = (
     <div className={styles.cardsSlider}>
       <div className={styles.cardsSlider__bgSection}>
         <h2
@@ -86,7 +104,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
         </h2>
         <div className={styles.cardsSlider__linkButtonContainer}>
           <p className={styles.cardsSlider__textLink}>{textLink}</p>
-          <LinkButton size="large" round />
+          <LinkButton size="large" round to="/news" />
         </div>
       </div>
       <div className={styles.cardsSlider__sliderContainer}>
@@ -94,6 +112,41 @@ const CardsSlider: FC<ICardsSliderProps> = ({
       </div>
     </div>
   );
+
+  const mobile = (
+    <div className={styles.sliderMobile}>
+      <h2 className={`${styles.sliderMobile__title}`}>{title}</h2>
+      <div className={styles.sliderMobile__linkButtonContainer}>
+        <LinkButton size="small" color={false} border={false} to="/news">
+          {textLink}
+        </LinkButton>
+      </div>
+      {cards.map((el, i) => {
+        if (i < 3) return el;
+        return null;
+      })}
+    </div>
+  );
+
+  useEffect(() => {
+    function changeIsMobile() {
+      const displayMobile = matchesMediaQuery(MOBYLE_MEDIA_QUERY);
+
+      if (!isMobile && displayMobile) {
+        setIsMobile(true);
+      }
+      if (isMobile && !displayMobile) {
+        setIsMobile(false);
+      }
+    }
+
+    window.addEventListener("resize", changeIsMobile);
+    return () => window.removeEventListener("resize", changeIsMobile);
+  }, [isMobile]);
+
+  const resultToRender = isMobile ? mobile : desctopAndTablet;
+
+  return resultToRender;
 };
 
 export default CardsSlider;
