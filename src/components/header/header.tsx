@@ -35,7 +35,7 @@ const Header: FunctionComponent = () => {
       <div className={`${headerStyles.header__container} ${headerStyles.menu}`}>
         <div className={headerStyles.header__links}>
           <a
-            href="https://prozhito.org/"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
             className={headerStyles.link}
