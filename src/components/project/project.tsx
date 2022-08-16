@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router';
 import ProjectCard from '../project-card/project-card';
 
 export const Project: FC = () => {
-  const navigate = useNavigate();
-  const {isLoading, data} = dataAPI.useGetProjectsQuery();
+  const navigate = useNavigate()
+  const {isLoading, data} = dataAPI.useGetProjectsQuery()
   const handleNavigate = (to: string) => {
     navigate(to)
   }
@@ -16,16 +16,17 @@ export const Project: FC = () => {
     <section className={projectStyle.project}>
       <h1 className={projectStyle.title}>Спецпроекты</h1>
         {
-          !isLoading && data &&
-          <ul className={projectStyle.container}>
-            {
-              data.map(item => (
-                <li key={item.id}>
-                  <ProjectCard item={item} onClick={() => handleNavigate(`/sample/${item.sample}`)}/>
-                </li>
-              ))
-            }
-          </ul>
+          !isLoading && data && (
+            <ul className={projectStyle.container}>
+              {
+                data.map(item => (
+                  <li key={item.id}>
+                    <ProjectCard item={item} onClick={() => handleNavigate(`/sample/${item.sample}`)}/>
+                  </li>
+                ))
+              }
+            </ul>
+          )
         }
         <div className={projectStyle.button}>
           <LinkButton
@@ -37,4 +38,4 @@ export const Project: FC = () => {
   )
 }
 
-export default Project;
+export default Project

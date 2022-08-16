@@ -9,87 +9,79 @@ import samplePageStyles from "./sample-page.module.css";
 
 const SamplePage: FC = () => {
 
-  const [popupOpen, setPopupOpen] = useState(true);
-  const [contentsOpen, setContentsOpen] = useState(false);
-
-  const [scrollingUp, setScrollingUp] = useState(false);
-
-  const [scrollValue, setScrollValue] = useState(0);
-
+  const [popupOpen, setPopupOpen] = useState(true)
+  const [contentsOpen, setContentsOpen] = useState(false)
+  const [scrollingUp, setScrollingUp] = useState(false)
+  const [scrollValue, setScrollValue] = useState(0)
   const onScroll = useCallback((): void => {
-
-    const currentScrollY = window.pageYOffset;
-
+    const currentScrollY = window.pageYOffset
     if (scrollValue < currentScrollY && scrollingUp) {
       setScrollingUp(false);
     }
-
     if (scrollValue > currentScrollY && !scrollingUp) {
       setScrollingUp(true);
     }
-
     setScrollValue(currentScrollY)
-
-  }, [scrollValue, setScrollValue, scrollingUp]);
-
+  }, [scrollValue, setScrollValue, scrollingUp])
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
-
     return () => window.removeEventListener('scroll', onScroll)
-
   }, [onScroll])
 
-  const mobile = useMediaQuery('(max-width: 767px)');
-
-  const {page} = useParams<{page?: string}>();
-  const {isLoading, data} = dataAPI.useGetSampleContentQuery(page);
+  const mobile = useMediaQuery('(max-width: 767px)')
+  const {page} = useParams<{page?: string}>()
+  const {isLoading, data} = dataAPI.useGetSampleContentQuery(page)
   if (isLoading || !data || data.length === 0) {
     return null
   }
 
   const openContents = (): void => {
     setContentsOpen(true)
-  };
-
+  }
 
   return (
     <main className={samplePageStyles.main}>
-        <nav>
-          <p className={samplePageStyles.pagesNav}>
-              <Link to="/" className={samplePageStyles.pagesNavLink}>Главная страница</Link> /
-              <Link to="/journal" className={samplePageStyles.pagesNavLink}>&nbsp;Журнал «Прожито»&nbsp;</Link>
-              / Опыт прочтения одного дневника
-            </p>
-        </nav>
-        <div className={samplePageStyles.tag}>
-          <p className={samplePageStyles.tagPart}>детство</p>
-          <p className={samplePageStyles.tagPart}>&#183;</p>
-          <p className={samplePageStyles.tagPart}>опыт читателя</p>
-        </div>
-
-        <button type="button" className={samplePageStyles.buttonContent}
-          onClick={openContents}>оглавление</button>
-
-        {contentsOpen && (
+      <nav>
+        <p className={samplePageStyles.pagesNav}>
+          <Link to="/" className={samplePageStyles.pagesNavLink}>Главная страница</Link> /
+          <Link to="/journal" className={samplePageStyles.pagesNavLink}>&nbsp;Журнал «Прожито»&nbsp;</Link>
+          / Опыт прочтения одного дневника
+        </p>
+      </nav>
+      <div className={samplePageStyles.tag}>
+        <p className={samplePageStyles.tagPart}>детство</p>
+        <p className={samplePageStyles.tagPart}>&#183;</p>
+        <p className={samplePageStyles.tagPart}>опыт читателя</p>
+      </div>
+      <button
+        type="button"
+        className={samplePageStyles.buttonContent}
+        onClick={openContents}
+      >
+        оглавление
+      </button>
+      {
+        contentsOpen && (
           <ContentsSample
             openContents={() => setContentsOpen(true)}
             closeContents={() => setContentsOpen(false)}
           />
-        )}
-
-        {popupOpen && (
+        )
+      }
+      {
+        popupOpen && (
           <PopupSample closePopup={() => setPopupOpen(false)}/>
-        )}
-
-        {mobile && scrollingUp && <ContentsMobile />}
-
-
-
-        <article className="article" dangerouslySetInnerHTML={{__html: data[0].content}}/>
-
+        )
+      }
+      {
+        mobile && scrollingUp && (
+          <ContentsMobile />
+        )
+      }
+      <article className="article" dangerouslySetInnerHTML={{__html: data[0].content}}/>
     </main>
   )
 }
 
-export default SamplePage;
+export default SamplePage

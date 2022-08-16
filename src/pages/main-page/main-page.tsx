@@ -24,7 +24,7 @@ const MainPage: FC = () => {
     dataAPI.useGetMainJournalQuery();
 
   const [popupOpen, setPopupOpen] = useState(true);
-  const newsForSlider = newsData ? newsData.map((news) => {
+  const newsForSlider = newsData ? newsData.map(news => {
     return (
       <NewsItem
         date={news.date}
@@ -37,7 +37,7 @@ const MainPage: FC = () => {
     );
   }) : [];
 
-  const journalForSlider = journalData ? journalData.map((item) => {
+  const journalForSlider = journalData ? journalData.map(item => {
     return (
       <JournalItem
         isExp={isExperience(item)}
@@ -49,41 +49,50 @@ const MainPage: FC = () => {
 
   return (
     <main>
-      {!isPopupLoading && popupData && popupOpen && (
-        <Popup data={popupData} closePopup={() => setPopupOpen(false)} />
-      )}
+      {
+        !isPopupLoading && popupData && popupOpen && (
+          <Popup data={popupData} closePopup={() => setPopupOpen(false)} />
+        )
+      }
       <Intro />
       {
-        !isNewsLoading && newsForSlider &&
-        <section>
-          <CardsSlider
-            title="Новости и события"
-            textLink="Ко всем новостям"
-            cards={newsForSlider}
-            sliderTitle="Свежее"
-            to={"/news"}
-          />
-        </section>
+        !isNewsLoading && newsForSlider && (
+          <section>
+            <CardsSlider
+              title="Новости и события"
+              textLink="Ко всем новостям"
+              cards={newsForSlider}
+              sliderTitle="Свежее"
+              to={"/news"}
+            />
+          </section>
+        )
       }
-      {!isDiaryLoading && diaryData && <Materials data={diaryData} />}
-      {!isBannerLoading && bannerData && (
-        <section className={pageStyles.page__section}>
-          <Banner data={bannerData} />
-        </section>
-      )}
-
-      {!isJournalLoading && journalData && (
-        <section>
-          <CardsSlider
-            title="Журнал «Прожито»"
-            textLink="Посмотреть всю подборку"
-            cards={journalForSlider}
-            sliderTitle="Журнал"
-            to={"/journal"}
-          />
-        </section>
-      )}
-
+      {
+        !isDiaryLoading && diaryData && (
+          <Materials data={diaryData} />
+        )
+      }
+      {
+        !isBannerLoading && bannerData && (
+          <section className={pageStyles.page__section}>
+            <Banner data={bannerData} />
+          </section>
+        )
+      }
+      {
+        !isJournalLoading && journalData && (
+          <section>
+            <CardsSlider
+              title="Журнал «Прожито»"
+              textLink="Посмотреть всю подборку"
+              cards={journalForSlider}
+              sliderTitle="Журнал"
+              to={"/journal"}
+            />
+          </section>
+        )
+      }
       <Project />
     </main>
   );
