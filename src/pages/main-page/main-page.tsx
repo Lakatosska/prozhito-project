@@ -55,7 +55,7 @@ const MainPage: FC = () => {
       <Intro />
       {
         !isNewsLoading && newsForSlider &&
-        <section style={{ margin: "0 auto", maxWidth: "1440px" }}>
+        <section>
           <CardsSlider
             title="Новости и события"
             textLink="Ко всем новостям"
