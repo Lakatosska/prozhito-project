@@ -116,12 +116,6 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .article {
-    margin: 0 12px;
-  }
-  .article p {
-    margin: 12px auto;
-  }
   .image {
     width: 700px;
   }
@@ -325,11 +319,9 @@
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 425px) {
   .player__soundtrack {
-    max-width: 100px;
-    height: 25px;
-    margin: 0 0 0 10px;
+    max-width: 145px;
   }
 }
 
@@ -358,14 +350,14 @@
 
 @media screen and (max-width: 1023px) {
   .player__button-mute {
-    background-image: url(../../images/player/Mute_320px.svg);
     margin: 30px 30px 30px 24px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .player__button-mute {
-    margin: 14px 10px 14px 16px;
+    background-image: url(../../images/player/Mute_320px.svg);
+    margin: 14px 10px 14px 0;
   }
 }
 
