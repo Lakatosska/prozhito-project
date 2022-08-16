@@ -16,7 +16,7 @@ interface ICardsSliderProps {
   to: string;
   title: string;
   textLink: string;
-  cards: readonly any[];
+  cards: readonly JSX.Element[];
   sliderTitle: string;
   slider?: boolean;
 }
@@ -46,7 +46,10 @@ const NavBtn: FC<{ direction: "left" | "right"; disabled: boolean }> = ({
  *
  * @arr Массив элементов для слайдера
  */
-const Slider: FC<{ arr: readonly any[]; title: string }> = ({ arr, title }) => {
+const Slider: FC<{ arr: readonly JSX.Element[]; title: string }> = ({
+  arr,
+  title,
+}) => {
   const [disabledPrevBtn, setDisabledPrevBtn] = useState(true);
   const [disabledNextBtn, setDisabledNextBtn] = useState(false);
   return (
@@ -78,7 +81,7 @@ const Slider: FC<{ arr: readonly any[]; title: string }> = ({ arr, title }) => {
           <NavBtn direction="right" disabled={disabledNextBtn} />
         </div>
       </div>
-      {arr.map((item) => (
+      {arr.map((item: JSX.Element) => (
         <SwiperSlide key={item.key} tag="li" className={styles.swiper__slide}>
           {item}
         </SwiperSlide>
@@ -155,11 +158,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
           </LinkButton>
         </div>
       </div>
-      {!slider &&
-        cards.map((el, i) => {
-          if (i < 3) return el;
-          return null;
-        })}
+      {!slider && cards.slice(0, 3).map((el) => el)}
       {slider && <SliderMobile arr={cards} />}
     </div>
   );

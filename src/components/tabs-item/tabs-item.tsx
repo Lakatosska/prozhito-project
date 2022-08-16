@@ -13,13 +13,18 @@ const TabsItem: FC<TTabItemProps> = ({value, selected, setSelected}) => {
   const tabsItemStylesLine = `${tabsItemStyles.line}`
   return (
     <li className={tabsItemStyles.tab}>
-      <button className={`${tabsItemStyles.button} ${selected && tabsItemStylesLine}`}
+      <button
+        className={`${tabsItemStyles.button} ${selected && tabsItemStylesLine}`}
         onClick={() => {
           if (!selected) {
             setSelected(value)
           }
         }}
-      >{JOURNAL_ITEM_TYPE[value]}</button>
+      >
+        {
+          JOURNAL_ITEM_TYPE[value]
+        }
+      </button>
     </li>
   )
 }

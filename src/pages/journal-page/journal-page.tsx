@@ -55,12 +55,16 @@ const JournalPage: FC = () => {
         <TabItem value={"project"} selected={selectedTab === "project"} setSelected={()=>handleFilter('project')} />
         <TabItem value={"experience"} selected={selectedTab === "experience"} setSelected={()=>handleFilter('experience')} />
       </Tabs>
-      {!isJournalLoading && journal && (
-        <ul className={journalPageStyles.list}>
-          {journal.map(item =>
-            <JournalItem key={item.id} item={item} isExp={isExperience(item)}/>)}
-        </ul>
-      )
+      {
+        !isJournalLoading && journal && (
+          <ul className={journalPageStyles.list}>
+            {
+              journal.map(item => (
+                <JournalItem key={item.id} item={item} isExp={isExperience(item)} />
+              ))
+            }
+          </ul>
+        )
       }
       <div className={journalPageStyles.buttonContainer}>
         <LinkButton type={"button"} onClick={handleLoad} disabled={total === journal.length}>Загрузить еще</LinkButton>
