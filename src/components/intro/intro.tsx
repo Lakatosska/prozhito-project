@@ -29,8 +29,7 @@ const introData: IntroItemProps[] = [{
 
 
 export const Intro: FC = () => {
-
-  return(
+  return (
     <section className={introStyles.intro}>
       <div className={introStyles.intro__container}>
         <h1 className={introStyles.intro__title}>
@@ -43,15 +42,17 @@ export const Intro: FC = () => {
 
         <div className={introStyles.intro__cardContainer}>
           <ul className={introStyles.intro__cards}>
-            {introData.map((item: IntroItemProps, index) =>
-              <IntroItem
-                title={item.title}
-                text={item.text}
-                action={item.action}
-                link={item.link}
-                key={index}
-              />
-            )}
+            {
+              introData.map((item: IntroItemProps, index) => (
+                <IntroItem
+                  title={item.title}
+                  text={item.text}
+                  action={item.action}
+                  link={item.link}
+                  key={index}
+                />
+              ))
+            }
           </ul>
         </div>
       </div>

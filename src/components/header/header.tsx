@@ -55,15 +55,17 @@ const Header: FunctionComponent = () => {
           </a>
         </div>
         <HeaderNav desktop={desktop} open={menuOpen} />
-        {!desktop && (
-          <button
-            type="button"
-            className={headerStyles.menu__button}
-            onClick={toggleMobileMenu}
-          >
-            <img alt={btnState.alt} src={btnState.img} />
-          </button>
-        )}
+        {
+          !desktop && (
+            <button
+              type="button"
+              className={headerStyles.menu__button}
+              onClick={toggleMobileMenu}
+            >
+              <img alt={btnState.alt} src={btnState.img} />
+            </button>
+          )
+        }
       </div>
     </header>
   );

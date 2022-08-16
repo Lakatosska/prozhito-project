@@ -76,11 +76,13 @@ const Slider: FC<{ arr: readonly JSX.Element[]; title: string }> = ({ arr, title
           <NavBtn direction="right" disabled={disabledNextBtn} />
         </div>
       </div>
-      {arr.map((item: JSX.Element) => (
-        <SwiperSlide key={item.key} tag="li" className={styles.swiper__slide}>
-          {item}
-        </SwiperSlide>
-      ))}
+      {
+        arr.map((item: JSX.Element) => (
+          <SwiperSlide key={item.key} tag="li" className={styles.swiper__slide}>
+            {item}
+          </SwiperSlide>
+        ))
+      }
     </Swiper>
   );
 };
@@ -125,10 +127,9 @@ const CardsSlider: FC<ICardsSliderProps> = ({
         </LinkButton>
       </div>
       </div>
-      {cards.map((el, i) => {
-        if (i < 3) return el;
-        return null;
-      })}
+      {
+        cards.slice(0, 3)
+      }
     </div>
   );
 

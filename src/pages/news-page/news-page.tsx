@@ -37,26 +37,26 @@ const NewsPage: FC = () => {
       <p className={newsPageStyle.breadcrumbs}><Link to='/' className={newsPageStyle.breadcrumbsLink}>Главная страница</Link> / <Link to='/journal' className={newsPageStyle.breadcrumbsLink}>Журнал «Прожито»</Link></p>
       <h1  className={newsPageStyle.title}>Новости и события</h1>
       {
-        !isLoading && data &&
-        <>
-        <ul className={newsPageStyle.container}>
-          {
-            data
-              .map(item => (
+        !isLoading && data && (
+          <>
+            <ul className={newsPageStyle.container}>
+            {
+              data.map(item => (
                 <li key={item.id}>
-                  <NewsCard  item={item} />
+                  <NewsCard item={item} />
                 </li>
               ))
-          }
-
-        </ul>
-        {
-          total > data.length &&
-          <div className={newsPageStyle.button}>
-            <LinkButton type={"button"} onClick={handleLoad}>Загрузить еще</LinkButton>
-          </div>
-          }
-        </>
+            }
+            </ul>
+            {
+              total > data.length && (
+                <div className={newsPageStyle.button}>
+                  <LinkButton type={"button"} onClick={handleLoad}>Загрузить еще</LinkButton>
+                </div>
+              )
+            }
+          </>
+        )
       }
     </div>
   )
