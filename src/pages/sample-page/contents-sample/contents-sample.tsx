@@ -1,7 +1,8 @@
 import {FC} from "react";
 import contentsSampleStyles from "./contents-sample.module.css";
+import {IContentsSampleProps} from "../../../services/types/sample";
 
-export const ContentsSample: FC<any> = ({ closeContents }) => {
+export const ContentsSample: FC<IContentsSampleProps> = ({ closeContents }) => {
   return (
     <div className={contentsSampleStyles.table}>
       <div className={contentsSampleStyles.table__container}>
