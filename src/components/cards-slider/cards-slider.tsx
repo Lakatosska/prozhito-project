@@ -1,15 +1,15 @@
-import {FC, useEffect, useState} from "react";
-import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
-import {Navigation, Scrollbar} from "swiper";
+import { FC, useState } from "react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Navigation, Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
-import {LinkButton} from "../link-button/link-button";
+import { LinkButton } from "../link-button/link-button";
 
 import styles from "./cards-slider.module.css";
-import {matchesMediaQuery} from "../../utils/functions";
-import {MOBYLE_MEDIA_QUERY} from "../../constants";
+import { MOBYLE_MEDIA_QUERY } from "../../constants";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 interface ICardsSliderProps {
   to: string;
@@ -92,9 +92,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
   cards,
   sliderTitle,
 }: ICardsSliderProps) => {
-  const [isMobile, setIsMobile] = useState(
-    matchesMediaQuery(MOBYLE_MEDIA_QUERY)
-  );
+  const displayMobile = useMediaQuery(MOBYLE_MEDIA_QUERY);
 
   const desktopAndTablet = (
     <div className={styles.cardsSlider}>
@@ -118,12 +116,12 @@ const CardsSlider: FC<ICardsSliderProps> = ({
   const mobile = (
     <div className={styles.sliderMobile}>
       <div className={styles.title__container}>
-      <h2 className={`${styles.sliderMobile__title}`}>{title}</h2>
-      <div className={styles.sliderMobile__linkButtonContainer}>
-        <LinkButton size="small" color={false} border={false} to={to}>
-          {textLink}
-        </LinkButton>
-      </div>
+        <h2 className={`${styles.sliderMobile__title}`}>{title}</h2>
+        <div className={styles.sliderMobile__linkButtonContainer}>
+          <LinkButton size="small" color={false} border={false} to={to}>
+            {textLink}
+          </LinkButton>
+        </div>
       </div>
       {cards.map((el, i) => {
         if (i < 3) return el;
@@ -132,23 +130,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
     </div>
   );
 
-  useEffect(() => {
-    function changeIsMobile() {
-      const displayMobile = matchesMediaQuery(MOBYLE_MEDIA_QUERY);
-
-      if (!isMobile && displayMobile) {
-        setIsMobile(true);
-      }
-      if (isMobile && !displayMobile) {
-        setIsMobile(false);
-      }
-    }
-
-    window.addEventListener("resize", changeIsMobile);
-    return () => window.removeEventListener("resize", changeIsMobile);
-  }, [isMobile]);
-
-  return isMobile ? mobile : desktopAndTablet;
+  return displayMobile ? mobile : desktopAndTablet;
 };
 
 export default CardsSlider;
