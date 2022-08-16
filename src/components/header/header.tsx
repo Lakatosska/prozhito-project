@@ -29,7 +29,7 @@ const Header: FunctionComponent = () => {
       className={
         `${menuOpen
           ? `${headerStyles.header} ${headerStyles.header_theme_dark}`
-          : headerStyles.header} ${location.pathname != '/' ? headerStyles.header_theme_white : null}`
+          : headerStyles.header} ${location.pathname !== '/' ? headerStyles.header_theme_white : null}`
       }
     >
       <div className={`${headerStyles.header__container} ${headerStyles.menu}`}>

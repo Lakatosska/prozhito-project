@@ -1,36 +1,36 @@
 import {FC} from "react";
-import {IJournalExperienceItem, IJournalItem} from "../../services/types/journal";
+import {IJournalExperienceItem, IJournalItem, IJournalMagazineItem} from "../../services/types/journal";
 import journalItemStyles from "./journal-item.module.css";
 
 interface IJournalItemProps{
-  item: IJournalItem
+  item: IJournalItem;
+  isExp: boolean;
 }
-export const JournalItem: FC<IJournalItemProps> = ({item}) => {
-console.log(item.type)
-  function isExperience(obj: IJournalItem): obj is IJournalExperienceItem {
-    return "name" in obj;
-  }
+export const JournalItem: FC<IJournalItemProps> = ({item, isExp}) => {
+
+  const itemTypeName = item.type === 'project' ? 'Спецпроект' : 'Тематическая подборка'
+
   return (
-    isExperience(item)
-    ?(<li className={journalItemStyles.item} key={item.id}>
+    isExp
+    ?(<div className={journalItemStyles.item} key={item.id}>
         <article className={`${journalItemStyles.cardExp}`}>
-          <p className={journalItemStyles.name}>{item.name}</p>
+          <p className={journalItemStyles.name}>{(item as IJournalExperienceItem).name}</p>
           <img src={require(`../../images/${item.image}`)} className={journalItemStyles.imgExp} alt={'Картинка журнала'}/>
           <p className={`${journalItemStyles.quote} ${journalItemStyles.quote_type_experience}`}>{item.text}</p>
           <p className={journalItemStyles.typeExp}>Опыт читателя</p>
         </article>
-      </li>)
-    :(<li className={journalItemStyles.item} key={item.id}>
+      </div>)
+    :(<div className={journalItemStyles.item} key={item.id}>
       <article className={journalItemStyles.card}>
         <img src={require(`../../images/${item.image}`)} className={journalItemStyles.img} alt={'Картинка журнала'}/>
-        <p className={journalItemStyles.type}>{item.type === 'project'? 'Спецпроект' : 'Тематическая подборка'}</p>
+        <p className={journalItemStyles.type}>{itemTypeName}</p>
         <div className={journalItemStyles.text}>
-          <p className={journalItemStyles.title}>{item.title}</p>
-          <p className={journalItemStyles.subtitle}>{item.subtitle}</p>
+          <p className={journalItemStyles.title}>{(item as IJournalMagazineItem).title}</p>
+          <p className={journalItemStyles.subtitle}>{(item as IJournalMagazineItem).subtitle}</p>
           <p className={journalItemStyles.quote}>{item.text}</p>
         </div>
 
       </article>
-    </li>)
+    </div>)
   )
 }

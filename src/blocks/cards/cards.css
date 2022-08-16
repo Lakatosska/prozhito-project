@@ -1,8 +1,0 @@
-.cards {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  transition: transform 1s ease-in;
-}

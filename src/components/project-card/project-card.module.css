@@ -1,5 +1,5 @@
 .card {
-  background-color: #F7F4F0;
+  background-color: var(--bg-gray);
   width: 678px;
   display: flex;
   cursor: pointer;
@@ -26,7 +26,7 @@ opacity: .8;
       width: 100%;
       height: 386px;
       margin: 24px 0 0;
-      background-color: #fff;
+      background-color: var(--bg-white);
   }
 
   .card:first-child {
@@ -75,7 +75,7 @@ opacity: .8;
   .text {
     height: 186px;
     width: 334px;
-    border: solid 1px #E7E4DE;
+    border: solid 1px var(--bg-orange-light);
     border-top: none;
 }
 }
@@ -94,7 +94,7 @@ opacity: .8;
 }
 
 .title {
-  font-family: 'WF', serif;
+  font-family: var(--font-family-wf);
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -112,7 +112,7 @@ opacity: .8;
 
 @media screen and (max-width: 767px) {
   .title {
-    font-family: 'WF', serif;
+    font-family: var(--font-family-wf);
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -121,12 +121,12 @@ opacity: .8;
 }
 
 .description {
-  font-family: 'PT Sans', serif;
+  font-family: var(--font-family-pt-sans);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 26px;
-  color: #323232;
+  color: var(--black-100);
   opacity: 0.6;
   max-width: 428px;
   margin: 18px 0 0;
@@ -134,7 +134,7 @@ opacity: .8;
 
 @media screen and (max-width: 1400px) {
   .description {
-    font-family: 'PT Sans', serif;
+    font-family: var(--font-family-pt-sans);
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -145,7 +145,7 @@ opacity: .8;
 }
 
 .date {
-  font-family: 'PT Sans', serif;
+  font-family: var(--font-family-pt-sans);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -155,7 +155,7 @@ opacity: .8;
 @media screen and (max-width: 1400px) {
   .date {
     margin: 0 0 12px 0;
-    font-family: 'PT Sans', serif;
+    font-family: var(--font-family-pt-sans);
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -166,7 +166,7 @@ opacity: .8;
 @media screen and (max-width: 767px) {
   .date {
     margin: 24px 0 12px 8px;
-    font-family: 'PT Sans', serif;
+    font-family: var(--font-family-pt-sans);
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

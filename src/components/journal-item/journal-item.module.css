@@ -30,7 +30,7 @@
   box-sizing: border-box;
   cursor: pointer;
   text-align: left;
-  color: #F5F5F5;
+  color: var(--color-text-white);
 }
 .card_type_experience{
   background-color: var(--bg-orange-light);
@@ -51,7 +51,7 @@
 }
 .name{
   margin: 0;
-  font-family: 'WF', serif;
+  font-family: var(--font-family-wf);
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -102,7 +102,7 @@
 
 .title {
   margin: 0;
-  font-family: 'WF', 'Times New Roman', serif;
+  font-family: var(--font-family-wf);
   font-weight: normal;
   font-style: normal;
   font-size: 26px;
@@ -116,7 +116,7 @@
 }
 
 .subtitle {
-  font-family: 'PT Sans', 'Times New Roman', serif;
+  font-family: var(--font-family-pt-sans);
   margin: 0;
   font-size: 20px;
   line-height: 26px;
@@ -130,7 +130,7 @@
 }
 
 .quote {
-  font-family: 'PT Sans', 'Times New Roman', serif;
+  font-family: var(--font-family-pt-sans);
   margin: 0;
   font-size: 14px;
   line-height: 18px;
@@ -160,8 +160,8 @@
   flex-direction: column;
   justify-content: space-between;
   aspect-ratio: calc(328 / 526);
-  padding: 32px 15.5px 28px;
-  background-color: #E7E4DE;
+  padding: 32px 16px 28px;
+  background-color: var(--bg-orange-light);
   align-items: center;
   box-sizing: border-box;
   width: 100%;
@@ -190,7 +190,7 @@
 
 .heading {
   margin: 0 0 20px 0;
-  font-family: 'WF', 'Times New Roman', serif;
+  font-family: var(--font-family-wf);
   font-size: 26px;
   line-height: 26px;
 }
@@ -218,7 +218,7 @@
 }
 
 .description {
-  font-family: 'PT Sans', 'Times New Roman', serif;
+  font-family: var(--font-family-pt-sans);
   margin: 20px 0 0;
   font-size: 14px;
   line-height: 18px;
@@ -237,7 +237,7 @@
 }
 
 .typeExp {
-  font-family: "PT Sans", sans-serif;
+  font-family: var(--font-family-pt-sans);
   margin: 0;
   font-size: 14px;
   line-height: 18px;
@@ -247,7 +247,7 @@
 @media screen and (max-width: 1023px) {
   .typeExp {
     font-size: 12px;
-    line-height: 15.53px;
+    line-height: 16px;
   }
 }
 

@@ -10,7 +10,11 @@ import journalPageStyles from "./journal-page.module.css";
 import { JournalItem } from "../../components/journal-item/journal-item";
 import {LinkButton} from "../../components/link-button/link-button";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import {JOURNAL_PAGE_LIMIT} from "../../constants";
+import {
+  JOURNAL_PAGE_LIMIT_DESKTOP, JOURNAL_PAGE_LIMIT_TABLET, JOURNAL_PAGE_LIMIT_MOBILE
+} from "../../constants";
+import {Link} from "react-router-dom";
+import {isExperience} from "../../utils/functions";
 
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
@@ -20,7 +24,18 @@ const JournalPage: FC = () => {
   const journal = useSelector(dataJournalSelector);
   const [selectedTab, setSelectedTab] = useState<TJournalFilter>(filter)
 
-  const {isLoading: isJournalLoading} = dataAPI.useGetJournalQuery({page, size: JOURNAL_PAGE_LIMIT, filter: filter}, {refetchOnMountOrArgChange: true});
+  const tablet = useMediaQuery("(max-width: 1024px)");
+  const mobile = useMediaQuery("(max-width: 425px)");
+
+  let pageLimit = JOURNAL_PAGE_LIMIT_DESKTOP;
+  if (tablet) {
+    pageLimit = JOURNAL_PAGE_LIMIT_TABLET
+  }
+  if (mobile) {
+    pageLimit = JOURNAL_PAGE_LIMIT_MOBILE
+  }
+
+  const {isLoading: isJournalLoading} = dataAPI.useGetJournalQuery({page, size: pageLimit, filter: filter}, {refetchOnMountOrArgChange: true});
   const handleLoad = () => {
     dispatch(setJournalPage(page + 1));
   }
@@ -29,17 +44,10 @@ const JournalPage: FC = () => {
     setSelectedTab(value)
     dispatch(setJournalFilter(value));
   }
-  const tablet = useMediaQuery("(max-width: 1024px)");
-  const mobile = useMediaQuery("(max-width: 425px)");
-  let journalDataToShow = journal;
-  if(tablet&&journal) journalDataToShow = journal.slice(0,6);
-  if(mobile&&journal) journalDataToShow = journal.slice(0,3)
-
-
 
   return (
     <main className={journalPageStyles.main}>
-      <p className={journalPageStyles.breadcrumps}>Главная страница / Журнал «Прожито»</p>
+      <p className={journalPageStyles.breadcrumbs}><Link to='/' className={journalPageStyles.breadcrumbsLink}>Главная страница</Link> / Журнал «Прожито»</p>
       <h1 className={journalPageStyles.heading}>Журнал &laquo;Прожито&raquo;</h1>
       <Tabs>
         <TabItem value={"all"} selected={selectedTab === "all"} setSelected={()=>handleFilter('all')} />
@@ -47,15 +55,15 @@ const JournalPage: FC = () => {
         <TabItem value={"project"} selected={selectedTab === "project"} setSelected={()=>handleFilter('project')} />
         <TabItem value={"experience"} selected={selectedTab === "experience"} setSelected={()=>handleFilter('experience')} />
       </Tabs>
-      {!isJournalLoading && journalDataToShow && (
+      {!isJournalLoading && journal && (
         <ul className={journalPageStyles.list}>
-          {journalDataToShow.map(item =>
-            <JournalItem key={item.id} item={item}/>)}
+          {journal.map(item =>
+            <JournalItem key={item.id} item={item} isExp={isExperience(item)}/>)}
         </ul>
       )
       }
       <div className={journalPageStyles.buttonContainer}>
-        <LinkButton onClick={handleLoad} disabled={total > journal.length}>Загрузить еще</LinkButton>
+        <LinkButton type={"button"} onClick={handleLoad} disabled={total === journal.length}>Загрузить еще</LinkButton>
       </div>
     </main>
   )

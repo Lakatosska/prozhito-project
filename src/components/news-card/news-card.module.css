@@ -15,8 +15,8 @@ li {
   "titleContainer image"
   "text text";
   gap: 20px;
-  font: normal 400 14px/18px "PT Sans";
-  color: #323232;
+  font: normal 400 14px/18px var(--font-family-pt-sans);
+  color: var(--black-100);
 }
 
 @media screen and (max-width: 1023px){
@@ -40,8 +40,8 @@ li {
     "text"
     "titleContainer";
     gap: 8px;
-    font: normal 400 14px/18px "PT Sans";
-    color: #323232;
+    font: normal 400 14px/18px var(--font-family-pt-sans);
+    color: var(--black-100);
   }
 }
 
@@ -123,7 +123,7 @@ li {
 .text {
   grid-area: text;
   margin: 0;
-  font-family: 'PT Sans';
+  font-family: var(--font-family-pt-sans);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -136,11 +136,6 @@ li {
   .text {
     font-size: 14px;
     line-height: 18px;
-    color: #323232;
+    color: var(--black-100);
   }
 }
-
-/*
-@media screen and (max-width: 1023px){}
-@media screen and (max-width: 767px) {}
-*/

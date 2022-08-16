@@ -20,12 +20,12 @@
 }
 
 .intro__cardTitle {
-  font: 1.8em/1em "WF", sans-serif;
+  font: 1.8em/1em var(--font-family-wf);
   margin: 0 auto 0;
   max-width: calc(100% - 60px);
   width: 100%;
   padding: 32px 0 0 0;
-  color: #323232;
+  color: var(--black-100);
   font-weight: 400;
   overflow-wrap: anywhere;
 }
@@ -51,11 +51,11 @@
 }
 
 .intro__cardSubtitle {
-  font: 1em/1.3em "PT Sans", sans-serif;
+  font: 1em/1.3em var(--font-family-pt-sans);
   margin: 11px auto 36px;
   max-width: calc(100% - 60px);
   width: 100%;
-  color: #323232;
+  color: var(--black-100);
   min-height: 80px;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .intro__aboutLink {
-  font: 1em/1.3em "PT Sans", sans-serif;
+  font: 1em/1.3em var(--font-family-pt-sans);
   margin: 0;
   padding: 0;
   color: rgba(50, 50, 50, 0.5);

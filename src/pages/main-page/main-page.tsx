@@ -7,6 +7,9 @@ import Popup from "../../components/popup/popup";
 import Project from "../../components/project/project";
 import Banner from "../../components/banner/banner";
 import CardsSlider from "../../components/cards-slider/cards-slider";
+import NewsItem from "../../components/news-item/news-item";
+import {JournalItem} from "../../components/journal-item/journal-item";
+import {isExperience} from "../../utils/functions";
 
 const MainPage: FC = () => {
   const { isLoading: isPopupLoading, data: popupData } =
@@ -21,6 +24,28 @@ const MainPage: FC = () => {
     dataAPI.useGetMainJournalQuery();
 
   const [popupOpen, setPopupOpen] = useState(true);
+  const newsForSlider = newsData ? newsData.map((news) => {
+    return (
+      <NewsItem
+        date={news.date}
+        tag={news.tag}
+        text={news.text}
+        image={news.image}
+        imageMobile={news.imageMobile}
+        key={news.id}
+      />
+    );
+  }) : [];
+
+  const journalForSlider = journalData ? journalData.map((item) => {
+    return (
+      <JournalItem
+        isExp={isExperience(item)}
+        item={item}
+        key={item.id}
+      />
+    );
+  }) : [];
 
   return (
     <main>
@@ -28,32 +53,37 @@ const MainPage: FC = () => {
         <Popup data={popupData} closePopup={() => setPopupOpen(false)} />
       )}
       <Intro />
-      {!isNewsLoading && newsData && (
-        <section>
-          {/*
+      {
+        !isNewsLoading && newsForSlider &&
+        <section style={{ margin: "0 auto", maxWidth: "1440px" }}>
           <CardsSlider
             title="Новости и события"
             textLink="Ко всем новостям"
-            cards={newsData}
+            cards={newsForSlider}
+            sliderTitle="Свежее"
+            to={"/news"}
           />
-      */}
         </section>
-      )}
+      }
       {!isDiaryLoading && diaryData && <Materials data={diaryData} />}
       {!isBannerLoading && bannerData && (
         <section className={pageStyles.page__section}>
           <Banner data={bannerData} />
         </section>
       )}
+
       {!isJournalLoading && journalData && (
         <section>
-          {/*<CardsSlider*/}
-          {/*  title="Журнал «Прожито»"*/}
-          {/*  textLink="Посмотреть всю подборку"*/}
-          {/*  cards={journalData}*/}
-          {/*/>*/}
+          <CardsSlider
+            title="Журнал «Прожито»"
+            textLink="Посмотреть всю подборку"
+            cards={journalForSlider}
+            sliderTitle="Журнал"
+            to={"/journal"}
+          />
         </section>
       )}
+
       <Project />
     </main>
   );
