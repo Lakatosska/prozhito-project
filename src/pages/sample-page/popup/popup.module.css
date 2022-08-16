@@ -3,6 +3,7 @@
   box-sizing: border-box;
   background-color: var(--bg-gray);
   position: fixed;
+  border-radius: 8px;
   top: 50%;
   right: 0;
   order: 3;
@@ -68,7 +69,7 @@
     max-width: 676px;
     left: 0;
     width: 100%;
-    margin: 12px auto;
+    margin: 0 auto;
   }
   .popup__closeButton{
     top: 12px;
