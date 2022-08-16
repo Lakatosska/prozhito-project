@@ -182,9 +182,7 @@
 @media screen and (max-width: 767px) {
   .legal{
     order: 3;
-    margin-top: 25px;
-    margin-bottom: 16px;
-    margin-left: 0;
+    margin: 20px 0 16px;
   }
 }
 

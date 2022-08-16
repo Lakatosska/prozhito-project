@@ -2,7 +2,8 @@
   min-width: 320px;
   position: relative;
   background-color: var(--bg-orange-lightest);
-  z-index: 2;
+  z-index: 10;
+  min-height: 50px;
 }
 
 .header_theme_dark {
