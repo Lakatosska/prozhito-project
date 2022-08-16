@@ -117,11 +117,13 @@ const CardsSlider: FC<ICardsSliderProps> = ({
 
   const mobile = (
     <div className={styles.sliderMobile}>
+      <div>
       <h2 className={`${styles.sliderMobile__title}`}>{title}</h2>
       <div className={styles.sliderMobile__linkButtonContainer}>
         <LinkButton size="small" color={false} border={false} to={to}>
           {textLink}
         </LinkButton>
+      </div>
       </div>
       {cards.map((el, i) => {
         if (i < 3) return el;
