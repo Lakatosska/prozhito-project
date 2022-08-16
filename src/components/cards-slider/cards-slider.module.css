@@ -99,6 +99,9 @@ ul {
   box-sizing: border-box;
   gap: 16px;
 }
+.title__container{
+  width: 100%;
+}
 
 .sliderMobile__title {
   margin: 0;

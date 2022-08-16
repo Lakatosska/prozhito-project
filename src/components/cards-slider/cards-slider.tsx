@@ -117,7 +117,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
 
   const mobile = (
     <div className={styles.sliderMobile}>
-      <div>
+      <div className={styles.title__container}>
       <h2 className={`${styles.sliderMobile__title}`}>{title}</h2>
       <div className={styles.sliderMobile__linkButtonContainer}>
         <LinkButton size="small" color={false} border={false} to={to}>
