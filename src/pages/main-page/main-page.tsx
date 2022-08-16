@@ -8,8 +8,8 @@ import Project from "../../components/project/project";
 import Banner from "../../components/banner/banner";
 import CardsSlider from "../../components/cards-slider/cards-slider";
 import NewsItem from "../../components/news-item/news-item";
-import {JournalItem} from "../../components/journal-item/journal-item";
-import {isExperience} from "../../utils/functions";
+import { JournalItem } from "../../components/journal-item/journal-item";
+import { isExperience } from "../../utils/functions";
 
 const MainPage: FC = () => {
   const { isLoading: isPopupLoading, data: popupData } =
@@ -24,28 +24,28 @@ const MainPage: FC = () => {
     dataAPI.useGetMainJournalQuery();
 
   const [popupOpen, setPopupOpen] = useState(true);
-  const newsForSlider = newsData ? newsData.map((news) => {
-    return (
-      <NewsItem
-        date={news.date}
-        tag={news.tag}
-        text={news.text}
-        image={news.image}
-        imageMobile={news.imageMobile}
-        key={news.id}
-      />
-    );
-  }) : [];
+  const newsForSlider = newsData
+    ? newsData.map((news) => {
+        return (
+          <NewsItem
+            date={news.date}
+            tag={news.tag}
+            text={news.text}
+            image={news.image}
+            imageMobile={news.imageMobile}
+            key={news.id}
+          />
+        );
+      })
+    : [];
 
-  const journalForSlider = journalData ? journalData.map((item) => {
-    return (
-      <JournalItem
-        isExp={isExperience(item)}
-        item={item}
-        key={item.id}
-      />
-    );
-  }) : [];
+  const journalForSlider = journalData
+    ? journalData.map((item) => {
+        return (
+          <JournalItem isExp={isExperience(item)} item={item} key={item.id} />
+        );
+      })
+    : [];
 
   return (
     <main>
@@ -53,8 +53,7 @@ const MainPage: FC = () => {
         <Popup data={popupData} closePopup={() => setPopupOpen(false)} />
       )}
       <Intro />
-      {
-        !isNewsLoading && newsForSlider &&
+      {!isNewsLoading && newsForSlider && (
         <section>
           <CardsSlider
             title="Новости и события"
@@ -64,7 +63,7 @@ const MainPage: FC = () => {
             to={"/news"}
           />
         </section>
-      }
+      )}
       {!isDiaryLoading && diaryData && <Materials data={diaryData} />}
       {!isBannerLoading && bannerData && (
         <section className={pageStyles.page__section}>
@@ -80,6 +79,7 @@ const MainPage: FC = () => {
             cards={journalForSlider}
             sliderTitle="Журнал"
             to={"/journal"}
+            slider={true}
           />
         </section>
       )}

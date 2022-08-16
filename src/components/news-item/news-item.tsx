@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import styles from "./news-item.module.css";
 import { formatDate } from "../../utils/dateHelper";
 import { INewsItem } from "../../services/types/news";

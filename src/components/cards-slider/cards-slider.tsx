@@ -1,9 +1,10 @@
 import { FC, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, Scrollbar } from "swiper";
+import { Navigation, Scrollbar, EffectCards } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
+import "swiper/css/effect-cards";
 
 import { LinkButton } from "../link-button/link-button";
 
@@ -17,6 +18,7 @@ interface ICardsSliderProps {
   textLink: string;
   cards: readonly any[];
   sliderTitle: string;
+  slider?: boolean;
 }
 
 const NavBtn: FC<{ direction: "left" | "right"; disabled: boolean }> = ({
@@ -76,8 +78,37 @@ const Slider: FC<{ arr: readonly any[]; title: string }> = ({ arr, title }) => {
           <NavBtn direction="right" disabled={disabledNextBtn} />
         </div>
       </div>
-      {arr.map((item: any) => (
+      {arr.map((item) => (
         <SwiperSlide key={item.key} tag="li" className={styles.swiper__slide}>
+          {item}
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+};
+
+const SliderMobile: FC<{ arr: readonly any[] }> = ({ arr }) => {
+  return (
+    <Swiper
+      wrapperTag="ul"
+      className={styles.swiperMobile}
+      centeredSlides={true}
+      slidesPerView={1}
+      effect={"cards"}
+      grabCursor={true}
+      slideToClickedSlide={true}
+      cardsEffect={{
+        rotate: false,
+        slideShadows: false,
+      }}
+      modules={[EffectCards]}
+    >
+      {arr.map((item) => (
+        <SwiperSlide
+          key={item.key}
+          tag="li"
+          className={styles.swiperMobile__slides}
+        >
           {item}
         </SwiperSlide>
       ))}
@@ -91,6 +122,7 @@ const CardsSlider: FC<ICardsSliderProps> = ({
   textLink,
   cards,
   sliderTitle,
+  slider = false,
 }: ICardsSliderProps) => {
   const displayMobile = useMediaQuery(MOBYLE_MEDIA_QUERY);
 
@@ -123,10 +155,12 @@ const CardsSlider: FC<ICardsSliderProps> = ({
           </LinkButton>
         </div>
       </div>
-      {cards.map((el, i) => {
-        if (i < 3) return el;
-        return null;
-      })}
+      {!slider &&
+        cards.map((el, i) => {
+          if (i < 3) return el;
+          return null;
+        })}
+      {slider && <SliderMobile arr={cards} />}
     </div>
   );
 
