@@ -15,6 +15,7 @@ import {
 } from "../../constants";
 import {Link} from "react-router-dom";
 import {isExperience} from "../../utils/functions";
+import Loader from "../../components/loader/loader";
 
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,8 @@ const JournalPage: FC = () => {
     setSelectedTab(value)
     dispatch(setJournalFilter(value));
   }
+
+  if (isJournalLoading) return <Loader />
 
   return (
     <main className={journalPageStyles.main}>

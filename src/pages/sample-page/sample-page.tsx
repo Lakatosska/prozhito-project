@@ -6,6 +6,7 @@ import ContentsSample from "./contents-sample/contents-sample";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import ContentsMobile from "./contents-mobile/contents-mobile";
 import samplePageStyles from "./sample-page.module.css";
+import Loader from "../../components/loader/loader";
 
 const SamplePage: FC = () => {
 
@@ -39,6 +40,8 @@ const SamplePage: FC = () => {
   const openContents = (): void => {
     setContentsOpen(true)
   }
+
+  if (isLoading) return <Loader />
 
   return (
     <main className={samplePageStyles.main}>
