@@ -13,9 +13,7 @@ const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
   desktop,
   setDropDownVisible,
 }) => {
-  const dropdownStylesMobile = visible
-    ? `${headerDropdownStyles.menu__mobileLinksSection}`
-    : `${headerDropdownStyles.menu__mobileLinksSection} ${headerDropdownStyles.menu__mobileLinksSection_closed}`;
+  const dropdownStylesMobile = `${headerDropdownStyles.menu__mobileLinksSection}`
 
   const dropdownStylesDesktop = visible
     ? `${headerDropdownStyles.menu__dropdown} ${headerDropdownStyles.menu__dropdown_visible} `
@@ -71,8 +69,6 @@ const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
   ) : (
     <div
       className={dropdownStylesMobile}
-      onMouseEnter={() => setDropDownVisible(true)}
-      onMouseLeave={() => setDropDownVisible(false)}
     >
       <ul className={headerDropdownStyles.menu__mobileLinks}>
         <li className={headerNavStyles.menu__item}>
