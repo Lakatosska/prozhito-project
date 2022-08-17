@@ -7,6 +7,7 @@ import logo_mobile from "../../images/logo_prozhito_mobile.svg"
 import telegram from '../../images/telegram.svg';
 import vk from '../../images/vk.svg';
 import useMediaQuery from "../../hooks/useMediaQuery";
+import {Link} from "react-router-dom";
 
 
 export const FooterInfo: FC = () => {
@@ -15,12 +16,12 @@ export const FooterInfo: FC = () => {
   return(
     <section className={footerInfoStyles.info}>
       <div className={footerInfoStyles.logo}>
-        <a href="https://prozhito.org/" target="_blank" rel="noopener noreferrer" className={footerInfoStyles.link}>
+        <Link to="/" className={footerInfoStyles.link}>
           <img
           src={desktop? logo : logo_mobile}
           alt={desktop.toString()}
         />
-        </a>
+        </Link>
         <a href="https://eusp.org/" target="_blank" rel="noopener noreferrer" className={footerInfoStyles.link}>
         <img
           src={desktop? logo_eu_ru : logo_eu_ru_mobile}
