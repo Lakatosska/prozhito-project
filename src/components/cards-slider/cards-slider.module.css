@@ -100,7 +100,7 @@ ul {
   box-sizing: border-box;
   gap: 16px;
 }
-.title__container{
+.title__container {
   width: 100%;
 }
 
@@ -121,12 +121,19 @@ ul {
   border: none;
   justify-content: flex-start;
 }
-.sliderMobile__linkButtonContainer img{
+.sliderMobile__linkButtonContainer img {
   width: 21px;
   margin-left: 6px;
 }
 .sliderMobile__linkButtonContainer a:hover {
   border: none;
+}
+
+.swiperMobile {
+  max-width: 352px;
+  height: auto;
+  box-sizing: border-box;
+  padding-inline-start: 12px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -142,5 +149,12 @@ ul {
   }
   .cardsSlider__linkButtonContainer {
     margin-inline-end: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sliderMobile {
+    max-width: 360px;
+    margin: 0 auto;
   }
 }

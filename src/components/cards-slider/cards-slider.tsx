@@ -1,15 +1,16 @@
-import {FC, useEffect, useState} from "react";
-import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
-import {Navigation, Scrollbar} from "swiper";
+import { FC, useState } from "react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Navigation, Scrollbar, EffectCards } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
+import "swiper/css/effect-cards";
 
-import {LinkButton} from "../link-button/link-button";
+import { LinkButton } from "../link-button/link-button";
 
 import styles from "./cards-slider.module.css";
-import {matchesMediaQuery} from "../../utils/functions";
-import {MOBYLE_MEDIA_QUERY} from "../../constants";
+import { MOBYLE_MEDIA_QUERY } from "../../constants";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 interface ICardsSliderProps {
   to: string;
@@ -17,6 +18,7 @@ interface ICardsSliderProps {
   textLink: string;
   cards: readonly JSX.Element[];
   sliderTitle: string;
+  slider?: boolean;
 }
 
 const NavBtn: FC<{ direction: "left" | "right"; disabled: boolean }> = ({
@@ -44,7 +46,10 @@ const NavBtn: FC<{ direction: "left" | "right"; disabled: boolean }> = ({
  *
  * @arr Массив элементов для слайдера
  */
-const Slider: FC<{ arr: readonly JSX.Element[]; title: string }> = ({ arr, title }) => {
+const Slider: FC<{ arr: readonly JSX.Element[]; title: string }> = ({
+  arr,
+  title,
+}) => {
   const [disabledPrevBtn, setDisabledPrevBtn] = useState(true);
   const [disabledNextBtn, setDisabledNextBtn] = useState(false);
   return (
@@ -76,13 +81,40 @@ const Slider: FC<{ arr: readonly JSX.Element[]; title: string }> = ({ arr, title
           <NavBtn direction="right" disabled={disabledNextBtn} />
         </div>
       </div>
-      {
-        arr.map((item: JSX.Element) => (
-          <SwiperSlide key={item.key} tag="li" className={styles.swiper__slide}>
-            {item}
-          </SwiperSlide>
-        ))
-      }
+      {arr.map((item: JSX.Element) => (
+        <SwiperSlide key={item.key} tag="li" className={styles.swiper__slide}>
+          {item}
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+};
+
+const SliderMobile: FC<{ arr: readonly any[] }> = ({ arr }) => {
+  return (
+    <Swiper
+      wrapperTag="ul"
+      className={styles.swiperMobile}
+      centeredSlides={true}
+      slidesPerView={1}
+      effect={"cards"}
+      grabCursor={true}
+      slideToClickedSlide={true}
+      cardsEffect={{
+        rotate: false,
+        slideShadows: false,
+      }}
+      modules={[EffectCards]}
+    >
+      {arr.map((item) => (
+        <SwiperSlide
+          key={item.key}
+          tag="li"
+          className={styles.swiperMobile__slides}
+        >
+          {item}
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };
@@ -93,10 +125,9 @@ const CardsSlider: FC<ICardsSliderProps> = ({
   textLink,
   cards,
   sliderTitle,
+  slider = false,
 }: ICardsSliderProps) => {
-  const [isMobile, setIsMobile] = useState(
-    matchesMediaQuery(MOBYLE_MEDIA_QUERY)
-  );
+  const displayMobile = useMediaQuery(MOBYLE_MEDIA_QUERY);
 
   const desktopAndTablet = (
     <div className={styles.cardsSlider}>
@@ -120,36 +151,19 @@ const CardsSlider: FC<ICardsSliderProps> = ({
   const mobile = (
     <div className={styles.sliderMobile}>
       <div className={styles.title__container}>
-      <h2 className={`${styles.sliderMobile__title}`}>{title}</h2>
-      <div className={styles.sliderMobile__linkButtonContainer}>
-        <LinkButton size="small" color={false} border={false} to={to}>
-          {textLink}
-        </LinkButton>
+        <h2 className={`${styles.sliderMobile__title}`}>{title}</h2>
+        <div className={styles.sliderMobile__linkButtonContainer}>
+          <LinkButton size="small" color={false} border={false} to={to}>
+            {textLink}
+          </LinkButton>
+        </div>
       </div>
-      </div>
-      {
-        cards.slice(0, 3)
-      }
+      {!slider && cards.slice(0, 3).map((el) => el)}
+      {slider && <SliderMobile arr={cards} />}
     </div>
   );
 
-  useEffect(() => {
-    function changeIsMobile() {
-      const displayMobile = matchesMediaQuery(MOBYLE_MEDIA_QUERY);
-
-      if (!isMobile && displayMobile) {
-        setIsMobile(true);
-      }
-      if (isMobile && !displayMobile) {
-        setIsMobile(false);
-      }
-    }
-
-    window.addEventListener("resize", changeIsMobile);
-    return () => window.removeEventListener("resize", changeIsMobile);
-  }, [isMobile]);
-
-  return isMobile ? mobile : desktopAndTablet;
+  return displayMobile ? mobile : desktopAndTablet;
 };
 
 export default CardsSlider;

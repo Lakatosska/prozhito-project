@@ -8,8 +8,8 @@ import Project from "../../components/project/project";
 import Banner from "../../components/banner/banner";
 import CardsSlider from "../../components/cards-slider/cards-slider";
 import NewsItem from "../../components/news-item/news-item";
-import {JournalItem} from "../../components/journal-item/journal-item";
-import {isExperience} from "../../utils/functions";
+import { JournalItem } from "../../components/journal-item/journal-item";
+import { isExperience } from "../../utils/functions";
 
 const MainPage: FC = () => {
   const { isLoading: isPopupLoading, data: popupData } =
@@ -24,75 +24,66 @@ const MainPage: FC = () => {
     dataAPI.useGetMainJournalQuery();
 
   const [popupOpen, setPopupOpen] = useState(true);
-  const newsForSlider = newsData ? newsData.map(news => {
-    return (
-      <NewsItem
-        date={news.date}
-        tag={news.tag}
-        text={news.text}
-        image={news.image}
-        imageMobile={news.imageMobile}
-        key={news.id}
-      />
-    );
-  }) : [];
+  const newsForSlider = newsData
+    ? newsData.map((news) => {
+        return (
+          <NewsItem
+            date={news.date}
+            tag={news.tag}
+            text={news.text}
+            image={news.image}
+            imageMobile={news.imageMobile}
+            key={news.id}
+          />
+        );
+      })
+    : [];
 
-  const journalForSlider = journalData ? journalData.map(item => {
-    return (
-      <JournalItem
-        isExp={isExperience(item)}
-        item={item}
-        key={item.id}
-      />
-    );
-  }) : [];
+  const journalForSlider = journalData
+    ? journalData.map((item) => {
+        return (
+          <JournalItem isExp={isExperience(item)} item={item} key={item.id} />
+        );
+      })
+    : [];
 
   return (
     <main>
-      {
-        !isPopupLoading && popupData && popupOpen && (
-          <Popup data={popupData} closePopup={() => setPopupOpen(false)} />
-        )
-      }
+      {!isPopupLoading && popupData && popupOpen && (
+        <Popup data={popupData} closePopup={() => setPopupOpen(false)} />
+      )}
       <Intro />
-      {
-        !isNewsLoading && newsForSlider && (
-          <section>
-            <CardsSlider
-              title="Новости и события"
-              textLink="Ко всем новостям"
-              cards={newsForSlider}
-              sliderTitle="Свежее"
-              to={"/news"}
-            />
-          </section>
-        )
-      }
-      {
-        !isDiaryLoading && diaryData && (
-          <Materials data={diaryData} />
-        )
-      }
-      {
-        !isBannerLoading && bannerData && (
-          <section className={pageStyles.page__section}>
-            <Banner data={bannerData} />
-          </section>
-        )
-      }
-      {
-        !isJournalLoading && journalData && (
-          <section>
-            <CardsSlider
-              title="Журнал «Прожито»"
-              textLink="Посмотреть всю подборку"
-              cards={journalForSlider}
-              sliderTitle="Журнал"
-              to={"/journal"}
-            />
-          </section>
-        )
-      }
+      {!isNewsLoading && newsForSlider && (
+        <section>
+          <CardsSlider
+            title="Новости и события"
+            textLink="Ко всем новостям"
+            cards={newsForSlider}
+            sliderTitle="Свежее"
+            to={"/news"}
+          />
+        </section>
+      )}
+      {!isDiaryLoading && diaryData && <Materials data={diaryData} />}
+      {!isBannerLoading && bannerData && (
+        <section className={pageStyles.page__section}>
+          <Banner data={bannerData} />
+        </section>
+      )}
+
+      {!isJournalLoading && journalData && (
+        <section>
+          <CardsSlider
+            title="Журнал «Прожито»"
+            textLink="Посмотреть всю подборку"
+            cards={journalForSlider}
+            sliderTitle="Журнал"
+            to={"/journal"}
+            slider={true}
+          />
+        </section>
+      )}
+
       <Project />
     </main>
   );
