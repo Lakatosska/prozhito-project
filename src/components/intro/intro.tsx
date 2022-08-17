@@ -6,31 +6,30 @@ const introData: IntroItemProps[] = [{
   title: 'Передать документы',
   text: 'Передайте в «Прожито» копии документов из семейного архива, чтобы сделать их доступнее исследователям и читателям',
   action: 'Подробнее',
-  link: '#'
+  link: '/sample/diary1'
 },
 {
   title: 'Стать волонтёром',
   text: 'Вы можете помочь нашему делу — для работы с документами нужен компьютер и несколько свободных часов в неделю',
   action: 'Узнать больше',
-  link: '#'
+  link: '/sample/diary2'
 },
 {
   title: 'Дневники и воспоминания',
   text: 'Мы собрали тексты опубликованных дневников и воспоминаний и сделали по ним  расширенный поиск',
   action: 'Ознакомиться',
-  link: '#'
+  link: '/sample/diary3'
 },
 {
   title: 'Работа с архивом',
   text: 'Как устроен наш архив и поиск по сохранённым документам',
   action: 'Перейти к архиву',
-  link: '#'
+  link: '/sample/diary3'
 }];
 
 
 export const Intro: FC = () => {
-
-  return(
+  return (
     <section className={introStyles.intro}>
       <div className={introStyles.intro__container}>
         <h1 className={introStyles.intro__title}>
@@ -43,15 +42,17 @@ export const Intro: FC = () => {
 
         <div className={introStyles.intro__cardContainer}>
           <ul className={introStyles.intro__cards}>
-            {introData.map((item: IntroItemProps, index) =>
-              <IntroItem
-                title={item.title}
-                text={item.text}
-                action={item.action}
-                link={item.link}
-                key={index}
-              />
-            )}
+            {
+              introData.map((item: IntroItemProps, index) => (
+                <IntroItem
+                  title={item.title}
+                  text={item.text}
+                  action={item.action}
+                  link={item.link}
+                  key={index}
+                />
+              ))
+            }
           </ul>
         </div>
       </div>

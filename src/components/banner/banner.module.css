@@ -18,7 +18,7 @@
   object-fit: cover;
 }
 .banner__title{
-  font-family: 'WF', serif;
+  font-family: var(--font-family-wf);
   font-weight: 400;
   font-size: 36px;
   line-height: 1;
@@ -26,7 +26,7 @@
   margin: 0;
 }
 .banner__text{
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--font-family-pt-sans);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

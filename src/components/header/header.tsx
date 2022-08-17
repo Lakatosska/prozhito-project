@@ -35,7 +35,7 @@ const Header: FunctionComponent = () => {
       <div className={`${headerStyles.header__container} ${headerStyles.menu}`}>
         <div className={headerStyles.header__links}>
           <a
-            href="https://prozhito.org/"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
             className={headerStyles.link}
@@ -54,16 +54,18 @@ const Header: FunctionComponent = () => {
             />
           </a>
         </div>
-        <HeaderNav desktop={desktop} open={menuOpen} />
-        {!desktop && (
-          <button
-            type="button"
-            className={headerStyles.menu__button}
-            onClick={toggleMobileMenu}
-          >
-            <img alt={btnState.alt} src={btnState.img} />
-          </button>
-        )}
+        <HeaderNav desktop={desktop} open={menuOpen} closeMenu={()=>setMenuOpen(false)} />
+        {
+          !desktop && (
+            <button
+              type="button"
+              className={headerStyles.menu__button}
+              onClick={toggleMobileMenu}
+            >
+              <img alt={btnState.alt} src={btnState.img} />
+            </button>
+          )
+        }
       </div>
     </header>
   );

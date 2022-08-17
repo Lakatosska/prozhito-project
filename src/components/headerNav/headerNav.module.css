@@ -3,14 +3,14 @@
   height: 0;
   overflow: hidden;
   background: var(--bg-orange-light);
-  top: 100%;
+  top: 50px;
   left: 0;
   width: 100%;
   transition: height 0.5s ease-in-out;
 }
 
 .menu__mobileContainer_open {
-  height: 100vh;
+  height: calc(100vh - 50px);
 }
 
 .menu__desktop {

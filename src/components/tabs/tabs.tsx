@@ -11,13 +11,15 @@ const Tabs: FC<TProps> = ({ children }) => {
     <>
       <p className={tabsStyles.heading}>Сортировать :</p>
       <ul className={tabsStyles.tabs}>
-        {children.map((item) => (
-          <TabsItem
-            value={item.props.value}
-            selected={item.props.selected}
-            setSelected={item.props.setSelected}
-          />
-        ))}
+        {
+          children.map(item => (
+            <TabsItem
+              value={item.props.value}
+              selected={item.props.selected}
+              setSelected={item.props.setSelected}
+            />
+          ))
+        }
       </ul>
     </>
   )

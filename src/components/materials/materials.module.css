@@ -23,18 +23,18 @@
 @media screen and (max-width: 767px) {
   .materials {
     overflow: hidden;
-    width: calc(100vw - 22px);
+    width: calc(100vw - 25px);
     padding-left: 0;
     margin-right: 0;
+    padding-bottom: 28px;
   }
 }
 
 .title {
-  margin: 0;
-  margin-bottom: 40px;
+  margin: 0 0 40px;
   padding: 0;
-  font: normal 46px "WF", "PT Sans", sans-serif;
-  color: #323232;
+  font: normal 46px var(--font-family-wf-pt-sans);
+  color: var(--black-100);
   text-align: center;
 }
 
@@ -70,12 +70,12 @@
 }
 
 .pagination{
-  margin-top: 20px;
+  margin-top: 18px;
   width: fit-content;
 }
 
 .materials .swiper{
-  margin-left: 30px;
+  margin-left: 41px;
 }
 
 .materials .swiperSlide {

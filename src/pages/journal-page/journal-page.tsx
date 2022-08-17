@@ -15,6 +15,7 @@ import {
 } from "../../constants";
 import {Link} from "react-router-dom";
 import {isExperience} from "../../utils/functions";
+import Loader from "../../components/loader/loader";
 
 const JournalPage: FC = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,8 @@ const JournalPage: FC = () => {
     dispatch(setJournalFilter(value));
   }
 
+  if (isJournalLoading) return <Loader />
+
   return (
     <main className={journalPageStyles.main}>
       <h1 className={journalPageStyles.heading}>Журнал &laquo;Прожито&raquo;</h1>
@@ -54,12 +57,16 @@ const JournalPage: FC = () => {
         <TabItem value={"project"} selected={selectedTab === "project"} setSelected={()=>handleFilter('project')} />
         <TabItem value={"experience"} selected={selectedTab === "experience"} setSelected={()=>handleFilter('experience')} />
       </Tabs>
-      {!isJournalLoading && journal && (
-        <ul className={journalPageStyles.list}>
-          {journal.map(item =>
-            <JournalItem key={item.id} item={item} isExp={isExperience(item)}/>)}
-        </ul>
-      )
+      {
+        !isJournalLoading && journal && (
+          <ul className={journalPageStyles.list}>
+            {
+              journal.map(item => (
+                <JournalItem key={item.id} item={item} isExp={isExperience(item)} />
+              ))
+            }
+          </ul>
+        )
       }
       <div className={journalPageStyles.buttonContainer}>
         <LinkButton type={"button"} onClick={handleLoad} disabled={total === journal.length}>Загрузить еще</LinkButton>

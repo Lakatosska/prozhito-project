@@ -1,6 +1,6 @@
 .container {
-  border-top: 1px solid #E7E4DE;
-  border-bottom: 1px solid #E7E4DE;
+  border-top: 1px solid var(--bg-orange-light);
+  border-bottom: 1px solid var(--bg-orange-light);
   height: 88px;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  font: 16px/1.18 "PT sans", sans-serif;
+  font: 16px/1.18 var(--font-family-pt-sans);
 }
 
 @media screen and (max-width: 1023px) { /* планшетная версия до ширины экрана в 1023px*/
@@ -69,11 +69,11 @@
   align-items: center;
   margin: 0;
   padding: 0;
-  color: #323232;
+  color: var(--black-100);
 }
 
 .link:hover {
-  border-bottom: 1px solid #323232;
+  border-bottom: 1px solid var(--black-100);
   margin-bottom: -1px;
 }
 
@@ -93,7 +93,7 @@
 
 @media screen and (max-width: 767px) {
   .link {
-    font-family: 'PT Sans', serif;
+    font-family: var(--font-family-pt-sans);
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

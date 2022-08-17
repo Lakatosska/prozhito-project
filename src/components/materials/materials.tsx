@@ -15,25 +15,27 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 interface IMaterialsProps {
   data: IDiaryItem[];
 }
-export const Materials: FC<IMaterialsProps> = ({ data }) => {
-  const desktop = useMediaQuery("(min-width: 768px)");
 
+export const Materials: FC<IMaterialsProps> = ({ data }) => {
+  const desktop = useMediaQuery("(min-width: 768px)")
   return (
     <section className={materialsStyle.materials}>
       <h2 className={materialsStyle.title}>Материалы</h2>
       {desktop ? (
         <ul className={materialsStyle.cards}>
-          {data.map((item) => (
-            <MaterialsItem
-              id={item.id}
-              name={item.name}
-              image={item.image}
-              text={item.text}
-              tag={item.tag}
-              key={item.id}
-              sample={item.sample}
-            />
-          ))}
+          {
+            data.map(item => (
+              <MaterialsItem
+                id={item.id}
+                name={item.name}
+                image={item.image}
+                text={item.text}
+                tag={item.tag}
+                key={item.id}
+                sample={item.sample}
+              />
+            ))
+          }
         </ul>
       ) : (
         <>
@@ -47,23 +49,25 @@ export const Materials: FC<IMaterialsProps> = ({ data }) => {
             onSlideChange={() => console.log("slide change")}
             className={materialsStyle.swiper}
           >
-            {data.map((item) => (
-              <SwiperSlide className={materialsStyle.swiperSlide}>
-                <MaterialsItem
-                  id={item.id}
-                  name={item.name}
-                  image={item.image}
-                  text={item.text}
-                  tag={item.tag}
-                  key={item.id}
-                  sample={item.sample}
-                />
-              </SwiperSlide>
-            ))}
+            {
+              data.map(item => (
+                <SwiperSlide className={materialsStyle.swiperSlide} key={item.id}>
+                  <MaterialsItem
+                    id={item.id}
+                    name={item.name}
+                    image={item.image}
+                    text={item.text}
+                    tag={item.tag}
+                    key={item.id}
+                    sample={item.sample}
+                  />
+                </SwiperSlide>
+              ))
+            }
           </Swiper>
           <div className={`${materialsStyle.pagination} pagination`} />
         </>
       )}
     </section>
-  );
-};
+  )
+}

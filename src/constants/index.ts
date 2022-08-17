@@ -19,4 +19,4 @@ export const JOURNAL_ITEM_TYPE: TJournalFilterDictionary = {
   experience: "ОПЫТ ЧИТАТЕЛЯ",
 };
 
-export const MOBYLE_MEDIA_QUERY = "max-width:767px";
+export const MOBYLE_MEDIA_QUERY = "(max-width:767px)";

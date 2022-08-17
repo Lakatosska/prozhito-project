@@ -1,8 +1,9 @@
 .popup {
   max-width: 329px;
   box-sizing: border-box;
-  background-color: #F7F4F0;
+  background-color: var(--bg-gray);
   position: fixed;
+  border-radius: 8px;
   top: 50%;
   right: 0;
   order: 3;
@@ -24,8 +25,8 @@
   background-size: cover;
   padding: 0;
   border: 0;
-  width: 16.71px;
-  height: 16.71px;
+  width: 17px;
+  height: 17px;
   position: absolute;
   top: 18px;
   right: 16px;
@@ -42,7 +43,7 @@
 }
 
 .popup__title {
-  font-family: "WF", Arial, sans-serif;
+  font-family: var(--font-family-wf);
   font-size: 26px;
   line-height: 26px;
   text-align: start;
@@ -54,10 +55,10 @@
 }
 
 .popup__subtitle {
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: var(--font-family-pt-sans);
   text-align: start;
   font-size: 20px;
-  line-height: 25.88px;
+  line-height: 26px;
   color: var(--black-100);
   margin: 0;
   padding: 0;
@@ -68,11 +69,11 @@
     max-width: 676px;
     left: 0;
     width: 100%;
-    margin: 12px auto;
+    margin: 0 auto;
   }
   .popup__closeButton{
-    top: 11.65px;
-    right: 11.65px;
+    top: 12px;
+    right: 12px;
   }
   .popup__article {
     padding: 8px 8px 12px;

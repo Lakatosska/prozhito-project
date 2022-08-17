@@ -1,10 +1,12 @@
 .main {
   position: relative;
+  max-width: 1440px;
+  padding: 0 20px;
 }
 
 .pagesNav {
-  font: 1em/1.3em "PT Sans", sans-serif;
-  color: #323232;
+  font: 14px var(--font-family-pt-sans);
+  color: var(--black-100);
   padding: 20px 0 0 32px;
   margin: 0;
   text-align: start;
@@ -19,25 +21,22 @@
 }
 
 .pagesNavLink {
-  font: 1em/1.3em "PT Sans", sans-serif;
+  font-family: var(--font-family-pt-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--black-100);
   text-decoration: none;
-  color: #323232;
   cursor: pointer;
-  padding-bottom: 10px;
-}
-
-@media screen and (max-width: 767px) {
-  .pagesNavLink {
-    padding-bottom: 2px;
-  }
 }
 
 .pagesNavLink:hover {
-  border-bottom: #323232 solid 1px;
+  border-bottom: var(--black-100) solid 1px;
 }
 
 .tag {
-  font: 0.7em/1.29em "PT Sans", sans-serif;
+  font: 0.7em/1.29em var(--font-family-pt-sans);
   margin: 0 auto 0;
   text-align: center;
   padding: 47px 0 0;
@@ -61,7 +60,7 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  background: #a5cdab;
+  background: var(--button-default);
   text-align: center;
 }
 
@@ -76,9 +75,9 @@
   }
 }
 
-.buttonContens {
-  font: normal 26px "WF", sans-serif;
-  color: #323232;
+.buttonContent {
+  font: normal 26px var(--font-family-wf);
+  color: var(--black-100);
   position: absolute;
   margin: 0;
   padding: 0;
@@ -93,18 +92,18 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .buttonContens {
+  .buttonContent {
     font-size: 18px;
     left: -5px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .buttonContens {
+  .buttonContent {
     display: none;
   }
 }
 
-.buttonontens:hover {
-  border-bottom: 1px solid #323232;
+.buttonContent:hover {
+  border-bottom: 1px solid var(--black-100);
 }
