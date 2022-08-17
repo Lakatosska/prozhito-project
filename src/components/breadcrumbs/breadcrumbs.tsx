@@ -31,15 +31,15 @@ const Breadcrumbs: FC = () => {
   let breadcrumbs = [<span><Link className={breadcrumbsStyle.text} to="/">Главная страница</Link> / </span>];
 
   if (matchNewsPage != null) {
-    breadcrumbs.push(<span className={breadcrumbsStyle.text}>Новости и события</span>)
+    breadcrumbs.push(<span className={breadcrumbsStyle.textlast}>Новости и события</span>)
   };
 
   if (matchJournalPage != null) {
-    breadcrumbs.push(<span className={breadcrumbsStyle.text}>Журнал «Прожито»</span>)
+    breadcrumbs.push(<span className={breadcrumbsStyle.textlast}>Журнал «Прожито»</span>)
   };
 
   if (matchSampleMaterial != null) {
-    breadcrumbs.push(<span className={breadcrumbsStyle.text}>Журнал «Прожито»</span>)
+    breadcrumbs.push(<span><Link className={breadcrumbsStyle.text} to="/journal">Журнал «Прожито»</Link></span>)
     breadcrumbs.push(<span className={breadcrumbsStyle.textlast}> / Опыт прочтения одного дневника</span>)
   };
 

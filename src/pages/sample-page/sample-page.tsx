@@ -43,15 +43,6 @@ const SamplePage: FC = () => {
   return (
     <main className={samplePageStyles.main}>
       <div onScroll={onScroll} style={{height: 900, overflowY: "scroll" }}>
-        <nav>
-          <p className={samplePageStyles.pagesNav}>
-              <a href="/" className={samplePageStyles.pagesNavLink}>Главная страница</a> /
-              <a href="/journal" className={samplePageStyles.pagesNavLink}
-                >Журнал «Прожито»</a
-              >
-              / Опыт прочтения одного дневника
-            </p>
-        </nav>
         <div className={samplePageStyles.tag}>
           <p className={samplePageStyles.tagPart}>детство</p>
           <p className={samplePageStyles.tagPart}>&#183;</p>

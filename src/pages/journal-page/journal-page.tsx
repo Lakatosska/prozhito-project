@@ -47,7 +47,6 @@ const JournalPage: FC = () => {
 
   return (
     <main className={journalPageStyles.main}>
-      <p className={journalPageStyles.breadcrumbs}><Link to='/' className={journalPageStyles.breadcrumbsLink}>Главная страница</Link> / Журнал «Прожито»</p>
       <h1 className={journalPageStyles.heading}>Журнал &laquo;Прожито&raquo;</h1>
       <Tabs>
         <TabItem value={"all"} selected={selectedTab === "all"} setSelected={()=>handleFilter('all')} />
