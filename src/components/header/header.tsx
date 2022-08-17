@@ -54,7 +54,7 @@ const Header: FunctionComponent = () => {
             />
           </a>
         </div>
-        <HeaderNav desktop={desktop} open={menuOpen} />
+        <HeaderNav desktop={desktop} open={menuOpen} closeMenu={()=>setMenuOpen(false)} />
         {
           !desktop && (
             <button

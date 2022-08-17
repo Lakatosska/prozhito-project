@@ -7,13 +7,15 @@ interface IHeaderDropdownProps {
   visible: boolean;
   desktop: boolean;
   setDropDownVisible: (visible: boolean) => void;
+  closeMenu: () => void;
 }
 const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
   visible,
   desktop,
   setDropDownVisible,
+  closeMenu,
 }) => {
-  const dropdownStylesMobile = `${headerDropdownStyles.menu__mobileLinksSection}`
+  const dropdownStylesMobile = `${headerDropdownStyles.menu__mobileLinksSection}`;
 
   const dropdownStylesDesktop = visible
     ? `${headerDropdownStyles.menu__dropdown} ${headerDropdownStyles.menu__dropdown_visible} `
@@ -28,6 +30,7 @@ const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
       <li className={headerDropdownStyles.menu__dropdownItem}>
         <Link
           to="/"
+          onClick={closeMenu}
           className={`${headerNavStyles.menu__link} ${headerDropdownStyles.menu__link_dropdown}`}
         >
           О&nbsp;прожито
@@ -36,6 +39,7 @@ const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
       <li className={headerDropdownStyles.menu__dropdownItem}>
         <Link
           to="/"
+          onClick={closeMenu}
           className={`${headerNavStyles.menu__link} ${headerDropdownStyles.menu__link_dropdown}`}
         >
           Как&nbsp;работать?
@@ -44,6 +48,7 @@ const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
       <li className={headerDropdownStyles.menu__dropdownItem}>
         <Link
           to="/"
+          onClick={closeMenu}
           className={`${headerNavStyles.menu__link} ${headerDropdownStyles.menu__link_dropdown}`}
         >
           Медиа
@@ -52,6 +57,7 @@ const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
       <li className={headerDropdownStyles.menu__dropdownItem}>
         <Link
           to="/"
+          onClick={closeMenu}
           className={`${headerNavStyles.menu__link} ${headerDropdownStyles.menu__link_dropdown}`}
         >
           Новости
@@ -60,6 +66,7 @@ const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
       <li className={headerDropdownStyles.menu__dropdownItem}>
         <Link
           to="/"
+          onClick={closeMenu}
           className={`${headerNavStyles.menu__link} ${headerDropdownStyles.menu__link_dropdown}`}
         >
           Спецпроекты
@@ -67,34 +74,52 @@ const HeaderDropdown: FunctionComponent<IHeaderDropdownProps> = ({
       </li>
     </ul>
   ) : (
-    <div
-      className={dropdownStylesMobile}
-    >
+    <div className={dropdownStylesMobile}>
       <ul className={headerDropdownStyles.menu__mobileLinks}>
         <li className={headerNavStyles.menu__item}>
-          <Link to="/" className={headerNavStyles.menu__link}>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className={headerNavStyles.menu__link}
+          >
             О&nbsp;прожито
           </Link>
         </li>
         <li className={headerNavStyles.menu__item}>
-          <Link to="/" className={headerNavStyles.menu__link}>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className={headerNavStyles.menu__link}
+          >
             Как&nbsp;работать?
           </Link>
         </li>
         <li className={headerNavStyles.menu__item}>
-          <Link to="/" className={headerNavStyles.menu__link}>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className={headerNavStyles.menu__link}
+          >
             Медиа
           </Link>
         </li>
       </ul>
       <ul className={headerDropdownStyles.menu__mobileLinks}>
         <li className={headerNavStyles.menu__item}>
-          <Link to="/" className={headerNavStyles.menu__link}>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className={headerNavStyles.menu__link}
+          >
             Новости
           </Link>
         </li>
         <li className={headerNavStyles.menu__item}>
-          <Link to="/" className={headerNavStyles.menu__link}>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className={headerNavStyles.menu__link}
+          >
             Спецпроекты
           </Link>
         </li>

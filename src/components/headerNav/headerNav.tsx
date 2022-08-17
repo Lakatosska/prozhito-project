@@ -6,8 +6,9 @@ import HeaderDropdown from "../headerDropdown/headerDropdown";
 interface IHeaderNavProps {
   desktop: boolean;
   open: boolean;
+  closeMenu: ()=>void;
 }
-const HeaderNav: FunctionComponent<IHeaderNavProps> = ({ desktop, open }) => {
+const HeaderNav: FunctionComponent<IHeaderNavProps> = ({ desktop, open, closeMenu }) => {
   const [dropDownVisible, setDropDownVisible] = useState(false);
 
   const isMobileMenuStyle = open
@@ -53,11 +54,11 @@ const HeaderNav: FunctionComponent<IHeaderNavProps> = ({ desktop, open }) => {
           onMouseEnter={() => setDropDownVisible(true)}
           onMouseLeave={() => setDropDownVisible(false)}
         >
-          <Link to="/" className={headerNavStyles.menu__link}>
+          <Link to="/" className={headerNavStyles.menu__link} onClick={closeMenu}>
             О&nbsp;проекте
           </Link>
         </li>
-        <HeaderDropdown visible={dropDownVisible} desktop={desktop} setDropDownVisible={setDropDownVisible } />
+        <HeaderDropdown visible={dropDownVisible} desktop={desktop} setDropDownVisible={setDropDownVisible } closeMenu={closeMenu} />
       </ul>
     </nav>
   );
