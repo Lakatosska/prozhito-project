@@ -16,3 +16,8 @@
   color: white;
   text-decoration: none;
 }
+
+.img {
+  max-width: 1200px;
+  width: 100%;
+}

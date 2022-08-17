@@ -10,6 +10,7 @@ import CardsSlider from "../../components/cards-slider/cards-slider";
 import NewsItem from "../../components/news-item/news-item";
 import { JournalItem } from "../../components/journal-item/journal-item";
 import { isExperience } from "../../utils/functions";
+import Loader from "../../components/loader/loader";
 
 const MainPage: FC = () => {
   const { isLoading: isPopupLoading, data: popupData } =
@@ -38,6 +39,10 @@ const MainPage: FC = () => {
         );
       })
     : [];
+
+  if (isNewsLoading || isBannerLoading || isDiaryLoading || isJournalLoading || isPopupLoading) {
+    return <Loader />
+  }
 
   const journalForSlider = journalData
     ? journalData.map((item) => {

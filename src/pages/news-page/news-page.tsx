@@ -17,6 +17,7 @@ import { LinkButton } from "../../components/link-button/link-button";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { Link } from "react-router-dom";
 import NewsItem from "../../components/news-item/news-item";
+import Loader from "../../components/loader/loader";
 
 const NewsPage: FC = () => {
   const dispatch = useDispatch();
@@ -42,6 +43,8 @@ const NewsPage: FC = () => {
   const handleLoad = () => {
     dispatch(setNewsPage(page + 1));
   };
+
+  if (isLoading) return <Loader />
 
   return (
     <div className={newsPageStyle.main}>
