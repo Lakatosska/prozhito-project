@@ -60,4 +60,4 @@ const NewsPage: FC = () => {
   )
 }
 
-export default NewsPage
+export default NewsPage;
