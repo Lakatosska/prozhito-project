@@ -45,13 +45,6 @@ const SamplePage: FC = () => {
 
   return (
     <main className={samplePageStyles.main}>
-      <nav>
-        <p className={samplePageStyles.pagesNav}>
-          <Link to="/" className={samplePageStyles.pagesNavLink}>Главная страница</Link> /
-          <Link to="/journal" className={samplePageStyles.pagesNavLink}>&nbsp;Журнал «Прожито»&nbsp;</Link>
-          / Опыт прочтения одного дневника
-        </p>
-      </nav>
       <div className={samplePageStyles.tag}>
         <p className={samplePageStyles.tagPart}>детство</p>
         <p className={samplePageStyles.tagPart}>&#183;</p>

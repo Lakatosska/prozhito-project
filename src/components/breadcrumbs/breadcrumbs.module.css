@@ -1,0 +1,41 @@
+.nav {
+  max-width: 1396px;
+  width: calc(100vw * 1375 / 1440);
+  margin: 0 auto;
+  box-sizing: border-box;
+  font: 1em/1.3em "PT Sans", sans-serif;
+  color: #323232;
+  padding-top: 20px;
+  text-align: start;
+}
+
+@media screen and (max-width: 767px) {
+  .nav {
+    padding: 20px 0 0 10px;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.text {
+  font: 1em/1.3em "PT Sans", sans-serif;
+  text-decoration: none;
+  color: #323232;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .text {
+    padding-bottom: 2px;
+  }
+}
+
+.text:hover {
+  border-bottom: #323232 solid 1px;
+}
+
+.textlast:hover  {
+  border-bottom: none;
+}
