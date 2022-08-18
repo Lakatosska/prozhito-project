@@ -13,7 +13,6 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import {
   JOURNAL_PAGE_LIMIT_DESKTOP, JOURNAL_PAGE_LIMIT_TABLET, JOURNAL_PAGE_LIMIT_MOBILE
 } from "../../constants";
-import {Link} from "react-router-dom";
 import {isExperience} from "../../utils/functions";
 import Loader from "../../components/loader/loader";
 

@@ -15,7 +15,6 @@ import {
 import newsPageStyle from "./news-page.module.css";
 import { LinkButton } from "../../components/link-button/link-button";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { Link } from "react-router-dom";
 import NewsItem from "../../components/news-item/news-item";
 import Loader from "../../components/loader/loader";
 

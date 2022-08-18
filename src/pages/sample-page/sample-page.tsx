@@ -1,6 +1,6 @@
 import {FC, useState, useEffect, useCallback} from "react";
 import {dataAPI} from "../../services/api/data";
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import PopupSample from "./popup/popup";
 import ContentsSample from "./contents-sample/contents-sample";
 import useMediaQuery from "../../hooks/useMediaQuery";
