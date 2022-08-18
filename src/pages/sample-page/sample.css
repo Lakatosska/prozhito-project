@@ -205,7 +205,7 @@
 .player__button-play {
   border: none;
   background-color: transparent;
-  background-image: url(../../images/player/Play.svg);
+  background-image: url(../../../public/images/player/Play.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;
@@ -227,7 +227,7 @@
 .player__button-reverse-anticlockwise {
   border: none;
   background-color: transparent;
-  background-image: url(../../images/player/Reverse_anticlockwise.svg);
+  background-image: url(../../../public/images/player/Reverse_anticlockwise.svg);
   background-repeat: no-repeat;
   height: 28px;
   width: 23px;
@@ -242,7 +242,7 @@
 .player__button-reverse-clockwise {
   border: none;
   background-color: transparent;
-  background-image: url(../../images/player/Reverse_clockwise.svg);
+  background-image: url(../../../public/images/player/Reverse_clockwise.svg);
   background-repeat: no-repeat;
   height: 28px;
   width: 23px;
@@ -265,7 +265,7 @@
 .player__button-mute {
   border: none;
   background-color: transparent;
-  background-image: url(../../images/player/Mute.svg);
+  background-image: url(../../../public/images/player/Mute.svg);
   background-repeat: no-repeat;
   background-position: center;
   height: 27px;
@@ -284,9 +284,6 @@
     height: 84px;
   }
   .player__button-play {
-    background-image: url(../../images/player/Play_320px.svg);
-    width: 18px;
-    height: 21px;
     margin: 32px 26px 32px 36px;
   }
   .player__button-mute {
@@ -301,18 +298,19 @@
     height: 55px;
   }
   .player__button-play {
+    background-image: url(../../../public/images/player/Play_320px.svg);
     width: 16px;
     height: 16px;
     margin: 14px 8px 14px 10px;
   }
   .player__button-reverse-anticlockwise {
-    background-image: url(../../images/player/Reverse_anticlockwise_320px.svg);
+    background-image: url(../../../public/images/player/Reverse_anticlockwise_320px.svg);
     width: 16px;
     height: 16px;
     margin: 0 8px 0 0;
   }
   .player__button-reverse-clockwise {
-    background-image: url(../../images/player/Reverse_clockwise_320px.svg);
+    background-image: url(../../../public/images/player/Reverse_clockwise_320px.svg);
     width: 16px;
     height: 16px;
   }
@@ -325,7 +323,7 @@
     margin: 0 0 0 16px;
   }
   .player__button-mute {
-    background-image: url(../../images/player/Mute_320px.svg);
+    background-image: url(../../../public/images/player/Mute_320px.svg);
     margin: 14px 10px 14px 0;
   }
 }

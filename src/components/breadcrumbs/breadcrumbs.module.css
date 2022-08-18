@@ -5,17 +5,8 @@
   box-sizing: border-box;
   font: 1em/1.3em "PT Sans", sans-serif;
   color: #323232;
-  padding-top: 20px;
   text-align: start;
-}
-
-@media screen and (max-width: 767px) {
-  .nav {
-    padding: 20px 0 0 10px;
-    max-width: 300px;
-    width: 100%;
-    margin: 0 auto;
-  }
+  display: block;
 }
 
 .text {
@@ -26,16 +17,30 @@
   padding-bottom: 10px;
 }
 
-@media screen and (max-width: 767px) {
-  .text {
-    padding-bottom: 2px;
-  }
-}
-
 .text:hover {
   border-bottom: #323232 solid 1px;
 }
 
 .textlast:hover  {
   border-bottom: none;
+}
+
+.title {
+  margin: 20px 0 40px;
+  padding: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .title {
+    margin: 20px 0 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+  .text {
+    padding-bottom: 2px;
+  }
 }

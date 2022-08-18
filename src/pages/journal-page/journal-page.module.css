@@ -47,6 +47,12 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .heading{
+    margin-top: 24px;
+  }
+}
+
 @media screen and (max-width: 646px) {
   .list {
     grid-template-columns: repeat(2, 175px);

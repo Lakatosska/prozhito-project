@@ -66,17 +66,20 @@
   font-size: 46px;
   line-height: 120%;
   color: var(--black-100);
+  margin: 0 0 36px 0;
 }
 
 @media screen and (max-width: 1023px) {
   .title {
     font-size: 30px;
+    margin: 0 0 20px 0;
   }
 }
 
 @media screen and (max-width: 767px) {
   .title {
     font-size: 32px;
+    margin: 20px 0 16px;
   }
 }
 

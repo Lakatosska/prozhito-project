@@ -45,7 +45,7 @@ const Breadcrumbs: FC = () => {
 
   return(
     <nav className={breadcrumbsStyle.nav}>
-      <p>
+      <p className={breadcrumbsStyle.title}>
         {breadcrumbs}
       </p>
     </nav>
