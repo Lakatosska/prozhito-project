@@ -23,9 +23,9 @@
 @media screen and (max-width: 767px) {
   .materials {
     overflow: hidden;
-    width: calc(100vw - 25px);
+    width: 100%;
     padding-left: 0;
-    margin-right: 0;
+    margin: 0;
     padding-bottom: 28px;
   }
 }
