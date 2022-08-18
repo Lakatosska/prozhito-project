@@ -48,15 +48,6 @@ const NewsPage: FC = () => {
 
   return (
     <div className={newsPageStyle.main}>
-      <p className={newsPageStyle.breadcrumbs}>
-        <Link to="/" className={newsPageStyle.breadcrumbsLink}>
-          Главная страница
-        </Link>{" "}
-        /{" "}
-        <Link to="/journal" className={newsPageStyle.breadcrumbsLink}>
-          Журнал «Прожито»
-        </Link>
-      </p>
       <h1 className={newsPageStyle.title}>Новости и события</h1>
       {!isLoading && data && (
         <>
