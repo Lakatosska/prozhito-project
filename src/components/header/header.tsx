@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useState } from "react";
-import {useLocation} from "react-router-dom";
+import { FunctionComponent, useState } from "react";
+import {useLocation, Link} from "react-router-dom";
 import headerStyles from "./header.module.css";
 import logo from "../../images/logo_Prozhito.svg";
 import logo_mobile from "../../images/logo_prozhito_mobile.svg";
@@ -34,14 +34,12 @@ const Header: FunctionComponent = () => {
     >
       <div className={`${headerStyles.header__container} ${headerStyles.menu}`}>
         <div className={headerStyles.header__links}>
-          <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={headerStyles.link}
-          >
-            <img src={desktop ? logo : logo_mobile} alt={desktop.toString()} />
-          </a>
+          <Link to="/" className={headerStyles.link}>
+            <img
+              src={desktop? logo : logo_mobile}
+              alt={desktop.toString()}
+            />
+          </Link>
           <a
             href="https://eusp.org/"
             target="_blank"
