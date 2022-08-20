@@ -1,6 +1,5 @@
 import {FC} from "react";
-import { Link } from "react-router-dom";
-import { useMatch } from 'react-router-dom';
+import {Link, useMatch} from "react-router-dom";
 import breadcrumbsStyle from './breadcrumbs.module.css';
 
 const Breadcrumbs: FC = () => {
@@ -28,20 +27,20 @@ const Breadcrumbs: FC = () => {
     return null
   }
 
-  let breadcrumbs = [<span><Link className={breadcrumbsStyle.text} to="/">Главная страница</Link> / </span>];
+  const breadcrumbs = [<span key={"0"}><Link className={breadcrumbsStyle.text} to="/">Главная страница</Link> / </span>];
 
   if (matchNewsPage != null) {
-    breadcrumbs.push(<span className={breadcrumbsStyle.textlast}>Новости и события</span>)
-  };
+    breadcrumbs.push(<span key={"1"} className={breadcrumbsStyle.textlast}>Новости и события</span>)
+  }
 
   if (matchJournalPage != null) {
-    breadcrumbs.push(<span className={breadcrumbsStyle.textlast}>Журнал «Прожито»</span>)
-  };
+    breadcrumbs.push(<span key={"2"} className={breadcrumbsStyle.textlast}>Журнал «Прожито»</span>)
+  }
 
   if (matchSampleMaterial != null) {
-    breadcrumbs.push(<span><Link className={breadcrumbsStyle.text} to="/journal">Журнал «Прожито»</Link></span>)
-    breadcrumbs.push(<span className={breadcrumbsStyle.textlast}> / Опыт прочтения одного дневника</span>)
-  };
+    breadcrumbs.push(<span key={"3"}><Link className={breadcrumbsStyle.text} to="/journal">Журнал «Прожито»</Link></span>)
+    breadcrumbs.push(<span key={"4"} className={breadcrumbsStyle.textlast}> / Опыт прочтения одного дневника</span>)
+  }
 
   return(
     <nav className={breadcrumbsStyle.nav}>

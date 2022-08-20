@@ -214,13 +214,23 @@
   cursor: pointer;
 }
 
-.player__image-play {
-  outline: none;
-  border: none;
-  background-color: transparent;
+.player__button-play:hover {
+  opacity: 50%;
 }
 
-.player__button-play:hover {
+.player__button-stop {
+  border: none;
+  background-color: transparent;
+  background-image: url(../../../public/images/player/stop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 28px;
+  margin: 40px 24px 40px 40px;
+  cursor: pointer;
+}
+
+.player__button-stop:hover {
   opacity: 50%;
 }
 
@@ -254,6 +264,7 @@
 }
 
 .player__soundtrack {
+  width: 340px;
   margin: 0 20px 0 24px;
 }
 
@@ -276,6 +287,23 @@
 
 .player__button-mute:hover {
   opacity: .5;
+}
+
+.player__button-unmute {
+  border: none;
+  background-color: transparent;
+  background-image: url(../../../public/images/player/Mute.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 27px;
+  width: 25px;
+  margin: 40px 40px 40px 24px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.player__button-unmute:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 1023px) {
@@ -303,6 +331,12 @@
     height: 16px;
     margin: 14px 8px 14px 10px;
   }
+  .player__button-stop {
+    background-image: url(../../../public/images/player/stop_320px.svg);
+    width: 16px;
+    height: 16px;
+    margin: 14px 8px 14px 10px;
+  }
   .player__button-reverse-anticlockwise {
     background-image: url(../../../public/images/player/Reverse_anticlockwise_320px.svg);
     width: 16px;
@@ -325,6 +359,11 @@
   .player__button-mute {
     background-image: url(../../../public/images/player/Mute_320px.svg);
     margin: 14px 10px 14px 0;
+  }
+  .player__button-unmute {
+    background-image: url(../../../public/images/player/Mute_320px.svg);
+    margin: 14px 10px 14px 0;
+    opacity: .5;
   }
 }
 
