@@ -53,9 +53,9 @@
   }
 }
 
-@media screen and (max-width: 646px) {
+@media screen and (max-width: 767px) {
   .list {
-    grid-template-columns: repeat(2, 175px);
+    grid-template-columns: repeat(2, 210px);
     grid-template-rows: repeat(2, 277px);
     gap: 36px;
     margin-top: 18px;
@@ -63,7 +63,7 @@
 
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .list {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 352px);

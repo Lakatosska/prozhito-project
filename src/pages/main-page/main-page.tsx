@@ -82,7 +82,7 @@ const MainPage: FC = () => {
             title="Журнал «Прожито»"
             textLink="Посмотреть всю подборку"
             cards={journalForSlider}
-            sliderTitle="Журнал"
+            sliderTitle="Новые материалы"
             to={"/journal"}
             slider={true}
           />
