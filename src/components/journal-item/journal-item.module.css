@@ -167,6 +167,7 @@ p {
   }
   .card {
     width: 70vw;
+    aspect-ratio: 63/88;
   }
   .quote {
     display: block;
@@ -176,5 +177,8 @@ p {
   }
   .type {
     padding: 3.3333vw 0 0 2.2222vw;
+  }
+  .text {
+    padding: 0 8px 25px;
   }
 }
