@@ -131,6 +131,7 @@ ul {
 
 .swiperMobile {
   max-width: 352px;
+  width: 75vw;
   height: auto;
   box-sizing: border-box;
   padding-inline-start: 12px;
