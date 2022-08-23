@@ -35,9 +35,7 @@ export const JournalItem: FC<IJournalItemProps> = ({ item, isExp }) => {
         alt={"Картинка журнала"}
       />
       <p className={journalItemStyles.type}>{itemTypeName}</p>
-      <div
-        className={`${journalItemStyles.text} ${journalItemStyles.card_type_experience}`}
-      >
+      <div className={journalItemStyles.text}>
         <p className={journalItemStyles.title}>
           {(item as IJournalMagazineItem).title}
         </p>
