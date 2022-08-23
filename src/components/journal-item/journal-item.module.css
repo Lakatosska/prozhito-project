@@ -163,6 +163,7 @@ p {
     width: 70vw;
     gap: 3.3333vw;
     padding: 4.4444vw 2.2222vw;
+    aspect-ratio: 63/88;
   }
   .card {
     width: 70vw;
