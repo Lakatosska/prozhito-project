@@ -1,14 +1,10 @@
-.page__section{
+.page__section {
   margin-bottom: 76px;
   display: flex;
   justify-content: center;
 }
-@media screen and (max-width: 767px){
-  .page__section{
+@media screen and (max-width: 767px) {
+  .page__section {
     margin-bottom: 27px;
   }
-}
-
-.page__overflow{
-  overflow: hidden;
 }
