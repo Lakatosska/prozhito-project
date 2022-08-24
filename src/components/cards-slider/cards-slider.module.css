@@ -96,7 +96,7 @@ ul {
   flex-direction: column;
   align-items: center;
   padding: 0.8vw 3.3333vw 0;
-  min-width: 360px;
+  min-width: 336px;
   box-sizing: border-box;
   gap: 16px;
 }
@@ -131,7 +131,7 @@ ul {
 
 .swiperMobile {
   max-width: 352px;
-  width: 75vw;
+  width: 80vw;
   overflow: hidden;
   height: auto;
   box-sizing: border-box;

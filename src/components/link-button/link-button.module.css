@@ -111,7 +111,7 @@
 
 @media screen and (max-width: 480px) {
   .linkButton_type_rect {
-    width: 335px;
+    width: 330px;
     min-height: 50px;
   }
   .linkButton__arrow {
