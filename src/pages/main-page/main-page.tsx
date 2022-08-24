@@ -83,7 +83,7 @@ const MainPage: FC = () => {
       )}
 
       {!isJournalLoading && journalData && (
-        <section>
+        <section className={pageStyles.page__overflow}>
           <CardsSlider
             title="Журнал «Прожито»"
             textLink="Посмотреть всю подборку"
