@@ -40,8 +40,14 @@ const MainPage: FC = () => {
       })
     : [];
 
-  if (isNewsLoading || isBannerLoading || isDiaryLoading || isJournalLoading || isPopupLoading) {
-    return <Loader />
+  if (
+    isNewsLoading ||
+    isBannerLoading ||
+    isDiaryLoading ||
+    isJournalLoading ||
+    isPopupLoading
+  ) {
+    return <Loader />;
   }
 
   const journalForSlider = journalData
