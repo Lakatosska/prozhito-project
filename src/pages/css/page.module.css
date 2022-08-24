@@ -9,4 +9,6 @@
   }
 }
 
-
+.page__overflow{
+  overflow: hidden;
+}
